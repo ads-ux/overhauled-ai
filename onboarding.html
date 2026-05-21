@@ -478,6 +478,71 @@
     }
     .trust-item span { font-size: 1rem; }
 
+    /* ── PACKAGE CARDS ── */
+    .package-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .package-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      user-select: none;
+      position: relative;
+    }
+    .package-card:hover {
+      border-color: #bef264;
+      background: #fafff0;
+    }
+    .package-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .package-card input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+      cursor: pointer;
+    }
+    .package-card-body { flex: 1; }
+    .package-card-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+    .package-card-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .package-card-price {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+    .package-card.selected .package-card-price {
+      color: var(--accent-dark);
+    }
+    .package-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero { padding: 2.5rem 1.25rem 3rem; }
@@ -843,6 +908,56 @@
         <div class="form-body">
           <div class="field-group">
 
+            <div class="field" id="f-packageInterest">
+              <label>Which service are you most interested in? <span class="optional">(optional)</span></label>
+              <div class="package-cards" id="packageInterestGroup">
+
+                <label class="package-card">
+                  <input type="radio" name="packageInterest" value="tune-up" onchange="togglePackage(this)" />
+                  <div class="package-card-body">
+                    <div class="package-card-top">
+                      <div class="package-card-name">🔎 The "Tune Up"</div>
+                      <div class="package-card-price">$297 one-time</div>
+                    </div>
+                    <div class="package-card-desc">A deep audit of your site + a fix of your top 3 issues. 48-hour turnaround. The $297 is credited toward a full Overhaul if you decide to go further.</div>
+                  </div>
+                </label>
+
+                <label class="package-card">
+                  <input type="radio" name="packageInterest" value="auto-pilot" onchange="togglePackage(this)" />
+                  <div class="package-card-body">
+                    <div class="package-card-top">
+                      <div class="package-card-name">🤖 The "Auto Pilot"</div>
+                      <div class="package-card-price">$1,000 + $50/mo</div>
+                    </div>
+                    <div class="package-card-desc">A Digital Employee that handles enquiries, follow-ups, and bookings 24/7 — so you never miss a lead, even while you sleep.</div>
+                  </div>
+                </label>
+
+                <label class="package-card">
+                  <input type="radio" name="packageInterest" value="overhaul" onchange="togglePackage(this)" />
+                  <div class="package-card-body">
+                    <div class="package-card-top">
+                      <div class="package-card-name">🚀 The "Overhaul"</div>
+                      <div class="package-card-price">from $2,997 one-time</div>
+                    </div>
+                    <div class="package-card-desc">The full transformation: a new or rebuilt site, a Digital Employee, automated follow-up sequences, and local SEO — all working together.</div>
+                  </div>
+                </label>
+
+                <label class="package-card">
+                  <input type="radio" name="packageInterest" value="not-sure" onchange="togglePackage(this)" />
+                  <div class="package-card-body">
+                    <div class="package-card-top">
+                      <div class="package-card-name">🤔 Not sure yet</div>
+                    </div>
+                    <div class="package-card-desc">I'm still figuring out what I need — happy to talk it through.</div>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
             <div class="field" id="f-successLooksLike">
               <label>What does success look like in 6 months?</label>
               <textarea name="successLooksLike" id="successLooksLike" rows="4" placeholder="e.g. double our monthly leads, rank on page 1 for our main keywords, fix our website so it actually converts, stop wasting money on ads that don't work…"></textarea>
@@ -905,6 +1020,14 @@
         opt.classList.remove('selected');
       });
       el.closest('.radio-option').classList.add('selected');
+    }
+
+    // ── PACKAGE CARD TOGGLE ──
+    function togglePackage(el) {
+      document.querySelectorAll('#packageInterestGroup .package-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      el.closest('.package-card').classList.add('selected');
     }
 
     // ── PROGRESS UI ──
@@ -1021,6 +1144,7 @@
         emailList: val('emailList'),
         crmTool: val('crmTool'),
         assetNotes: val('assetNotes'),
+        packageInterest: radio('packageInterest'),
         successLooksLike: val('successLooksLike'),
         anythingElse: val('anythingElse'),
       };
