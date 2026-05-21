@@ -1,506 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7H4493NWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E7H4493NWB');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch with Overhauled.ai — website fixes, AI automation, and digital support for small businesses in Guelph, Kitchener, Waterloo & Cambridge.">
 <title>Contact | Overhauled.ai</title>
-<meta name="description" content="Get in touch with Overhauled.ai. Questions about your website, a project you want to discuss, or anything else, send us a message and we'll get back to you within one business day." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="canonical" href="https://overhauled.ai/contact" />
-<link rel="icon" href="/favicon.ico" />
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Overhauled.ai">
+<meta property="og:title" content="Contact | Overhauled.ai">
+<meta property="og:description" content="Get in touch with Overhauled.ai. Based in Guelph, serving Kitchener, Waterloo, Cambridge & beyond. Usually reply within a few hours.">
+<meta property="og:url" content="https://overhauled.ai/contact/">
+<meta property="og:image" content="https://overhauled.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact | Overhauled.ai">
+<meta name="twitter:description" content="Get in touch with Overhauled.ai. Based in Guelph, serving Kitchener, Waterloo, Cambridge & beyond. Usually reply within a few hours.">
+<meta name="twitter:image" content="https://overhauled.ai/og-image.png">
+<!-- Canonical -->
+<link rel="canonical" href="https://overhauled.ai/contact/">
 <style>
-  :root {
-    --bg: #ffffff;
-    --bg-soft: #f8fafc;
-    --bg-dark: #0b1120;
-    --surface: #ffffff;
-    --border: #e2e8f0;
-    --text: #0f172a;
-    --text-muted: #475569;
-    --text-soft: #64748b;
-    --text-on-dark: #f1f5f9;
-    --text-on-dark-muted: #94a3b8;
-    --accent: #84cc16;
-    --accent-dark: #65a30d;
-    --accent-soft: #ecfccb;
-    --shadow-sm: 0 1px 2px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.08);
-    --shadow-md: 0 4px 6px -1px rgba(15,23,42,0.08), 0 2px 4px -2px rgba(15,23,42,0.06);
-    --shadow-lg: 0 20px 25px -5px rgba(15,23,42,0.08), 0 8px 10px -6px rgba(15,23,42,0.06);
-    --radius: 14px;
-    --radius-lg: 20px;
-    --container: 1100px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#22C55E;--green-dim:#16A34A;--dark:#0A0A0A;
+  --navy:#0F172A;--slate:#1E293B;--border:#1E293B;
+  --text:#F8FAFC;--muted:#94A3B8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--dark);color:var(--text);line-height:1.7;font-size:16px}
 
-  *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-  }
-  img { max-width: 100%; height: auto; display: block; }
-  a { color: inherit; text-decoration: none; }
-  h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
-  h2 { font-size: 1.2rem; font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
-  p { color: var(--text-muted); margin: 0 0 14px; }
-  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #1a1a1a;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{color:#fff;font-weight:800;font-size:17px;text-decoration:none;letter-spacing:-0.3px}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#aaa;text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--green);color:#000!important;padding:8px 18px;border-radius:6px;font-weight:700;font-size:14px}
+.nav-cta:hover{background:var(--green-dim)!important}
 
-  /* ---- NAV ---- */
-  .nav-wrapper {
-    position: sticky; top: 0; z-index: 100;
-    border-bottom: 1px solid var(--border);
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-  }
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px; gap: 24px;
-  }
-  .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
-  .logo-icon { width: 28px; height: 28px; background: var(--text); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .logo-icon svg { width: 14px; height: 14px; fill: var(--accent); }
-  .logo-word span { color: var(--accent-dark); }
-  .nav-links { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 4px; }
-  .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-soft); padding: 6px 10px; border-radius: 6px; transition: color 0.15s; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-links a.active { color: var(--text); font-weight: 700; }
-  .btn-nav { display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 7px; background: var(--text); color: #fff; font-size: 0.85rem; font-weight: 700; transition: background 0.15s; }
-  .btn-nav:hover { background: #1e293b; }
-  .hamburger { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; padding: 4px; }
-  .mobile-menu { display: none; flex-direction: column; gap: 4px; padding: 12px 24px 16px; border-top: 1px solid var(--border); background: #fff; }
-  .mobile-menu a { padding: 10px 0; font-size: 1rem; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border); }
-  .mobile-menu.open { display: flex; }
-  @media (max-width: 800px) { .nav-links { display: none; } .hamburger { display: block; } }
+/* HERO */
+.contact-hero{background:var(--navy);padding:80px 40px 60px;text-align:center}
+.section-label{color:var(--green);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.contact-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.15;margin-bottom:16px;color:#fff}
+.contact-hero p{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto}
 
-  /* ---- HERO ---- */
-  .hero {
-    text-align: center;
-    padding: 64px 24px 48px;
-    background:
-      radial-gradient(ellipse at top right, rgba(132,204,22,0.12), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(251,146,60,0.08), transparent 55%),
-      #fff;
-    overflow: hidden;
-  }
-  .badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--accent-soft); color: var(--accent-dark);
-    font-size: 0.78rem; font-weight: 700; padding: 5px 14px;
-    border-radius: 99px; letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .hero h1 { color: var(--text); }
-  .hero h1 span {
-    background: linear-gradient(135deg, var(--accent-dark), #a3e635);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .hero .lede { font-size: 1.1rem; max-width: 540px; margin: 0 auto; color: var(--text-muted); }
+/* LAYOUT */
+.contact-body{padding:70px 40px;background:var(--dark)}
+.contact-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
+@media(max-width:720px){.contact-wrap{grid-template-columns:1fr;gap:40px}}
 
-  /* ---- MAIN CONTENT ---- */
-  .page-body { padding: 56px 0 80px; }
+/* SIDE INFO */
+.contact-info h2{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:20px}
+.contact-info p{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:28px}
+.info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px}
+.info-icon{font-size:20px;margin-top:2px;flex-shrink:0}
+.info-text strong{display:block;color:#fff;font-size:14px;font-weight:700;margin-bottom:3px}
+.info-text span{color:var(--muted);font-size:14px}
+.response-note{background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-top:28px}
+.response-note p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:0}
+.response-note strong{color:var(--green)}
 
-  /* ---- CARD ---- */
-  .contact-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    box-shadow: var(--shadow-lg);
-  }
-  @media (max-width: 640px) { .contact-card { padding: 24px; } }
+/* FORM */
+.contact-form-wrap h2{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:24px}
+form{display:flex;flex-direction:column;gap:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:8px}
+label{font-size:13px;font-weight:700;color:#fff;letter-spacing:0.3px}
+input,textarea,select{background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:13px 16px;color:#fff;font-size:14px;font-family:inherit;width:100%;transition:border-color 0.2s;outline:none}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+input:focus,textarea:focus,select:focus{border-color:var(--green)}
+select option{background:var(--navy)}
+textarea{resize:vertical;min-height:130px}
+.form-submit{background:var(--green);color:#000;font-weight:800;font-size:15px;padding:15px 28px;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;align-self:flex-start;font-family:inherit}
+.form-submit:hover{background:var(--green-dim)}
+.form-note{font-size:12px;color:var(--muted)}
 
-  /* ---- GRID ---- */
-  .grid-split {
-    display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start;
-  }
-  @media (max-width: 780px) { .grid-split { grid-template-columns: 1fr; gap: 36px; } }
+/* SUCCESS */
+.form-success{display:none;background:var(--navy);border:1px solid var(--green);border-radius:12px;padding:32px;text-align:center}
+.form-success.show{display:block}
+.form-success h3{color:var(--green);font-size:1.3rem;margin-bottom:10px}
+.form-success p{color:var(--muted);font-size:14px}
 
-  /* ---- LEFT PANEL ---- */
-  .info-panel h2 { color: var(--text); }
-  .info-panel > p { margin-bottom: 16px; font-size: 0.9rem; }
-
-  .problem-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
-  .problem-btn {
-    display: block; width: 100%; text-align: left;
-    padding: 10px 14px;
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text-muted);
-    font-size: 0.85rem; font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
-    line-height: 1.4;
-  }
-  .problem-btn:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent-dark);
-    color: var(--text);
-  }
-  .problem-btn.selected {
-    background: var(--accent-soft);
-    border-color: var(--accent-dark);
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  .contact-meta { font-size: 0.82rem; color: var(--text-soft); }
-  .contact-meta a { color: var(--accent-dark); font-weight: 600; }
-  .contact-meta a:hover { color: var(--text); }
-
-  /* ---- FORM ---- */
-  form .field { margin-bottom: 18px; }
-  form label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: 0.01em; }
-  form input, form textarea, form select {
-    width: 100%; padding: 13px 16px;
-    border-radius: 10px;
-    border: 1.5px solid var(--border);
-    background: var(--bg-soft);
-    color: var(--text);
-    font-size: 0.95rem;
-    font-family: inherit;
-    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
-    resize: none;
-  }
-  form input::placeholder, form textarea::placeholder { color: var(--text-soft); }
-  form input:focus, form textarea:focus, form select:focus {
-    outline: 0;
-    border-color: var(--accent-dark);
-    background: #fff;
-    box-shadow: 0 0 0 3px rgba(132,204,22,0.15);
-  }
-  form select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-
-  .btn-submit {
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; padding: 15px 24px;
-    background: var(--text); color: #fff;
-    font-weight: 800; font-size: 1rem;
-    border: 0; border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.15s;
-    font-family: inherit;
-  }
-  .btn-submit:hover { background: #1e293b; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .form-note { font-size: 0.8rem; color: var(--text-soft); text-align: center; margin: 10px 0 0; }
-
-  /* ---- SUCCESS ---- */
-  .success {
-    display: none;
-    background: var(--accent-soft);
-    border: 1.5px solid var(--accent-dark);
-    border-radius: var(--radius);
-    padding: 32px;
-    text-align: center;
-  }
-  .success.show { display: block; animation: fadeIn 0.4s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .success-icon { font-size: 2.4rem; margin-bottom: 10px; }
-  .success-title { font-size: 1.15rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-  .success-body { font-size: 0.92rem; color: var(--text-muted); }
-  .success-body a { color: var(--accent-dark); font-weight: 600; }
-
-  /* ---- ERROR ---- */
-  .error-msg {
-    display: none;
-    background: #fef2f2;
-    border: 1.5px solid #fca5a5;
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 0.88rem;
-    color: #dc2626;
-    margin-bottom: 16px;
-  }
-  .error-msg a { color: #dc2626; font-weight: 600; }
-  .error-msg.show { display: block; }
-
-  /* ---- FOOTER ---- */
-  .footer { background: var(--bg-dark); color: var(--text-on-dark-muted); padding: 50px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-  .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  @media (max-width: 800px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; } }
-  .footer .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
-  .footer .logo-icon { width: 28px; height: 28px; background: rgba(255,255,255,0.08); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .footer .logo-icon svg { width: 14px; height: 14px; fill: var(--accent); }
-  .footer .logo-word { color: #fff; }
-  .footer .logo-word span { color: var(--accent); }
-  .footer-blurb { font-size: 0.9rem; margin-top: 14px; max-width: 280px; color: var(--text-on-dark-muted); }
-  .footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
-  .footer-col a { display: block; color: var(--text-on-dark-muted); margin-bottom: 8px; font-size: 0.92rem; }
-  .footer-col a:hover { color: var(--accent); }
-  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-top: 24px; font-size: 0.85rem; }
-  .footer-bottom a { color: var(--text-on-dark-muted); transition: color 0.15s; }
-  .footer-bottom a:hover { color: var(--accent); }
+/* FOOTER */
+footer{background:#050505;border-top:1px solid #111;padding:40px;text-align:center}
+.footer-logo{color:#fff;font-weight:800;font-size:16px;text-decoration:none;display:inline-block;margin-bottom:16px}
+.footer-logo span{color:var(--green)}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{color:#333;font-size:12px}
 </style>
 </head>
 <body>
 
-<!-- =============== NAV =============== -->
-<header class="nav-wrapper">
-  <nav class="nav container" aria-label="Main navigation">
-    <a href="/" class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-      </div>
-      <span class="logo-word">overhauled<span>.ai</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/#packages">Services</a></li>
-      <li><a href="/#pricing">Pricing</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#faq">FAQ</a></li>
-      <li><a href="/contact" class="btn-nav active">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="/#packages">Services</a>
-    <a href="/#pricing">Pricing</a>
+<nav>
+  <a href="/" class="nav-logo">overhauled<span>.ai</span></a>
+  <div class="nav-links">
     <a href="/blog/">Blog</a>
     <a href="/#faq">FAQ</a>
-    <a href="/contact">Contact</a>
+    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
   </div>
-</header>
+</nav>
 
-<!-- =============== HERO =============== -->
-<section class="hero">
-  <span class="badge">Reply within one business day</span>
-  <h1>Sound like any of <span>these?</span></h1>
-  <p class="lede">Most small business owners reach out because of one of these problems. If something here sounds familiar, let's talk.</p>
+<section class="contact-hero">
+  <p class="section-label">Get in touch</p>
+  <h1>Have a question?<br>Let's talk.</h1>
+  <p>Not ready for the full onboarding flow? No problem. Send a message and you'll hear back within a few hours.</p>
 </section>
 
-<!-- =============== BODY =============== -->
-<div class="page-body">
-  <div class="container">
-    <div class="contact-card">
-      <div class="grid-split">
+<section class="contact-body">
+  <div class="contact-wrap">
 
-        <!-- Problems panel -->
-        <div class="info-panel">
-          <h2>Common problems we fix</h2>
-          <p>Click one to pre-fill the form.</p>
+    <div class="contact-info">
+      <h2>Before you write</h2>
+      <p>If you're not sure what you need — that's exactly what we help with. A quick message is all it takes to get started.</p>
 
-          <div class="problem-list">
-            <button type="button" class="problem-btn" data-topic="My website is slow or broken">
-              🐌 My website is slow or looks broken
-            </button>
-            <button type="button" class="problem-btn" data-topic="My contact form isn't working">
-              📭 My contact form stopped working and I'm missing leads
-            </button>
-            <button type="button" class="problem-btn" data-topic="Not showing up on Google or AI search">
-              🔍 I'm not showing up on Google, or in ChatGPT / Perplexity
-            </button>
-            <button type="button" class="problem-btn" data-topic="I need a new website">
-              🏗️ I need a new website built properly
-            </button>
-            <button type="button" class="problem-btn" data-topic="Leads are falling through the cracks">
-              🕳️ Leads are coming in but nothing is following up on them
-            </button>
-            <button type="button" class="problem-btn" data-topic="I need a booking or scheduling system">
-              📅 I need a way for customers to book or schedule online
-            </button>
-            <button type="button" class="problem-btn" data-topic="My CRM is a mess or I don't have one">
-              🗂️ My CRM is a mess, or I don't have one at all
-            </button>
-            <button type="button" class="problem-btn" data-topic="I want to automate repetitive tasks with AI">
-              🤖 I'm doing the same repetitive tasks every day and want to automate them
-            </button>
-            <button type="button" class="problem-btn" data-topic="I need help with my mailing list">
-              📧 My mailing list isn't growing, or I'm not sending anything
-            </button>
-            <button type="button" class="problem-btn" data-topic="I can't keep up with social media">
-              📱 I can't keep up with posting on social media
-            </button>
-            <button type="button" class="problem-btn" data-topic="My website looks broken on phones">
-              📵 My website looks terrible on phones
-            </button>
-            <button type="button" class="problem-btn" data-topic="I don't know where to start">
-              🤷 I don't know where to start, I just know something isn't working
-            </button>
-          </div>
-
-          <p class="contact-meta">Call or email: <a href="tel:+15199425698">(519) 942-5698</a> · <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a></p>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Based in</strong>
+          <span>Guelph, Ontario — serving Kitchener, Waterloo, Cambridge & beyond</span>
         </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">⏱️</div>
+        <div class="info-text">
+          <strong>Response time</strong>
+          <span>Usually within a few hours, same business day</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📋</div>
+        <div class="info-text">
+          <strong>Prefer the quick version?</strong>
+          <span>Get a free automated website check instead — takes 2 minutes</span>
+        </div>
+      </div>
 
-        <!-- Form panel -->
-        <div>
-          <div class="error-msg" id="errorMsg">Something went wrong, please try again or email us at <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a>.</div>
+      <div class="response-note">
+        <p><strong>Tip:</strong> If you want the fastest answer, include your website URL and a brief description of the issue. We can usually diagnose the core problem before we even speak.</p>
+      </div>
+    </div>
 
-          <form id="contactForm" novalidate>
-            <!-- Honeypot -->
-            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" id="botField" tabindex="-1" autocomplete="off" /></label></p>
+    <div class="contact-form-wrap">
+      <h2>Send a message</h2>
+      <div class="form-success" id="formSuccess">
+        <h3>✓ Message sent!</h3>
+        <p>We'll be in touch within a few hours. Check your inbox — we reply from mark@overhauled.ai.</p>
+      </div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="bot-field" style="display:none">
 
-            <div class="field">
-              <label for="name">Your name <span style="color:var(--accent-dark)">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Dave Smith" required autocomplete="name" />
-            </div>
-
-            <div class="field">
-              <label for="email">Email address <span style="color:var(--accent-dark)">*</span></label>
-              <input type="email" id="email" name="email" placeholder="dave@yourbusiness.com" required autocomplete="email" />
-            </div>
-
-            <div class="field">
-              <label for="subject">What's this about?</label>
-              <select id="subject" name="subject">
-                <option value="">What's going on?…</option>
-                <option value="My website is slow or broken">My website is slow or looks broken</option>
-                <option value="My contact form isn't working">My contact form stopped working</option>
-                <option value="Not showing up on Google or AI search">I'm not showing up on Google or AI search</option>
-                <option value="I need a new website">I need a new website built properly</option>
-                <option value="Leads are falling through the cracks">Leads aren't being followed up on</option>
-                <option value="I need a booking or scheduling system">I need online booking or scheduling</option>
-                <option value="My CRM is a mess or I don't have one">My CRM is a mess, or I don't have one</option>
-                <option value="I want to automate repetitive tasks with AI">I want to automate repetitive tasks with AI</option>
-                <option value="I need help with my mailing list">My mailing list isn't working</option>
-                <option value="I can't keep up with social media">I can't keep up with social media</option>
-                <option value="My website looks broken on phones">My website looks broken on phones</option>
-                <option value="I don't know where to start">I don't know where to start</option>
-                <option value="Something else">Something else</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="message">Message <span style="color:var(--accent-dark)">*</span></label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about your business and what you're looking for…" required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit" id="submitBtn">
-              <span>Send message</span>
-              <span>→</span>
-            </button>
-            <p class="form-note">No pitch. No follow-up unless you want one.</p>
-          </form>
-
-          <div class="success" id="success">
-            <div class="success-icon">✅</div>
-            <div class="success-title">Message sent, thanks!</div>
-            <p class="success-body">We'll get back to you within one business day. Or reach us directly at <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a>.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name *</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Smith Plumbing">
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" placeholder="jane@smithplumbing.ca" required>
+        </div>
 
-<!-- =============== FOOTER =============== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <a href="/" class="logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-          </div>
-          <span class="logo-word">overhauled<span>.ai</span></span>
-        </a>
-        <p class="footer-blurb">Websites, AI agents &amp; automation for small businesses everywhere.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Packages</h4>
-        <a href="/#packages">The Lead Leak Audit</a>
-        <a href="/#packages">The Growth Engine</a>
-        <a href="/#packages">The Scale System</a>
-        <a href="/#check">Free Website Check</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/#packages">Services</a>
-        <a href="/#pricing">Pricing</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="tel:+15199425698">(519) 942-5698</a>
-        <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a>
-        <a href="https://www.linkedin.com/in/markhurson/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="/contact">Get in touch &rarr;</a>
-      </div>
+        <div class="form-group">
+          <label for="website">Your website URL</label>
+          <input type="url" id="website" name="website" placeholder="https://smithplumbing.ca">
+        </div>
+
+        <div class="form-group">
+          <label for="topic">What's this about?</label>
+          <select id="topic" name="topic">
+            <option value="">Select one...</option>
+            <option value="tune-up">The Tune Up ($297)</option>
+            <option value="auto-pilot">The Auto Pilot (AI automation)</option>
+            <option value="overhaul">The Overhaul (full rebuild)</option>
+            <option value="question">General question</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your message *</label>
+          <textarea id="message" name="message" placeholder="Tell us what's going on with your site, what you're trying to fix, or just ask your question..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message →</button>
+        <p class="form-note">No spam, no pitch decks, no follow-up pressure. Just a real reply.</p>
+      </form>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Overhauled.ai &middot; Guelph, ON</span>
-      <div style="display:flex;gap:18px;">
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </div>
-    </div>
+
   </div>
+</section>
+
+<footer>
+  <a href="/" class="footer-logo">overhauled<span>.ai</span></a>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/work/">Our Work</a>
+    <a href="/blog/">Blog</a>
+    <a href="/health-check">Free Website Check</a>
+    <a href="/terms/">Terms</a>
+    <a href="/privacy/">Privacy</a>
+  </div>
+  <p class="footer-copy">© 2025 Overhauled.ai · Guelph, Ontario</p>
 </footer>
 
 <script>
-  const form      = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const success   = document.getElementById('success');
-  const errorMsg  = document.getElementById('errorMsg');
-  const botField  = document.getElementById('botField');
-
-  // Hamburger
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  });
-
-  // Problem button → pre-fill subject dropdown
-  document.querySelectorAll('.problem-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const topic = btn.dataset.topic;
-      const select = document.getElementById('subject');
-      for (let i = 0; i < select.options.length; i++) {
-        if (select.options[i].value === topic) { select.selectedIndex = i; break; }
-      }
-      document.querySelectorAll('.problem-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => document.getElementById('message').focus(), 400);
-    });
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    errorMsg.classList.remove('show');
-
-    const nameVal    = document.getElementById('name').value.trim();
-    const emailVal   = document.getElementById('email').value.trim();
-    const messageVal = document.getElementById('message').value.trim();
-
-    if (!nameVal || !emailVal || !messageVal) {
-      errorMsg.textContent = 'Please fill in your name, email, and message.';
-      errorMsg.classList.add('show');
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending…';
-
-    const body = new URLSearchParams({
-      name:        nameVal,
-      email:       emailVal,
-      subject:     document.getElementById('subject').value,
-      message:     messageVal,
-      'bot-field': botField.value,
-    }).toString();
-
-    try {
-      await fetch('/.netlify/functions/contact', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
-      });
-    } catch (err) {
-      console.error('Submission error:', err);
-    }
-
-    form.style.display = 'none';
-    success.classList.add('show');
-  });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const data = new FormData(form);
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString()})
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    })
+    .catch(() => { form.submit(); });
+});
 </script>
 
 </body>
