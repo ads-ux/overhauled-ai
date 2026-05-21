@@ -553,7 +553,17 @@
       .retainer-cta { width: 100%; text-align: center; }
     }
 
-    </style>
+    
+/* ── MOBILE NAV ── */
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1; }
+@media (max-width: 768px) {
+  nav { padding: 0 18px; position: relative; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-bottom: 1px solid #222; padding: 16px 18px 20px; gap: 14px; z-index: 200; }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .nav-cta { width: 100%; text-align: center; padding: 10px 18px; }
+}
+</style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -595,12 +605,14 @@
 
 <!-- ── Navigation ── -->
 <nav>
-  <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
-  <div class="nav-links">
+  <a href="/" class="nav-logo">overhauled<span>.ai</span></a>
+  <div class="nav-links" id="nav-links">
     <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
     <a href="/#faq">FAQ</a>
-    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
+    <a href="/health-check" class="nav-cta">Free Website Audit →</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
 </nav>
 
 <!-- ── Hero ── -->
@@ -619,7 +631,7 @@
     </p>
 
     <div class="hero-actions">
-      <a href="https://overhauled.ai/onboarding" class="hero-cta">Start my Overhaul &rarr;</a>
+      <a href="/health-check" class="hero-cta">Start my Overhaul &rarr;</a>
       <p class="hero-note">Free check first. <strong>Flat-rate quote before anything starts.</strong> No surprises.</p>
     </div>
 
@@ -903,7 +915,7 @@
           <h3 class="retainer-title">Full Support Retainer — $500/mo</h3>
           <p class="retainer-desc">Need us on standby? For $500/month, you get us available for any work, strategy, or technical support you need. Updates, new features, AI tweaks, SEO adjustments — just ask. No scope negotiations, no invoices for every small thing. One flat monthly rate, full access to the team.</p>
         </div>
-        <a href="https://overhauled.ai/onboarding" class="retainer-cta">Add support to my project →</a>
+        <a href="/health-check" class="retainer-cta">Add support to my project →</a>
       </div>
     </div>
 
@@ -1012,7 +1024,7 @@
     </p>
 
     <div class="cta-actions">
-      <a href="https://overhauled.ai/onboarding" class="cta-btn">Start my Overhaul &rarr;</a>
+      <a href="/health-check" class="cta-btn">Start my Overhaul &rarr;</a>
       <p class="cta-sub">Free check first. <strong>No obligation. No agency runaround.</strong></p>
     </div>
 
@@ -1030,7 +1042,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo">Overhauled<span>.ai</span></a>
+        <a href="/" class="logo">overhauled<span>.ai</span></a>
         <p>Websites and AI automation for small businesses in Guelph, Kitchener, Waterloo, and across Ontario. Built fast. Owned by you.</p>
       </div>
 
@@ -1046,7 +1058,7 @@
         <h4>Company</h4>
         <a href="/#pricing">Pricing</a>
         <a href="/#faq">FAQ</a>
-        <a href="https://overhauled.ai/onboarding">Free Check</a>
+        <a href="/health-check">Free Check</a>
       </div>
 
       <div class="footer-col">
@@ -1121,8 +1133,28 @@ body { padding-bottom: 60px; }
 <div class="sticky-cta-bar">
   <div class="sticky-cta-inner">
     <span class="sticky-cta-text">Ready for the full transformation? Let's talk.</span>
-    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+    <a href="/health-check" class="sticky-cta-btn">Get Started →</a>
   </div>
 </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(btn && links){
+    btn.addEventListener('click', function(){
+      links.classList.toggle('open');
+      btn.textContent = links.classList.contains('open') ? '✕' : '☰';
+    });
+    // Close nav when a link is clicked
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        links.classList.remove('open');
+        btn.textContent = '☰';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
