@@ -211,10 +211,10 @@
   <nav>
     <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
     <div class="nav-links">
-      <a href="/#services">Services</a>
+      <a href="/#packages">Services</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#faq">FAQ</a>
-      <a href="/#check" class="nav-cta">Get Started</a>
+      <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started</a>
     </div>
   </nav>
 
@@ -223,7 +223,7 @@
     <div class="container">
       <a href="/">Home</a>
       <span>/</span>
-      <a href="/#services">Services</a>
+      <a href="/#packages">Services</a>
       <span>/</span>
       The Auto Pilot
     </div>
@@ -237,7 +237,7 @@
         <h1>Stop Being the <em>Bottleneck</em> in Your Own Business</h1>
         <p class="hero-sub">Every missed after-hours enquiry, every follow-up you forgot, every appointment that didn't get confirmed — that's revenue walking out the door. The Auto Pilot handles it automatically.</p>
         <div class="hero-actions">
-          <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+          <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
         </div>
         <p class="hero-price-note" style="margin-top:16px;"><strong>$1,000 setup</strong> &nbsp;+&nbsp; <strong>$50/mo</strong> &nbsp;&mdash;&nbsp; Cancel anytime.</p>
       </div>
@@ -499,7 +499,7 @@
             <div class="amount-monthly">$50 / month</div>
           </div>
           <div class="included-cta">
-            <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+            <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
             <p class="cancel">No contracts. No lock-in. Cancel anytime.</p>
           </div>
           <hr style="border:none;border-top:1px solid #1E293B;margin:28px 0;" />
@@ -555,7 +555,7 @@
     <div class="container">
       <h2>Your business is ready to run <em>without you</em> being the glue holding it together.</h2>
       <p>Set up The Auto Pilot and stop being the bottleneck. One setup. $50 a month. Works while you sleep.</p>
-      <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+      <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
       <p class="sub-note">$1,000 one-time setup &nbsp;&middot;&nbsp; $50/mo &nbsp;&middot;&nbsp; Cancel anytime &nbsp;&middot;&nbsp; Serving Guelph, Kitchener, Waterloo &amp; across Ontario</p>
     </div>
   </section>
@@ -572,7 +572,7 @@
 
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="/#services">All Packages</a>
+          <a href="/#packages">All Packages</a>
           <a href="/tune-up/">The Tune-Up</a>
           <a href="/auto-pilot/">The Auto Pilot</a>
           <a href="/overhaul/">The Overhaul</a>
@@ -582,7 +582,7 @@
           <h4>Site</h4>
           <a href="/#pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
-          <a href="/#check">Get Started</a>
+          <a href="https://overhauled.ai/onboarding">Get Started</a>
         </div>
 
         <div class="footer-col">
@@ -604,5 +604,46 @@
     </div>
   </footer>
 
+
+<style>
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #22C55E;
+  padding: 14px 24px;
+  z-index: 999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.sticky-cta-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sticky-cta-text { font-size: 16px; font-weight: 700; color: #000; }
+.sticky-cta-btn {
+  background: #000; color: #22C55E;
+  font-weight: 800; font-size: 15px;
+  padding: 10px 24px; border-radius: 7px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.sticky-cta-btn:hover { background: #111; }
+/* add bottom padding to body so sticky bar doesn't cover content */
+body { padding-bottom: 60px; }
+@media(max-width:600px){
+  .sticky-cta-text { font-size: 13px; }
+  .sticky-cta-btn { font-size: 13px; padding: 8px 16px; }
+}
+</style>
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta-bar">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-text">Get your Digital Employee working this week.</span>
+    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+  </div>
+</div>
 </body>
 </html>
