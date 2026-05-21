@@ -188,7 +188,17 @@
       .nav-links { display: none; }
       .nav-cta { display: flex; }
     }
-  </style>
+  
+/* ── MOBILE NAV ── */
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1; }
+@media (max-width: 768px) {
+  nav { padding: 0 18px; position: relative; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-bottom: 1px solid #222; padding: 16px 18px 20px; gap: 14px; z-index: 200; }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .nav-cta { width: 100%; text-align: center; padding: 10px 18px; }
+}
+</style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -217,12 +227,13 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
-    <div class="nav-links">
+    <a href="/" class="nav-logo">overhauled<span>.ai</span></a>
+    <div class="nav-links" id="nav-links">
     <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
     <a href="/#faq">FAQ</a>
-    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
-    </div>
+    <a href="/health-check" class="nav-cta">Free Website Audit →</a>
+  </div>
   </nav>
 
   <!-- Breadcrumb -->
@@ -244,7 +255,7 @@
         <h1>Stop Being the <em>Bottleneck</em> in Your Own Business</h1>
         <p class="hero-sub">Every missed after-hours enquiry, every follow-up you forgot, every appointment that didn't get confirmed — that's revenue walking out the door. The Auto Pilot handles it automatically.</p>
         <div class="hero-actions">
-          <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+          <a href="/health-check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
         </div>
         <p class="hero-price-note" style="margin-top:16px;"><strong>$1,000 setup</strong> &nbsp;+&nbsp; <strong>$50/mo</strong> &nbsp;&mdash;&nbsp; Cancel anytime.</p>
       </div>
@@ -506,7 +517,7 @@
             <div class="amount-monthly">$50 / month</div>
           </div>
           <div class="included-cta">
-            <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+            <a href="/health-check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
             <p class="cancel">No contracts. No lock-in. Cancel anytime.</p>
           </div>
           <hr style="border:none;border-top:1px solid #1E293B;margin:28px 0;" />
@@ -562,7 +573,7 @@
     <div class="container">
       <h2>Your business is ready to run <em>without you</em> being the glue holding it together.</h2>
       <p>Set up The Auto Pilot and stop being the bottleneck. One setup. $50 a month. Works while you sleep.</p>
-      <a href="https://overhauled.ai/onboarding" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+      <a href="/health-check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
       <p class="sub-note">$1,000 one-time setup &nbsp;&middot;&nbsp; $50/mo &nbsp;&middot;&nbsp; Cancel anytime &nbsp;&middot;&nbsp; Serving Guelph, Kitchener, Waterloo &amp; across Ontario</p>
     </div>
   </section>
@@ -573,7 +584,7 @@
       <div class="footer-top">
 
         <div class="footer-brand">
-          <a href="/" class="logo">Overhauled<span>.ai</span></a>
+          <a href="/" class="logo">overhauled<span>.ai</span></a>
           <p>AI automation for small businesses in Guelph, Kitchener, Waterloo, and across Ontario. We build Digital Employees that handle the work you shouldn't have to do yourself.</p>
         </div>
 
@@ -589,7 +600,7 @@
           <h4>Site</h4>
           <a href="/#pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
-          <a href="https://overhauled.ai/onboarding">Get Started</a>
+          <a href="/health-check">Get Started</a>
         </div>
 
         <div class="footer-col">
@@ -649,8 +660,28 @@ body { padding-bottom: 60px; }
 <div class="sticky-cta-bar">
   <div class="sticky-cta-inner">
     <span class="sticky-cta-text">Get your Digital Employee working this week.</span>
-    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+    <a href="/health-check" class="sticky-cta-btn">Get Started →</a>
   </div>
 </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(btn && links){
+    btn.addEventListener('click', function(){
+      links.classList.toggle('open');
+      btn.textContent = links.classList.contains('open') ? '✕' : '☰';
+    });
+    // Close nav when a link is clicked
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        links.classList.remove('open');
+        btn.textContent = '☰';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
