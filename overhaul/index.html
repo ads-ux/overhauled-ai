@@ -534,10 +534,10 @@
 <nav>
   <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
   <div class="nav-links">
-    <a href="/#services">Services</a>
+    <a href="/#packages">Services</a>
     <a href="/#pricing">Pricing</a>
     <a href="/#faq">FAQ</a>
-    <a href="/#check" class="nav-cta">Get a Free Check</a>
+    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get a Free Check</a>
   </div>
 </nav>
 
@@ -557,7 +557,7 @@
     </p>
 
     <div class="hero-actions">
-      <a href="/#check" class="hero-cta">Start my Overhaul &rarr;</a>
+      <a href="https://overhauled.ai/onboarding" class="hero-cta">Start my Overhaul &rarr;</a>
       <p class="hero-note">Free check first. <strong>Flat-rate quote before anything starts.</strong> No surprises.</p>
     </div>
 
@@ -934,7 +934,7 @@
     </p>
 
     <div class="cta-actions">
-      <a href="/#check" class="cta-btn">Start my Overhaul &rarr;</a>
+      <a href="https://overhauled.ai/onboarding" class="cta-btn">Start my Overhaul &rarr;</a>
       <p class="cta-sub">Free check first. <strong>No obligation. No agency runaround.</strong></p>
     </div>
 
@@ -958,7 +958,7 @@
 
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="/#services">All Services</a>
+        <a href="/#packages">All Services</a>
         <a href="/tune-up/">The Tune Up</a>
         <a href="/overhaul/">The Overhaul</a>
         <a href="/auto-pilot/">Auto-Pilot</a>
@@ -968,7 +968,7 @@
         <h4>Company</h4>
         <a href="/#pricing">Pricing</a>
         <a href="/#faq">FAQ</a>
-        <a href="/#check">Free Check</a>
+        <a href="https://overhauled.ai/onboarding">Free Check</a>
       </div>
 
       <div class="footer-col">
@@ -1005,5 +1005,46 @@
   }
 </script>
 
+
+<style>
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #22C55E;
+  padding: 14px 24px;
+  z-index: 999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.sticky-cta-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sticky-cta-text { font-size: 16px; font-weight: 700; color: #000; }
+.sticky-cta-btn {
+  background: #000; color: #22C55E;
+  font-weight: 800; font-size: 15px;
+  padding: 10px 24px; border-radius: 7px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.sticky-cta-btn:hover { background: #111; }
+/* add bottom padding to body so sticky bar doesn't cover content */
+body { padding-bottom: 60px; }
+@media(max-width:600px){
+  .sticky-cta-text { font-size: 13px; }
+  .sticky-cta-btn { font-size: 13px; padding: 8px 16px; }
+}
+</style>
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta-bar">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-text">Ready for the full transformation? Let's talk.</span>
+    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+  </div>
+</div>
 </body>
 </html>
