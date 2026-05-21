@@ -1,746 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overhauled.ai fixes broken websites, sets up AI that responds to leads 24/7, and helps small businesses in Guelph, Kitchener, Waterloo & Cambridge show up on Google. Flat-rate. No surprises.">
 <title>Websites & AI for Guelph, Kitchener, Waterloo & Cambridge Small Business | Overhauled.ai</title>
-<meta name="description" content="Overhauled.ai fixes the website problems costing local businesses leads every day — broken forms, bad mobile, invisible on Google. Serving Guelph, Kitchener, Waterloo, Cambridge, Milton, Fergus & Elora. Free 24-hour site check. Flat-rate fixes." />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Overhauled.ai",
-  "url": "https://overhauled.ai/",
-  "logo": "https://overhauled.ai/favicon.svg",
-  "description": "Web design, AI agents, and automation for small businesses everywhere. Flat-rate pricing, fast turnaround, no tech jargon.",
-  "founder": { "@type": "Person", "name": "Mark Hurson" },
-  "email": "hello@overhauled.ai",
-  "telephone": "+15199425698",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Guelph",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "areaServed": "Worldwide",
-  "priceRange": "$$",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "The Tune Up",
-        "description": "Full diagnostic of your website — what's broken, what's costing you leads, and what to fix first. Delivered in 48 hours.",
-        "price": "297",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "The Overhaul",
-        "description": "Fast, mobile-first, SEO-ready website built to convert. Flat rate, you own everything, no ongoing fees.",
-        "price": "2997",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "The Extended Warranty Coverage",
-        "description": "AI agents and automation — instant lead replies, quote follow-up, appointment booking, FAQ handling, and after-hours coverage.",
-        "price": "397",
-        "priceCurrency": "USD"
-      }
-    ]
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/markhurson/"
-  ]
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
-  /* ---------- TOKENS ---------- */
-  :root {
-    --bg: #ffffff;
-    --bg-dark: #0b1120;
-    --bg-soft: #f8fafc;
-    --surface: #ffffff;
-    --border: #e2e8f0;
-    --text: #0f172a;
-    --text-muted: #475569;
-    --text-soft: #64748b;
-    --text-on-dark: #f1f5f9;
-    --text-on-dark-muted: #94a3b8;
-    --accent: #84cc16;
-    --accent-dark: #65a30d;
-    --accent-soft: #ecfccb;
-    --warm: #fb923c;
-    --danger: #ef4444;
-    --shadow-sm: 0 1px 2px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.08);
-    --shadow-md: 0 4px 6px -1px rgba(15,23,42,0.08), 0 2px 4px -2px rgba(15,23,42,0.06);
-    --shadow-lg: 0 20px 25px -5px rgba(15,23,42,0.1), 0 8px 10px -6px rgba(15,23,42,0.08);
-    --radius: 14px;
-    --radius-lg: 20px;
-    --container: 1200px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
-  /* ---------- RESET ---------- */
-  *,*::before,*::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.6;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  img { max-width: 100%; height: auto; display: block; }
-  a { color: inherit; text-decoration: none; }
-  h1,h2,h3,h4 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 0.5em; }
-  h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 900; }
-  h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); }
-  h3 { font-size: 1.25rem; }
-  p { margin: 0 0 1em; color: var(--text-muted); }
-  ul { padding-left: 1.2rem; margin: 0 0 1em; }
-  li { margin-bottom: 0.4em; color: var(--text-muted); }
-  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-  section { position: relative; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* ---------- BUTTONS ---------- */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 24px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.98rem;
-    border: 1.5px solid transparent;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    white-space: nowrap;
-  }
-  .btn-primary { background: var(--text); color: #fff; }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); background: #1e293b; }
-  .btn-accent { background: var(--accent); color: var(--text); }
-  .btn-accent:hover { transform: translateY(-1px); background: var(--accent-dark); color: #fff; box-shadow: var(--shadow-md); }
-  .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
-  .btn-ghost:hover { background: var(--bg-soft); }
-  .btn-ghost-dark { background: transparent; color: var(--text-on-dark); border-color: rgba(255,255,255,0.25); }
-  .btn-ghost-dark:hover { background: rgba(255,255,255,0.08); }
-  .btn-sm { padding: 10px 18px; font-size: 0.88rem; }
-  .btn-lg { padding: 16px 30px; font-size: 1.05rem; }
+:root {
+  --green: #22C55E;
+  --green-dim: #16A34A;
+  --dark: #0A0A0A;
+  --navy: #0F172A;
+  --slate: #1E293B;
+  --border: #1E293B;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --light-border: #E2E8F0;
+  --light-bg: #F8FAFC;
+}
 
-  /* ---------- BADGE ---------- */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: var(--accent-soft);
-    color: var(--accent-dark);
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 16px;
-  }
-  .badge-warm { background: #fff7ed; color: #c2410c; }
-  .badge-dark { background: rgba(255,255,255,0.08); color: var(--accent); }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #0F172A; line-height: 1.6; }
 
-  /* ---------- NAV ---------- */
-  .nav-wrapper {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; }
-  .logo-icon { width: 32px; height: 32px; background: var(--text); border-radius: 9px; display: grid; place-items: center; }
-  .logo-icon svg { width: 18px; height: 18px; fill: var(--accent); }
-  .logo-word { letter-spacing: -0.02em; }
-  .logo-word span { color: var(--accent-dark); }
-  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
-  .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); }
-  .nav-links a:hover { color: var(--text); }
-  .nav-links .btn { color: #fff; }
-  .hamburger { display: none; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: var(--text); }
-  .mobile-menu { display: none; flex-direction: column; padding: 12px 24px 20px; gap: 14px; border-top: 1px solid var(--border); background: #fff; }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { font-size: 1rem; font-weight: 600; }
-  @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: block; } }
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1a1a1a;
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo { color: #fff; font-weight: 800; font-size: 17px; text-decoration: none; letter-spacing: -0.3px; }
+.nav-logo span { color: var(--green); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { color: #aaa; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  background: var(--green); color: #000 !important; padding: 8px 18px;
+  border-radius: 6px; font-weight: 700; font-size: 14px;
+}
+.nav-cta:hover { background: var(--green-dim) !important; }
 
-  /* ---------- HERO ---------- */
-  .hero {
-    padding: 80px 0 60px;
-    background:
-      radial-gradient(ellipse at top right, rgba(132,204,22,0.12), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(251,146,60,0.08), transparent 55%),
-      #fff;
-    overflow: hidden;
-  }
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 50px 0 40px; } }
-  .hero h1 .gradient { background: linear-gradient(135deg, var(--accent-dark), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero-sub { font-size: 1.18rem; color: var(--text-muted); max-width: 560px; margin-bottom: 32px; }
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 28px; }
-  .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: var(--text-soft); font-size: 0.92rem; }
-  .hero-meta strong { color: var(--text); font-weight: 700; }
-  .pulse-dot { display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin-right: 6px; box-shadow: 0 0 0 0 rgba(132,204,22,0.6); animation: pulse 2s infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(132,204,22,0.6); } 70% { box-shadow: 0 0 0 10px rgba(132,204,22,0); } 100% { box-shadow: 0 0 0 0 rgba(132,204,22,0); } }
-  .social-proof-bar { display: flex; align-items: center; gap: 14px; padding-top: 24px; margin-top: 28px; border-top: 1px solid var(--border); }
-  .avatars { display: flex; }
-  .avatars span { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #fff; background: linear-gradient(135deg, #cbd5e1, #94a3b8); margin-left: -8px; display: grid; place-items: center; font-size: 0.72rem; font-weight: 700; color: #fff; }
-  .avatars span:first-child { margin-left: 0; background: linear-gradient(135deg, #84cc16, #65a30d); }
-  .avatars span:nth-child(2) { background: linear-gradient(135deg, #fb923c, #ea580c); }
-  .avatars span:nth-child(3) { background: linear-gradient(135deg, #6366f1, #4f46e5); }
-  .avatars span:nth-child(4) { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 100px 40px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 800px 500px at 50% 0%, rgba(34,197,94,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: var(--green);
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  color: #fff;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -1.5px;
+  max-width: 700px; margin: 0 auto 20px;
+}
+.hero h1 em { color: var(--green); font-style: normal; }
+.hero-sub {
+  color: var(--muted); font-size: 18px; max-width: 520px;
+  margin: 0 auto 40px; line-height: 1.65;
+}
+.hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.btn-primary {
+  background: var(--green); color: #000;
+  font-weight: 700; font-size: 16px;
+  padding: 14px 28px; border-radius: 8px;
+  text-decoration: none; display: inline-block;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-primary:hover { background: var(--green-dim); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: #fff;
+  border: 1px solid #333; font-weight: 600; font-size: 16px;
+  padding: 14px 28px; border-radius: 8px;
+  text-decoration: none; display: inline-block;
+  transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: #555; }
+.hero-overhaul {
+  font-size: 15px; font-weight: 700; color: #94A3B8;
+  margin-bottom: 20px; letter-spacing: 0.2px;
+}
+.hero-overhaul span { color: var(--green); }
+.hero-status { color: #555; font-size: 13px; margin-bottom: 48px; }
+.hero-status span { color: var(--green); }
 
-  /* Hero visual */
-  .hero-visual { position: relative; }
-  .hero-leak-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-lg); }
-  .hero-leak-title { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-soft); margin-bottom: 18px; }
-  .leak-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-  .leak-row:last-child { margin-bottom: 0; }
-  .leak-icon { width: 32px; height: 32px; border-radius: 9px; background: #fef2f2; display: grid; place-items: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
-  .leak-text strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); }
-  .leak-text span { font-size: 0.82rem; color: var(--text-soft); line-height: 1.5; }
-  .lead-toast { position: absolute; bottom: -22px; left: -16px; background: var(--text); color: #fff; padding: 14px 18px; border-radius: var(--radius); box-shadow: var(--shadow-lg); font-size: 0.85rem; display: flex; align-items: center; gap: 12px; max-width: 280px; animation: floaty 4s ease-in-out infinite; }
-  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-  .lead-toast strong { color: var(--accent); display: block; font-size: 0.8rem; margin-bottom: 2px; }
+/* Trust bar */
+.trust-bar {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 14px 24px;
+  max-width: 500px; margin: 0 auto;
+}
+.trust-avatars { display: flex; }
+.trust-avatars span {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--green); border: 2px solid var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #000;
+  margin-left: -8px;
+}
+.trust-avatars span:first-child { margin-left: 0; }
+.trust-avatars span:nth-child(2) { background: #3B82F6; color: #fff; }
+.trust-avatars span:nth-child(3) { background: #8B5CF6; color: #fff; }
+.trust-avatars span:nth-child(4) { background: #F59E0B; color: #000; font-size: 10px; }
+.trust-text { color: #ccc; font-size: 13px; font-weight: 500; }
+.trust-text strong { color: #fff; }
 
-  /* ---------- ICP SELECTOR ---------- */
-  .icp { padding: 50px 0; background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .icp-inner { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
-  @media (max-width: 800px) { .icp-inner { grid-template-columns: 1fr; gap: 16px; } }
-  .icp-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 0; }
-  .icp-title span { color: var(--accent-dark); }
-  .icp-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-  .icp-chip { padding: 10px 18px; background: #fff; border: 1px solid var(--border); border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: var(--text); cursor: pointer; transition: all 0.15s ease; }
-  .icp-chip:hover { border-color: var(--text); transform: translateY(-1px); }
-  .icp-chip.active { background: var(--text); color: #fff; border-color: var(--text); }
+/* ── PROBLEMS ── */
+.section { padding: 80px 40px; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(26px, 3.5vw, 36px); font-weight: 800;
+  letter-spacing: -0.5px; line-height: 1.2;
+  margin-bottom: 48px; max-width: 600px;
+}
+.problems { background: var(--navy); }
+.problems .section-label { color: var(--green); }
+.problems .section-title { color: #fff; }
 
-  /* ---------- SECTION HEADER ---------- */
-  .section { padding: 72px 0; }
-  @media (max-width: 800px) { .section { padding: 52px 0; } }
-  .section-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
-  .section-header h2 { margin-bottom: 14px; }
-  .section-header p { font-size: 1.08rem; }
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px; background: #1e293b;
+  border: 1px solid #1e293b; border-radius: 12px; overflow: hidden;
+  max-width: 1100px; margin: 0 auto;
+}
+.problem-card {
+  background: #0F172A; padding: 28px 24px;
+}
+.problem-card .icon { font-size: 26px; margin-bottom: 12px; display: block; }
+.problem-card h3 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.problem-card p { color: var(--muted); font-size: 13.5px; line-height: 1.55; }
 
-  /* ---------- PACKAGES (3-column) ---------- */
-  .packages-grid {
-    padding-top: 18px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: start;
-  }
-  @media (max-width: 1000px) { .packages-grid { grid-template-columns: 1fr; } }
+/* ── AI DEMO ── */
+.ai-demo { background: #fff; }
+.demo-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.demo-left h2 {
+  font-size: clamp(26px, 3vw, 36px); font-weight: 900;
+  letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px;
+}
+.demo-left h2 em { color: var(--green); font-style: normal; }
+.demo-left p { color: #475569; font-size: 15px; margin-bottom: 24px; line-height: 1.65; }
+.demo-checks { display: flex; flex-direction: column; gap: 10px; }
+.demo-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; font-weight: 500; color: #334155;
+}
+.demo-check::before {
+  content: '✓'; color: var(--green); font-weight: 800;
+  font-size: 15px; flex-shrink: 0; margin-top: 1px;
+}
 
-  .pkg-card {
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .pkg-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .pkg-card.featured {
-    background: linear-gradient(160deg, #0b1120, #162032);
-    border-color: rgba(132,204,22,0.4);
-    overflow: visible;
-    border-width: 2px;
-  }
-  .pkg-card.featured::before {
-    content: "";
-    position: absolute;
-    top: -50%; right: -20%;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(132,204,22,0.15), transparent 60%);
-    pointer-events: none;
-  }
-  .pkg-card.featured h3 { color: #fff; position: relative; }
-  .pkg-card.featured p { color: var(--text-on-dark-muted); position: relative; }
-  .pkg-card.featured ul li { color: var(--text-on-dark-muted); position: relative; }
-  .pkg-card.featured .pkg-price-label { color: rgba(255,255,255,0.5); }
-  .pkg-card.featured .pkg-price-num { color: var(--accent); }
-  .pkg-card.featured .pkg-price-note { color: rgba(255,255,255,0.4); }
-  .pkg-card.featured .pkg-outcome { background: rgba(132,204,22,0.15); border-color: rgba(132,204,22,0.3); color: var(--accent); }
-  .pkg-card.featured .service-link { color: var(--accent); }
+/* Chat mockup */
+.chat-window {
+  background: var(--navy); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border: 1px solid #1e293b;
+}
+.chat-header {
+  background: #1e293b; padding: 14px 20px;
+  font-size: 12px; color: var(--muted); font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+.chat-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; }
+.chat-body { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
 
-  .pkg-tier-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 14px;
-  }
-  .tier-entry { background: #fff7ed; color: #c2410c; }
-  .tier-core { background: rgba(132,204,22,0.15); color: var(--accent-dark); }
-  .tier-core.on-dark { background: rgba(132,204,22,0.15); color: var(--accent); }
-  .tier-recurring { background: #f5f3ff; color: #6d28d9; }
+.msg { display: flex; gap: 10px; }
+.msg-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+}
+.msg-avatar.user { background: #3B82F6; color: #fff; }
+.msg-avatar.ai { background: var(--green); color: #000; font-size: 16px; }
+.msg-content { flex: 1; }
+.msg-meta { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+.msg-meta strong { color: #94A3B8; }
+.msg-bubble {
+  background: #1e293b; color: #e2e8f0;
+  border-radius: 0 10px 10px 10px;
+  padding: 12px 15px; font-size: 13px; line-height: 1.55;
+}
+.msg.ai .msg-bubble { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.2); border-radius: 10px 0 10px 10px; }
 
-  .pkg-popular {
-    position: absolute;
-    top: -13px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent);
-    color: var(--text);
-    padding: 5px 14px;
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
+.chat-flash {
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 6px; padding: 8px 14px;
+  font-size: 11px; color: var(--green); font-weight: 700;
+  letter-spacing: 0.5px; text-align: center;
+}
+.chat-result {
+  background: #1e293b; border-radius: 8px; padding: 12px 16px;
+  font-size: 13px; color: var(--muted);
+}
+.chat-result strong { color: #fff; display: block; margin-bottom: 2px; }
 
-  .pkg-icon { font-size: 2rem; margin-bottom: 14px; }
-  .pkg-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
-  .pkg-tagline { font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
-  .pkg-price-label { font-size: 0.78rem; color: var(--text-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-  .pkg-price-num { font-size: 2rem; font-weight: 900; color: var(--text); line-height: 1.1; letter-spacing: -0.03em; }
-  .pkg-price-note { font-size: 0.8rem; color: var(--text-soft); margin-top: 2px; margin-bottom: 20px; }
-  .pkg-divider { border: 0; border-top: 1px solid var(--border); margin: 20px 0; }
-  .pkg-card.featured .pkg-divider { border-color: rgba(255,255,255,0.08); }
-  .pkg-includes-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-soft); margin-bottom: 10px; }
-  .pkg-card.featured .pkg-includes-label { color: rgba(255,255,255,0.4); }
-  .pkg-card ul { padding-left: 0; list-style: none; margin-bottom: 20px; font-size: 0.93rem; }
-  .pkg-card ul li { padding-left: 1.4rem; position: relative; margin-bottom: 8px; }
-  .pkg-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-dark); font-weight: 800; }
-  .pkg-card.featured ul li::before { color: var(--accent); }
-  .pkg-outcome {
-    margin-top: auto;
-    padding-top: 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-dark);
-    background: var(--accent-soft);
-    border: 1px solid #bef264;
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 18px;
-    line-height: 1.4;
-  }
-  .pkg-outcome::before { content: "→"; flex-shrink: 0; }
-  .service-link { color: var(--text); font-weight: 700; font-size: 0.95rem; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
-  .pkg-credit-note {
-    margin-top: 32px;
-    background: var(--accent-soft);
-    border: 1px solid #bef264;
-    border-radius: var(--radius);
-    padding: 18px 22px;
-    font-size: 0.9rem;
-    color: var(--accent-dark);
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .pkg-credit-note strong { color: var(--text); display: block; margin-bottom: 2px; }
+/* ── PACKAGES ── */
+.packages { background: var(--dark); padding: 80px 40px; }
+.packages .section-title { color: #fff; }
+.packages .section-label { color: var(--green); }
+.packages-sub { color: var(--muted); font-size: 15px; max-width: 600px; margin-bottom: 48px; line-height: 1.6; }
 
-  /* ---------- CASE STUDY ---------- */
-  .case-study { background: var(--bg-dark); color: var(--text-on-dark); overflow: hidden; position: relative; }
-  .case-study::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(132,204,22,0.12), transparent 50%), radial-gradient(ellipse at 10% 90%, rgba(251,146,60,0.08), transparent 50%); pointer-events: none; }
-  .case-study .container { position: relative; }
-  .case-study .badge { background: rgba(132,204,22,0.15); color: var(--accent); }
-  .case-study h2 { color: #fff; }
-  .case-study p { color: var(--text-on-dark-muted); }
-  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  @media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .case-quote { font-size: 1.2rem; line-height: 1.6; color: #fff; border-left: 3px solid var(--accent); padding-left: 20px; font-style: italic; margin: 30px 0; }
-  .case-author { display: flex; align-items: center; gap: 14px; margin-top: 24px; }
-  .case-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--warm), #ea580c); display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 1.1rem; }
-  .case-author strong { display: block; color: #fff; }
-  .case-author span { color: var(--text-on-dark-muted); font-size: 0.9rem; }
-  .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .case-metric { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 28px; backdrop-filter: blur(8px); }
-  .case-metric-num { font-size: 2.4rem; font-weight: 900; color: var(--accent); line-height: 1; display: block; margin-bottom: 6px; }
-  .case-metric-label { color: var(--text-on-dark-muted); font-size: 0.92rem; }
+.package-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; max-width: 1100px; margin: 0 auto 40px;
+}
+.package-card {
+  background: var(--navy); border: 1px solid #1e293b;
+  border-radius: 14px; padding: 32px 28px;
+  position: relative; display: flex; flex-direction: column;
+}
+.package-card.featured {
+  border-color: var(--green);
+  box-shadow: 0 0 0 1px var(--green), 0 20px 40px rgba(34,197,94,0.1);
+}
+.package-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--green); color: #000; font-size: 10px; font-weight: 800;
+  letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
+}
+.pkg-icon { font-size: 28px; margin-bottom: 14px; }
+.pkg-name { color: #fff; font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.pkg-outcome { color: var(--muted); font-size: 13.5px; line-height: 1.5; margin-bottom: 20px; flex: 1; }
+.pkg-price {
+  display: flex; align-items: baseline; gap: 6px;
+  margin-bottom: 4px;
+}
+.pkg-price .amount { color: #fff; font-size: 30px; font-weight: 900; letter-spacing: -0.5px; }
+.pkg-price .period { color: var(--muted); font-size: 14px; }
+.pkg-note { color: #475569; font-size: 12px; margin-bottom: 24px; }
+.pkg-divider { border: none; border-top: 1px solid #1e293b; margin: 20px 0; }
+.pkg-includes { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #475569; margin-bottom: 12px; }
+.pkg-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+.pkg-list li {
+  display: flex; align-items: flex-start; gap: 9px;
+  color: #94A3B8; font-size: 13.5px; line-height: 1.4;
+}
+.pkg-list li::before { content: '→'; color: var(--green); flex-shrink: 0; font-weight: 700; }
+.pkg-cta {
+  display: block; text-align: center; padding: 13px;
+  border-radius: 8px; font-weight: 700; font-size: 14px;
+  text-decoration: none; transition: all 0.2s;
+}
+.pkg-cta.primary { background: var(--green); color: #000; }
+.pkg-cta.primary:hover { background: var(--green-dim); }
+.pkg-cta.outline { border: 1px solid #2d3748; color: #94A3B8; }
+.pkg-cta.outline:hover { border-color: var(--green); color: var(--green); }
 
-  /* ---------- PROCESS ---------- */
-  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
-  @media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .process-grid { grid-template-columns: 1fr; } }
-  .process-step { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; counter-increment: step; }
-  .process-step::before { content: counter(step); position: absolute; top: -16px; left: 24px; background: var(--text); color: #fff; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; font-size: 1rem; }
-  .process-step h3 { margin-top: 14px; margin-bottom: 8px; font-size: 1.05rem; }
-  .process-step p { font-size: 0.93rem; margin: 0; }
-  .process-step .step-pkg { display: inline-block; margin-top: 10px; font-size: 0.75rem; font-weight: 700; color: var(--accent-dark); background: var(--accent-soft); padding: 3px 8px; border-radius: 5px; }
+.pkg-callouts {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.pkg-callout {
+  background: var(--navy); border: 1px solid #1e293b;
+  border-radius: 10px; padding: 20px 24px;
+}
+.pkg-callout h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.pkg-callout p { color: var(--muted); font-size: 13px; line-height: 1.55; }
 
-  /* ---------- PRICING / UPSELL FLOW ---------- */
-  .upsell-flow {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    margin-bottom: 32px;
-  }
-  @media (max-width: 800px) { .upsell-flow { flex-direction: column; } }
-  .upsell-step {
-    flex: 1;
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    padding: 24px;
-    position: relative;
-  }
-  .upsell-step:first-child { border-radius: var(--radius-lg) 0 0 var(--radius-lg); }
-  .upsell-step:last-child { border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
-  .upsell-step + .upsell-step { border-left: none; }
-  @media (max-width: 800px) {
-    .upsell-step:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-    .upsell-step:last-child { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
-    .upsell-step + .upsell-step { border-left: 1px solid var(--border); border-top: none; }
-  }
-  .upsell-step-num { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
-  .upsell-step-name { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-  .upsell-step-price { font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
-  .upsell-step-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
-  .upsell-arrow { display: flex; align-items: center; justify-content: center; padding: 0 8px; color: var(--border); font-size: 1.5rem; flex-shrink: 0; }
-  @media (max-width: 800px) { .upsell-arrow { display: none; } }
-  .u1 .upsell-step-num { color: #c2410c; }
-  .u1 .upsell-step-price { color: #c2410c; }
-  .u2 .upsell-step-num { color: var(--accent-dark); }
-  .u2 .upsell-step-price { color: var(--accent-dark); }
-  .u3 .upsell-step-num { color: #6d28d9; }
-  .u3 .upsell-step-price { color: #6d28d9; }
+/* ── CASE STUDY ── */
+.case-study { background: var(--light-bg); }
+.case-inner {
+  max-width: 900px; margin: 0 auto;
+  background: #fff; border: 1px solid var(--light-border);
+  border-radius: 16px; overflow: hidden;
+}
+.case-header { background: var(--navy); padding: 36px 40px; }
+.case-header .section-label { color: var(--green); margin-bottom: 10px; }
+.case-header h2 { color: #fff; font-size: 28px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; }
+.case-body { padding: 36px 40px; }
+.case-body p { color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+.case-quote {
+  border-left: 3px solid var(--green); padding-left: 20px; margin-bottom: 32px;
+}
+.case-quote p { color: #334155; font-style: italic; font-size: 15px; margin: 0 0 12px; }
+.case-quote cite { font-size: 13px; color: #94A3B8; font-style: normal; font-weight: 600; }
+.case-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--light-border); border: 1px solid var(--light-border); border-radius: 10px; overflow: hidden; }
+.stat { background: #fff; padding: 20px; text-align: center; }
+.stat .num { font-size: 24px; font-weight: 900; color: var(--green); letter-spacing: -0.5px; }
+.stat .label { font-size: 12px; color: #94A3B8; margin-top: 4px; }
 
-  .decision-help { margin-top: 36px; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
-  .decision-help a { color: var(--accent-dark); font-weight: 700; border-bottom: 1px solid var(--accent); }
+/* ── HOW IT WORKS ── */
+.how-it-works { background: #fff; }
+.how-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0; max-width: 1000px; margin: 0 auto;
+  border: 1px solid var(--light-border); border-radius: 12px; overflow: hidden;
+}
+.how-step { padding: 28px 24px; border-right: 1px solid var(--light-border); position: relative; }
+.how-step:last-child { border-right: none; }
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--green); color: #000; font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.how-step h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #0F172A; }
+.how-step p { font-size: 13px; color: #64748B; line-height: 1.55; margin-bottom: 10px; }
+.how-step .step-tag {
+  font-size: 11px; font-weight: 700; color: var(--green);
+  background: rgba(34,197,94,0.1); padding: 3px 8px; border-radius: 4px;
+  display: inline-block;
+}
 
-  /* ---------- WORK ---------- */
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .work-grid { grid-template-columns: 1fr; } }
-  .work-card { display: block; color: inherit; text-decoration: none; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .work-card:hover h3 { color: var(--accent-dark); }
-  .work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-  .work-img { aspect-ratio: 16/10; background: linear-gradient(135deg, #0b1120, #1e293b); position: relative; display: grid; place-items: center; color: #fff; }
-  .work-img::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(132,204,22,0.15), transparent 60%); }
-  .work-img-emoji { font-size: 3rem; position: relative; z-index: 1; }
-  .work-info { padding: 22px; }
-  .work-info h3 { font-size: 1.05rem; margin-bottom: 6px; }
-  .work-info p { font-size: 0.9rem; margin-bottom: 10px; }
-  .work-tag { display: inline-block; background: var(--bg-soft); color: var(--text-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
+/* ── PRICING SUMMARY ── */
+.pricing-summary { background: var(--light-bg); }
+.pricing-steps {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; max-width: 900px; margin: 0 auto 24px;
+}
+.pricing-step {
+  background: #fff; border: 1px solid var(--light-border);
+  border-radius: 12px; padding: 28px 24px;
+}
+.ps-step { font-size: 11px; font-weight: 700; color: var(--green); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.ps-name { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+.ps-price { font-size: 20px; font-weight: 900; color: var(--green); margin-bottom: 8px; letter-spacing: -0.5px; }
+.ps-desc { font-size: 13px; color: #64748B; line-height: 1.55; }
+.pricing-arrow {
+  display: flex; align-items: center; justify-content: center;
+  color: #CBD5E1; font-size: 24px; margin: 0 -10px; flex-shrink: 0; align-self: center;
+}
+.pricing-note {
+  text-align: center; max-width: 900px; margin: 0 auto;
+  background: var(--navy); border-radius: 10px; padding: 16px 24px;
+  color: var(--muted); font-size: 14px;
+}
+.pricing-note a { color: var(--green); text-decoration: none; font-weight: 600; }
 
-  /* ---------- LEAD MAGNET ---------- */
-  .lead-magnet { background: linear-gradient(135deg, #0b1120, #1e293b); color: #fff; border-radius: var(--radius-lg); padding: 60px; position: relative; overflow: hidden; }
-  @media (max-width: 700px) { .lead-magnet { padding: 40px 24px; } }
-  .lead-magnet::before { content: ""; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(132,204,22,0.15), transparent 60%); pointer-events: none; }
-  .lead-magnet-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; position: relative; }
-  @media (max-width: 800px) { .lead-magnet-grid { grid-template-columns: 1fr; } }
-  .lead-magnet h2 { color: #fff; }
-  .lead-magnet p { color: var(--text-on-dark-muted); }
-  .lead-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 28px; backdrop-filter: blur(10px); }
-  .lead-form label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-on-dark-muted); margin-bottom: 6px; }
-  .lead-form input { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: #fff; font-size: 1rem; margin-bottom: 14px; font-family: inherit; }
-  .lead-form input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .lead-form input::placeholder { color: rgba(255,255,255,0.4); }
-  .lead-form .btn { width: 100%; }
-  .lead-form-note { font-size: 0.8rem; color: var(--text-on-dark-muted); text-align: center; margin-top: 10px; margin-bottom: 0; }
-  .lead-checks { list-style: none; padding: 0; margin: 24px 0; }
-  .lead-checks li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; color: var(--text-on-dark); }
-  .lead-checks li::before { content: "✓"; color: var(--accent); font-weight: 800; flex-shrink: 0; }
+/* ── RECENT WORK ── */
+.recent-work { background: #fff; }
+.work-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px; max-width: 1100px; margin: 0 auto;
+}
+.work-card {
+  border: 1px solid var(--light-border); border-radius: 12px;
+  padding: 24px; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.work-card:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(34,197,94,0.08); }
+.work-icon { font-size: 28px; margin-bottom: 12px; }
+.work-name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.work-desc { font-size: 13px; color: #64748B; line-height: 1.5; margin-bottom: 12px; }
+.work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.work-tag {
+  font-size: 11px; font-weight: 600; color: #64748B;
+  background: var(--light-bg); border: 1px solid var(--light-border);
+  padding: 3px 8px; border-radius: 4px;
+}
 
-  /* ---------- ABOUT ---------- */
-  .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
-  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .about-photo { aspect-ratio: 1/1.2; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(132,204,22,0.2), rgba(251,146,60,0.15)), linear-gradient(135deg, #475569, #1e293b); color: #fff; font-size: 0.92rem; text-align: center; line-height: 1.5; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
-  .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .about h2 { margin-bottom: 18px; }
-  .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 28px 0; }
-  .about-stat { background: var(--bg-soft); border-radius: var(--radius); padding: 18px; border: 1px solid var(--border); }
-  .about-stat-num { font-size: 1.8rem; font-weight: 900; color: var(--text); line-height: 1; }
-  .about-stat-label { font-size: 0.85rem; color: var(--text-soft); margin-top: 4px; }
+/* ── FREE CHECK FORM ── */
+.free-check { background: var(--dark); padding: 80px 40px; }
+.free-check .section-label { color: var(--green); }
+.free-check-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.free-check h2 { color: #fff; font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 16px; }
+.free-check-body { color: var(--muted); font-size: 15px; margin-bottom: 28px; line-height: 1.65; }
+.check-list {
+  text-align: left; background: var(--navy); border: 1px solid #1e293b;
+  border-radius: 10px; padding: 20px 24px; margin-bottom: 28px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.check-list-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: #94A3B8;
+}
+.check-list-item::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+.check-note { color: #475569; font-size: 13px; margin-bottom: 28px; line-height: 1.5; }
+.check-note strong { color: var(--muted); }
+.check-proof {
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 8px; padding: 12px 16px;
+  color: var(--green); font-size: 13px; font-weight: 500; margin-bottom: 28px;
+}
+.check-form { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.check-form input {
+  background: #111; border: 1px solid #2d3748; color: #fff;
+  padding: 14px 16px; border-radius: 8px; font-size: 15px;
+  font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+.check-form input:focus { border-color: var(--green); }
+.check-form input::placeholder { color: #4B5563; }
+.check-submit {
+  background: var(--green); color: #000; border: none;
+  padding: 16px; border-radius: 8px; font-size: 16px; font-weight: 700;
+  cursor: pointer; font-family: inherit; transition: background 0.2s;
+}
+.check-submit:hover { background: var(--green-dim); }
+.check-fine { color: #4B5563; font-size: 13px; text-align: center; margin-top: 8px; }
 
-  /* ---------- FAQ ---------- */
-  .faq-list { max-width: 780px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; cursor: pointer; }
-  .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-weight: 700; color: var(--text); font-size: 1.05rem; }
-  .faq-q::after { content: "+"; flex-shrink: 0; color: var(--accent-dark); font-size: 1.4rem; transition: transform 0.2s ease; }
-  .faq-item.open .faq-q::after { transform: rotate(45deg); }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, margin 0.3s ease; color: var(--text-muted); }
-  .faq-item.open .faq-a { max-height: 400px; margin-top: 12px; }
+/* ── ABOUT ── */
+.about { background: #fff; }
+.about-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 20px; }
+.about h2 em { color: var(--green); font-style: normal; }
+.about p { color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
+.about-cta {
+  display: inline-block; background: var(--green); color: #000;
+  padding: 13px 24px; border-radius: 8px; font-weight: 700; font-size: 14px;
+  text-decoration: none; margin-top: 8px;
+}
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--light-border); border: 1px solid var(--light-border);
+  border-radius: 12px; overflow: hidden;
+}
+.about-stat { background: var(--light-bg); padding: 28px; }
+.about-stat .num { font-size: 32px; font-weight: 900; color: var(--green); letter-spacing: -1px; }
+.about-stat .label { font-size: 13px; color: #64748B; margin-top: 4px; line-height: 1.4; }
 
-  /* ---------- FINAL CTA ---------- */
-  .final-cta { background: radial-gradient(ellipse at top, rgba(132,204,22,0.15), transparent 60%), var(--bg-dark); color: #fff; text-align: center; padding: 100px 0; }
-  .final-cta h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); }
-  .final-cta p { color: var(--text-on-dark-muted); font-size: 1.1rem; max-width: 580px; margin: 0 auto 30px; }
-  .final-cta .btn-primary { background: var(--accent); color: var(--text); }
-  .final-cta .btn-primary:hover { background: var(--accent-dark); color: #fff; }
+/* ── FAQ ── */
+.faq { background: var(--light-bg); }
+.faq-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1px; }
+.faq-item {
+  background: #fff; border: 1px solid var(--light-border);
+  border-radius: 0; padding: 22px 24px;
+}
+.faq-item:first-child { border-radius: 10px 10px 0 0; }
+.faq-item:last-child { border-radius: 0 0 10px 10px; }
+.faq-q { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 10px; }
+.faq-a { font-size: 14px; color: #475569; line-height: 1.65; }
 
-  /* ---------- FOOTER ---------- */
-  .footer { background: var(--bg-dark); color: var(--text-on-dark-muted); padding: 50px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-  .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  @media (max-width: 800px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; } }
-  .footer .logo-word { color: #fff; }
-  .footer-blurb { font-size: 0.9rem; margin-top: 14px; max-width: 280px; }
-  .footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
-  .footer-col a { display: block; color: var(--text-on-dark-muted); margin-bottom: 8px; font-size: 0.92rem; }
-  .footer-col a:hover { color: var(--accent); }
-  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-top: 24px; font-size: 0.85rem; }
+/* ── BOTTOM CTA ── */
+.bottom-cta {
+  background: var(--navy); padding: 90px 40px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.bottom-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 700px 400px at 50% 100%, rgba(34,197,94,0.07) 0%, transparent 70%);
+}
+.bottom-cta .section-label { color: var(--green); }
+.bottom-cta h2 { color: #fff; font-size: clamp(30px, 4.5vw, 48px); font-weight: 900; letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px; }
+.bottom-cta-sub { color: #F59E0B; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
+.bottom-cta-body { color: var(--muted); font-size: 15px; max-width: 520px; margin: 0 auto 36px; line-height: 1.6; }
+.bottom-cta .btn-primary { font-size: 17px; padding: 16px 32px; }
+.bottom-cta-note { color: #4B5563; font-size: 13px; margin-top: 14px; }
+.bottom-cta-note a { color: var(--green); text-decoration: none; font-weight: 600; }
+.status-line {
+  margin-top: 40px; color: #4B5563; font-size: 13px;
+  border-top: 1px solid #1e293b; padding-top: 24px; max-width: 500px; margin: 40px auto 0;
+}
 
-  /* ---------- STICKY MOBILE CTA ---------- */
-  .sticky-cta { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 100; background: var(--text); color: #fff; padding: 12px 16px; border-radius: 999px; box-shadow: var(--shadow-lg); align-items: center; justify-content: space-between; gap: 10px; }
-  .sticky-cta-btn { background: var(--accent); color: var(--text); font-weight: 800; padding: 10px 18px; border-radius: 999px; font-size: 0.9rem; flex: 1; text-align: center; }
-  .sticky-cta-text { font-size: 0.88rem; font-weight: 600; }
-  @media (max-width: 800px) { .sticky-cta { display: flex; } body { padding-bottom: 80px; } }
+/* ── FOOTER ── */
+footer {
+  background: var(--dark); border-top: 1px solid #111;
+  padding: 48px 40px 32px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer-brand .logo { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; }
+.footer-brand .logo span { color: var(--green); }
+.footer-brand p { color: #555; font-size: 13px; margin-top: 10px; line-height: 1.6; max-width: 260px; }
+.footer-col h4 { color: #888; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+.footer-col a { display: block; color: #555; font-size: 14px; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid #111; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { color: #333; font-size: 13px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #333; font-size: 13px; text-decoration: none; }
 
-  /* ---------- AI DEMO ---------- */
-  @media (max-width: 900px) {
-    .ai-demo-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  }
+/* ── OVERHAUL DIAGNOSTIC ── */
+.overhaul-diag { background: #fff; padding: 72px 40px; border-top: 1px solid var(--light-border); }
+.od-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.od-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--green); margin-bottom: 12px;
+}
+.od-title {
+  font-size: clamp(28px, 3.5vw, 40px); font-weight: 900;
+  letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 14px;
+}
+.od-title em { color: var(--green); font-style: normal; }
+.od-sub { color: #64748B; font-size: 15px; line-height: 1.6; }
+.od-checks { display: flex; flex-direction: column; gap: 0; }
+.od-check {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid var(--light-border);
+  font-size: 14px; color: #334155; font-weight: 500; line-height: 1.5;
+}
+.od-check:last-of-type { border-bottom: none; }
+.od-yn {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #FEF3C7; border: 1px solid #FDE68A;
+  color: #D97706; font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.od-cta {
+  display: inline-block; margin-top: 20px;
+  background: var(--green); color: #000;
+  padding: 13px 22px; border-radius: 8px;
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  transition: background 0.2s;
+}
+.od-cta:hover { background: var(--green-dim); }
 
-  /* ---------- REVEAL ---------- */
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+/* ── SERVICE AREA ── */
+.service-area {
+  background: var(--light-bg);
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+  padding: 36px 40px;
+}
+.sa-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.sa-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: #64748B; margin-bottom: 16px;
+}
+.sa-cities {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center; margin-bottom: 16px;
+}
+.sa-cities span {
+  background: #fff; border: 1px solid var(--light-border);
+  color: #334155; font-size: 14px; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+}
+.sa-cities .sa-plus {
+  background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.3);
+  color: var(--green);
+}
+.sa-note { color: #94A3B8; font-size: 13px; }
+
+/* ── UTILITY ── */
+.container { max-width: 1100px; margin: 0 auto; }
+@media (max-width: 768px) {
+  .demo-inner, .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .pricing-steps { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .case-stats { grid-template-columns: 1fr 1fr; }
+  .pkg-callouts { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-
-<!-- =============== NAV =============== -->
-<header class="nav-wrapper">
-  <nav class="nav container" aria-label="Main navigation">
-    <a href="/" class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-      </div>
-      <span class="logo-word">overhauled<span>.ai</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#packages">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#check" class="btn btn-accent btn-sm">Free Website Check →</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#packages">Services</a>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">overhauled<span>.ai</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="/blog/">Blog</a>
+    <a href="#blog">Blog</a>
     <a href="#faq">FAQ</a>
-    <a href="#check">Free Website Check →</a>
+    <a href="#check" class="nav-cta">Free Website Check →</a>
   </div>
-</header>
+</nav>
 
-
-<!-- =============== HERO =============== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <span class="badge">Websites + AI Automation · Guelph, Kitchener, Waterloo, Cambridge & Beyond</span>
-        <h1>Your website is <span class="gradient">leaking leads</span>. Right now. Every day you wait.</h1>
-        <p class="hero-sub" id="heroSub"
-          data-icp-trades="Most trades businesses lose leads to slow replies. We fix that, AI responds in under 2 minutes, your site converts, and no enquiry ever falls through the cracks again."
-          data-icp-local="When someone Googles your shop or restaurant, what do they find? We make sure your site, your Google listing, and your follow-up all work together to turn browsers into customers."
-          data-icp-ecom="Traffic is worthless if your site doesn't convert. We find the leaks, fix what's broken, and build automation that recovers abandoned leads automatically."
-          data-icp-agency="Client acquisition should run itself. We build the website and AI systems that qualify leads, answer questions, and book calls, while you focus on delivery."
-        >Someone just searched for what you sell. Your site couldn't close them. We fix that, usually in 48 hours.</p>
-        <div class="hero-ctas">
-          <a href="https://overhauled.ai/onboarding" class="btn btn-primary btn-lg">Get my free website check →</a>
-          <a href="#packages" class="btn btn-ghost">See the packages</a>
-        </div>
-        <div class="hero-meta">
-          <span><span class="pulse-dot"></span><strong>Currently accepting new projects</strong></span>
-        </div>
-        <div class="social-proof-bar">
-          <div class="avatars" aria-hidden="true">
-            <span>DM</span><span>SR</span><span>TK</span><span>+</span>
-          </div>
-          <div style="font-size:0.92rem;color:var(--text-muted);">
-            <strong style="color:var(--text);">30+ businesses fixed.</strong> Zero surprise invoices. Results in 48 hours.
-          </div>
-        </div>
-      </div>
+  <div class="hero-eyebrow">Websites + AI Automation · Guelph, Kitchener, Waterloo, Cambridge & Beyond</div>
+  <div class="hero-overhaul">Does your business need an <span>Overhaul?</span></div>
+  <h1>Someone in your city just searched<br>for what you do.<br><em>Your site couldn't close them.</em></h1>
+  <p class="hero-sub">Broken contact forms. Invisible on Google. Your website doesn't load properly on mobile phones. If your website isn't pulling its weight, it's time for an Overhaul — we find what's costing you customers and fix it, usually in 48 hours.</p>
+  <div class="hero-ctas">
+    <a href="#check" class="btn-primary">Get my free website check →</a>
+    <a href="#packages" class="btn-secondary">See the packages</a>
+  </div>
+  <p class="hero-status"><span>●</span> Currently accepting new projects</p>
+  <div class="trust-bar">
+    <div class="trust-avatars">
+      <span>DM</span><span>SR</span><span>TK</span><span>+27</span>
+    </div>
+    <p class="trust-text"><strong>30+ businesses fixed across Guelph & the region.</strong> Zero surprise invoices. Results in 48 hours.</p>
+  </div>
+</section>
 
-      <div class="hero-visual">
-        <div class="hero-leak-card">
-          <div class="hero-leak-title">What we find on almost every site we audit</div>
-          <div class="leak-row">
-            <div class="leak-icon">🚨</div>
-            <div class="leak-text">
-              <strong>Contact form goes nowhere</strong>
-              <span>Broken or going to spam, leads disappear without a trace.</span>
-            </div>
-          </div>
-          <div class="leak-row">
-            <div class="leak-icon">⏳</div>
-            <div class="leak-text">
-              <strong>24–48 hour reply time</strong>
-              <span>48 hours later they've booked someone else. That job is gone.</span>
-            </div>
-          </div>
-          <div class="leak-row">
-            <div class="leak-icon">🔍</div>
-            <div class="leak-text">
-              <strong>Not showing up in Google</strong>
-              <span>Missing basic SEO means you're invisible when it counts most.</span>
-            </div>
-          </div>
-          <div class="leak-row">
-            <div class="leak-icon">📱</div>
-            <div class="leak-text">
-              <strong>Broken on mobile</strong>
-              <span>60%+ of visitors are on phones. A bad mobile site ends trust instantly.</span>
-            </div>
-          </div>
-        </div>
-        <div class="lead-toast">
-          <span style="font-size:1.2rem;">🤖</span>
-          <div>
-            <strong>AI replied in 47 seconds</strong>
-            New enquiry from your site, qualified and routed.
-          </div>
-        </div>
+<!-- PROBLEMS -->
+<section class="section problems" id="services">
+  <div class="container">
+    <p class="section-label">Signs your business website needs an Overhaul</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="icon">🚨</span>
+        <h3>Contact form goes nowhere</h3>
+        <p>Broken or routing to spam — leads disappear without a trace. Owners have no idea.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">⏳</span>
+        <h3>24–48 hour reply time</h3>
+        <p>By the time you follow up, they've booked someone else. That job is gone.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🔍</span>
+        <h3>Not showing up on Google</h3>
+        <p>Missing basic SEO means you're invisible to customers who are ready to buy right now.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">📱</span>
+        <h3>Broken on mobile</h3>
+        <p>60%+ of local searches happen on phones. A bad mobile site kills trust before they read a word.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🤖</span>
+        <h3>No after-hours response</h3>
+        <p>Someone enquires at 9pm. Your competitor's Digital Employee replies in 47 seconds. They wake up to a booked job.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🧠</span>
+        <h3>Invisible to AI search</h3>
+        <p>When someone asks ChatGPT, Claude, or Perplexity to recommend a local business, yours doesn't come up. AI search is where new customers are going — and most businesses aren't on it yet.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🔁</span>
+        <h3>Drowning in repetitive tasks</h3>
+        <p>Answering the same questions, chasing the same follow-ups, doing the same admin — over and over. These are exactly the tasks a Digital Employee handles automatically, so you don't have to.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">📧</span>
+        <h3>An email list you're not using</h3>
+        <p>You have a list of past customers who already trust you — but you're not reaching out regularly. That's repeat business and referrals sitting untouched. Automated email keeps you in front of them without lifting a finger.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- =============== ICP SELECTOR =============== -->
-<section class="icp">
+<!-- OVERHAUL DIAGNOSTIC -->
+<section class="overhaul-diag">
   <div class="container">
-    <div class="icp-inner">
-      <p class="icp-title">I run a<span>…</span></p>
-      <div class="icp-chips" role="tablist">
-        <button class="icp-chip active" data-icp="trades">🛠️ Trades / contractor</button>
-        <button class="icp-chip" data-icp="local">🏪 Local store or restaurant</button>
-        <button class="icp-chip" data-icp="ecom">🛒 E-commerce shop</button>
-        <button class="icp-chip" data-icp="agency">💼 Agency or consultancy</button>
+    <div class="od-inner">
+      <div class="od-left">
+        <p class="od-label">Quick self-check</p>
+        <h2 class="od-title">Does your business<br>need an <em>Overhaul?</em></h2>
+        <p class="od-sub">If you answer yes to any of these, you're losing customers you don't even know about.</p>
+      </div>
+      <div class="od-checks">
+        <div class="od-check"><span class="od-yn">?</span> When did you last test whether your contact form actually delivers?</div>
+        <div class="od-check"><span class="od-yn">?</span> Does your site load in under 3 seconds on a phone?</div>
+        <div class="od-check"><span class="od-yn">?</span> Do you show up when someone Googles your service + your city?</div>
+        <div class="od-check"><span class="od-yn">?</span> Can a customer book or enquire on your site after 5pm?</div>
+        <div class="od-check"><span class="od-yn">?</span> Is your Google Business Profile verified and up to date?</div>
+        <a href="#check" class="od-cta">Find out what needs fixing — free →</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- =============== AI DEMO =============== -->
-<section class="section" style="background:var(--bg-dark);overflow:hidden;position:relative;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(132,204,22,0.08), transparent 55%);pointer-events:none;"></div>
-  <div class="container" style="position:relative;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-
-      <!-- Left: explanation -->
-      <div class="reveal">
-        <span class="badge badge-dark">See It In Action</span>
-        <h2 style="color:#fff;">A lead comes in at 11:47 PM. Your Digital Employee replies in 47 seconds. You wake up to a booked job.</h2>
-        <p style="color:var(--text-on-dark-muted);">While you sleep, it replies. While you're on a job, it qualifies. While you're at dinner, it follows up. You wake up to booked work.</p>
-        <p style="color:var(--text-on-dark-muted);">This isn't a chatbot. It's trained on your business, your services, your prices, and how you actually talk to customers. The reply to the right took 47 seconds. It converted into a booked job the next morning.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
-          <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-on-dark);">
-            <span style="color:var(--accent);font-weight:800;">✓</span> Replies in your voice, not robotic, not generic
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-on-dark);">
-            <span style="color:var(--accent);font-weight:800;">✓</span> Qualifies leads before you spend a minute on them
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-on-dark);">
-            <span style="color:var(--accent);font-weight:800;">✓</span> Runs 24/7, weekends, evenings, holidays
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-on-dark);">
-            <span style="color:var(--accent);font-weight:800;">✓</span> Follows up automatically if they go quiet
-          </div>
-        </div>
+<!-- AI DEMO -->
+<section class="section ai-demo">
+  <div class="demo-inner">
+    <div class="demo-left">
+      <p class="section-label">Your Digital Employee — see it in action</p>
+      <h2>A lead comes in at 11:47 PM.<br><em>Your Digital Employee replies in 47 seconds.</em><br>You wake up to a booked job.</h2>
+      <p>While you sleep, it replies. While you're on a job, it qualifies. While you're at dinner, it follows up. You wake up to booked work.</p>
+      <p>This isn't a chatbot. Your Digital Employee is trained on your business, your services, your prices, and how you actually talk to customers — then it works around the clock so you don't have to.</p>
+      <div class="demo-checks">
+        <div class="demo-check">Replies in your voice — not robotic, not generic</div>
+        <div class="demo-check">Qualifies leads before you spend a minute on them</div>
+        <div class="demo-check">Runs 24/7: weekends, evenings, holidays</div>
+        <div class="demo-check">Follows up automatically if they go quiet</div>
       </div>
-
-      <!-- Right: conversation mockup -->
-      <div class="reveal" style="display:flex;flex-direction:column;gap:14px;">
-
-        <!-- Timestamp -->
-        <div style="text-align:center;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:rgba(255,255,255,0.3);">Tonight · 11:47 PM</div>
-
-        <!-- Inbound lead -->
-        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 20px;">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#4f46e5);display:grid;place-items:center;font-size:0.8rem;font-weight:800;color:#fff;flex-shrink:0;">SH</div>
-            <div>
-              <div style="font-size:0.82rem;font-weight:700;color:#fff;">Sarah H.</div>
-              <div style="font-size:0.72rem;color:rgba(255,255,255,0.35);">via your website contact form</div>
-            </div>
-            <div style="margin-left:auto;font-size:0.72rem;color:rgba(255,255,255,0.3);">11:47 PM</div>
-          </div>
-          <p style="font-size:0.88rem;color:rgba(255,255,255,0.75);margin:0;line-height:1.6;">"Hi, I need a quote for roof repair, about 20 squares on the south side, storm damage from last week. Hoping to get it sorted before the end of the month."</p>
-        </div>
-
-        <!-- AI response -->
-        <div style="background:rgba(132,204,22,0.08);border:1px solid rgba(132,204,22,0.2);border-radius:14px;padding:18px 20px;position:relative;">
-          <div style="position:absolute;top:-10px;right:18px;background:#0b1120;padding:0 8px;">
-            <span style="font-size:0.68rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;">⚡ 47 seconds later</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#84cc16,#65a30d);display:grid;place-items:center;font-size:1rem;flex-shrink:0;">🤖</div>
-            <div>
-              <div style="font-size:0.82rem;font-weight:700;color:#fff;">Digital Employee <span style="font-size:0.68rem;font-weight:600;color:var(--accent);background:rgba(132,204,22,0.15);padding:2px 6px;border-radius:4px;margin-left:4px;">via [Your Business]</span></div>
-              <div style="font-size:0.72rem;color:rgba(255,255,255,0.35);">11:48 PM</div>
-            </div>
-          </div>
-          <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);margin:0 0 10px;line-height:1.65;">"Hi Sarah! Wanted to make sure you heard from us right away, I know it's late but we don't like leaving people waiting.</p>
-          <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);margin:0 0 10px;line-height:1.65;">A few quick questions so Mark can give you an accurate number:</p>
-          <ul style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin:0 0 10px;padding-left:18px;line-height:1.7;">
-            <li>Are you in the Guelph area?</li>
-            <li>Is this a full replacement or just the damaged section?</li>
-            <li>Any interior water damage we should factor in?</li>
-          </ul>
-          <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);margin:0;line-height:1.65;">Mark will follow up first thing in the morning with a quote. We're booking 1–2 weeks out right now, so the sooner we can get the details, the better."</p>
-        </div>
-
-        <!-- Outcome line -->
-        <div style="display:flex;align-items:center;gap:10px;background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.2);border-radius:10px;padding:12px 16px;">
-          <span style="font-size:1.1rem;">✅</span>
-          <div>
-            <div style="font-size:0.82rem;font-weight:700;color:#fff;">Next morning, Sarah booked.</div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Mark followed up at 8:54 AM with a quote. Job confirmed by noon.</div>
+    </div>
+    <div class="chat-window">
+      <div class="chat-header"><span class="chat-dot"></span>TONIGHT · 11:47 PM</div>
+      <div class="chat-body">
+        <div class="msg">
+          <div class="msg-avatar user">SH</div>
+          <div class="msg-content">
+            <div class="msg-meta"><strong>Sarah H.</strong> via your website contact form &nbsp;·&nbsp; 11:47 PM</div>
+            <div class="msg-bubble">"Hi, I need a quote for roof repair, about 20 squares on the south side, storm damage from last week. Hoping to get it sorted before the end of the month."</div>
           </div>
         </div>
-
+        <div class="chat-flash">⚡ 47 SECONDS LATER</div>
+        <div class="msg ai">
+          <div class="msg-content">
+            <div class="msg-meta"><strong>🤖 AI Agent</strong> via [Your Business] &nbsp;·&nbsp; 11:48 PM</div>
+            <div class="msg-bubble">"Hi Sarah! Wanted to make sure you heard from us right away — I know it's late but we don't like leaving people waiting.<br><br>A few quick questions so Mark can give you an accurate number:<br>· Are you in the Guelph area?<br>· Is this a full replacement or just the damaged section?<br>· Any interior water damage we should factor in?<br><br>Mark will follow up first thing in the morning with a quote. We're booking 1–2 weeks out right now, so the sooner we can get the details, the better."</div>
+          </div>
+          <div class="msg-avatar ai">🤖</div>
+        </div>
+        <div class="chat-result"><strong>✅ Next morning, Sarah booked.</strong>Mark followed up at 8:54 AM with a quote. Job confirmed by noon.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============== PACKAGES =============== -->
-<section class="section" id="packages">
+<!-- PACKAGES -->
+<section class="section packages" id="packages">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="badge">Three Packages</span>
-      <h2>Stop losing business this week. Pick your starting point.</h2>
-      <p>Every package is outcome-focused, flat-rate priced, and built to move you to the next level. Most clients start with the Audit and upgrade from there.</p>
-    </div>
+    <p class="section-label">Three packages</p>
+    <h2 class="section-title">Stop losing business this week.<br>Pick your starting point.</h2>
+    <p class="packages-sub">Every package is outcome-focused, flat-rate priced, and built to move you to the next level. Most clients start with the Audit and upgrade from there.</p>
+    <div class="package-grid">
 
-    <div class="packages-grid">
-
-      <!-- PACKAGE 1: Tune Up -->
-      <div class="pkg-card reveal">
-        <div class="pkg-icon">🔧</div>
-        <h3>The &#8220;Tune Up&#8221;</h3>
-        <p class="pkg-tagline">In 48 hours you'll know exactly why you're losing business, and the top issues will already be fixed.</p>
-        <div class="pkg-price-label">One time</div>
-        <div class="pkg-price-num">$297</div>
-        <div class="pkg-price-note">Flat rate · Done in 48 hours · Credit applies toward The Overhaul</div>
-        <hr class="pkg-divider" />
-        <div class="pkg-includes-label">What's included</div>
-        <ul>
+      <div class="package-card">
+        <div class="pkg-icon">🔎</div>
+        <div class="pkg-name">The "Tune Up"</div>
+        <div class="pkg-outcome">We go through the website you already have — find what's broken, fix what we can, and give you a clear plan for the rest.</div>
+        <div class="pkg-price"><span class="amount">$297</span><span class="period">one-time flat rate</span></div>
+        <div class="pkg-note">Done in 48 hours. $297 credited toward The Overhaul.</div>
+        <hr class="pkg-divider">
+        <div class="pkg-includes">What we find and fix</div>
+        <ul class="pkg-list">
           <li>We make sure customers who fill out your contact form actually reach you — not a black hole</li>
           <li>We check that emails you send don't end up in your customer's spam folder</li>
           <li>We update your Google listing so customers find the right hours, address, and phone number</li>
@@ -749,23 +735,19 @@
           <li>We check how your site performs on a phone — because most of your customers are on one</li>
           <li>We hand you a plain-English action plan — what we fixed, what to do next, and why it matters</li>
         </ul>
-        <div class="pkg-outcome">More business from the site you already have, starting this week</div>
-        <a href="/audit/" class="service-link">Get the Tune Up →</a>
+        <a href="#check" class="pkg-cta outline">Get the Tune Up →</a>
       </div>
 
-      <!-- PACKAGE 2: The Overhaul (featured) -->
-      <div class="pkg-card featured reveal">
-        <span class="pkg-popular">Most Popular</span>
-        <div class="pkg-icon">🚗</div>
-        <h3>The &#8220;Overhaul&#8221;</h3>
-        <p class="pkg-tagline">A brand new website, completely built from the ground up. Plus a Digital Employee that works 24/7 so you never miss a job again.</p>
-        <div class="pkg-price-label" style="color:rgba(255,255,255,0.45);">One-time setup</div>
-        <div class="pkg-price-num">from $2,997</div>
-        <div class="pkg-price-note" style="color:rgba(255,255,255,0.4);">Flat-rate quote before anything starts</div>
-        <div style="font-size:0.82rem;color:rgba(132,204,22,0.8);margin-top:6px;font-weight:600;">One recovered job pays for this twice over.</div>
-        <hr class="pkg-divider" />
-        <div class="pkg-includes-label">What's included</div>
-        <ul>
+      <div class="package-card featured">
+        <div class="package-badge">MOST POPULAR</div>
+        <div class="pkg-icon">🚀</div>
+        <div class="pkg-name">The "Overhaul"</div>
+        <div class="pkg-outcome">A brand new website, completely built from the ground up. A Digital Employee that works in your business to help you free up your time and handle repetitive tasks.</div>
+        <div class="pkg-price"><span class="amount">from $2,997</span></div>
+        <div class="pkg-note">One-time setup · Flat-rate quote before anything starts</div>
+        <hr class="pkg-divider">
+        <div class="pkg-includes">What's included</div>
+        <ul class="pkg-list">
           <li>A brand new website built to turn visitors into paying customers — not just look pretty</li>
           <li>A Digital Employee that replies to every customer enquiry in under 90 seconds, day or night, so you never miss a job</li>
           <li>If a customer enquires and goes quiet, your Digital Employee follows up automatically — so you don't have to chase</li>
@@ -774,21 +756,18 @@
           <li>We stick around for 30 days after launch to make sure everything is running smoothly</li>
           <li>You own your website outright — no monthly fees, no lock-in, no strings attached</li>
         </ul>
-        <div class="pkg-outcome">A complete system that finds, responds to, and follows up with customers — automatically, around the clock</div>
-        <a href="/contact" class="service-link">Build my Overhaul →</a>
+        <a href="#check" class="pkg-cta primary">Start my Overhaul →</a>
       </div>
 
-      <!-- PACKAGE 3: Extended Warranty Coverage -->
-      <div class="pkg-card reveal">
-        <div class="pkg-icon">🛡️</div>
-        <h3>The &#8220;Extended Warranty Coverage&#8221;</h3>
-        <p class="pkg-tagline">Ongoing monthly support at the ready — your site, your Digital Employee, and your Google presence, all looked after every month.</p>
-        <div class="pkg-price-label">Monthly</div>
-        <div class="pkg-price-num">from $500/mo</div>
-        <div class="pkg-price-note">Per month · Cancel anytime</div>
-        <hr class="pkg-divider" />
-        <div class="pkg-includes-label">What's included monthly</div>
-        <ul>
+      <div class="package-card">
+        <div class="pkg-icon">📈</div>
+        <div class="pkg-name">The "Extended Warranty Coverage"</div>
+        <div class="pkg-outcome">Ongoing monthly support at the ready — website updates and changes, monthly SEO optimisation and strategy, and help setting up new automations as your business grows.</div>
+        <div class="pkg-price"><span class="amount">$500</span><span class="period">/mo</span></div>
+        <div class="pkg-note">Per month · Cancel anytime · Everything included, no extras</div>
+        <hr class="pkg-divider">
+        <div class="pkg-includes">What's included monthly</div>
+        <ul class="pkg-list">
           <li>Every month we make sure Google is still finding you — and fix anything that's slipping</li>
           <li>We keep your Digital Employee sharp — tuning its responses so it closes more customers over time</li>
           <li>We check your website every month for pages that are quietly turning customers away</li>
@@ -798,391 +777,302 @@
           <li>If something breaks on your site, we fix it fast — no waiting, no extra charge</li>
           <li>Every month you get a plain-English summary of how your site is performing and what we did</li>
         </ul>
-        <div class="pkg-outcome">Your site, your Digital Employee, and your Google presence — all looked after, every month</div>
-        <a href="/contact" class="service-link">Add Extended Warranty →</a>
+        <a href="#check" class="pkg-cta outline">Add Extended Warranty →</a>
       </div>
 
     </div>
-
-    <!-- Credit mechanic callout -->
-    <div class="pkg-credit-note reveal">
-      <span style="font-size:1.2rem;flex-shrink:0;">💡</span>
-      <div>
-        <strong>The Tune Up Credit</strong>
-        Start with The Tune Up. If you upgrade to The Overhaul, your $297 comes off the price. It's the lowest-risk way in, worst case, you get a detailed audit and a list of exactly what to fix.
+    <div class="pkg-callouts">
+      <div class="pkg-callout">
+        <h4>💡 The Tune Up Credit</h4>
+        <p>Start with The "Tune Up". If you upgrade to The "Overhaul", your $297 comes off the price. It's the lowest-risk way in — worst case, you get a detailed tune up and a clear list of exactly what to fix next.</p>
+      </div>
+      <div class="pkg-callout">
+        <h4>The No-Waste Guarantee</h4>
+        <p>If the free check doesn't surface at least one specific thing costing you customers, we'll tell you so and stop there. No pitch. No pressure. No invoice.</p>
       </div>
     </div>
-
-    <div style="text-align:center;margin-top:32px;padding:20px 28px;border:1px solid var(--border);border-radius:12px;max-width:640px;margin-left:auto;margin-right:auto;">
-      <strong style="display:block;margin-bottom:6px;">The No-Waste Guarantee</strong>
-      <span style="color:var(--text-muted);font-size:0.92rem;">If the free check doesn't surface at least one specific thing costing you customers, we'll tell you so and stop there. No pitch. No pressure. No invoice.</span>
-    </div>
-
   </div>
 </section>
 
-
-<!-- =============== CASE STUDY =============== -->
+<!-- CASE STUDY -->
 <section class="section case-study">
-  <div class="container">
-    <div class="case-grid">
-      <div class="reveal">
-        <span class="badge">Case study</span>
-        <h2>48 hours. Zero missed customer inquiries. One flat fee.</h2>
-        <p>GuelphDumpsterRental.com had traffic. They had a contact form. They were still losing every lead that came in after hours. We rebuilt the site, installed AI response, and had them ranking locally. In 48 hours.</p>
-        <p>Every new enquiry now gets an automatic reply within minutes, and a 3-step follow-up sequence kicks in for anyone who goes quiet. Zero leads fall through the cracks.</p>
-        <blockquote class="case-quote">
-          "We were struggling to get leads and keep track of potential business. Now we have a professional site that actually works for us. The follow-up email sequence ensures no lead slips through the cracks, and the site's performance has been outstanding."
-        </blockquote>
-        <div class="case-author">
-          <div class="case-avatar">GR</div>
-          <div>
-            <strong>Greg W</strong>
-            <span>Owner, <a href="https://guelphdumpsterrental.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">GuelphDumpsterRental.com</a></span>
-          </div>
-        </div>
+  <div class="case-inner">
+    <div class="case-header">
+      <p class="section-label">Case study</p>
+      <h2>48 hours. Zero missed customer inquiries. One flat fee.</h2>
+    </div>
+    <div class="case-body">
+      <p>GuelphDumpsterRental.com had traffic. They had a contact form. They were still losing every lead that came in after hours. We rebuilt the site, installed AI response, and had them ranking locally — in 48 hours.</p>
+      <p>Every new enquiry now gets an automatic reply within minutes, and a 3-step follow-up sequence kicks in for anyone who goes quiet. Zero leads fall through the cracks.</p>
+      <div class="case-quote">
+        <p>"We were struggling to get leads and keep track of potential business. Now we have a professional site that actually works for us. The follow-up email sequence ensures no lead slips through the cracks, and the site's performance has been outstanding."</p>
+        <cite>— Greg W., Owner, GuelphDumpsterRental.com</cite>
       </div>
-      <div class="case-metrics reveal">
-        <div class="case-metric">
-          <span class="case-metric-num">48 hr</span>
-          <span class="case-metric-label">Kickoff to live site</span>
-        </div>
-        <div class="case-metric">
-          <span class="case-metric-num">&lt;2 min</span>
-          <span class="case-metric-label">Lead response time (was 36hrs)</span>
-        </div>
-        <div class="case-metric">
-          <span class="case-metric-num">0 missed</span>
-          <span class="case-metric-label">Enquiries since launch</span>
-        </div>
-        <div class="case-metric">
-          <span class="case-metric-num">$1,200</span>
-          <span class="case-metric-label">Flat fee, under budget</span>
-        </div>
+      <div class="case-stats">
+        <div class="stat"><div class="num">48hr</div><div class="label">Kickoff to live site</div></div>
+        <div class="stat"><div class="num">&lt;2min</div><div class="label">Lead response time (was 36hrs)</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Missed enquiries since launch</div></div>
+        <div class="stat"><div class="num">$1,200</div><div class="label">Flat fee, under budget</div></div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- =============== HOW IT WORKS =============== -->
-<section class="section" id="how-it-works" style="background:var(--bg-soft);">
+<!-- HOW IT WORKS -->
+<section class="section how-it-works">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="badge">How It Works</span>
-      <h2>Start with a check. End with a system.</h2>
-      <p>Most clients begin with the free website check or the $297 audit. From there, the path to a full lead system is clear, fast, and flat-rate priced.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step reveal">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Start with a check. End with a system.</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
         <h3>Get your free website check</h3>
-        <p>Drop your URL and email. We'll review your site and send back a one-page breakdown of what's leaking leads, for free, within 24 hours.</p>
-        <span class="step-pkg">Free · 24-hour turnaround</span>
+        <p>Drop your URL and email. We review your site and send back a one-page breakdown of what's leaking leads — for free, within 24 hours.</p>
+        <span class="step-tag">Free · 24-hour turnaround</span>
       </div>
-      <div class="process-step reveal">
+      <div class="how-step">
+        <div class="step-num">2</div>
         <h3>Choose your package</h3>
-        <p>Start with the $297 Tune Up to fix the top 3 issues fast, or go straight to The Overhaul if you're ready for the full system. Flat-rate quote before anything starts.</p>
-        <span class="step-pkg">The Tune Up · $297</span>
+        <p>Start with the $297 Audit to fix the top 3 issues fast — or go straight to The Overhaul if you're ready for the full system.</p>
+        <span class="step-tag">The "Tune Up" · $297</span>
       </div>
-      <div class="process-step reveal">
+      <div class="how-step">
+        <div class="step-num">3</div>
         <h3>We build it, fast</h3>
-        <p>Most fixes in 24–48 hours. Full Growth Engine systems live in under 2 weeks. You'll hear from us throughout, no black holes.</p>
-        <span class="step-pkg">The Overhaul · $2,997+</span>
+        <p>Most fixes in 24–48 hours. Full Overhaul systems live in under 2 weeks. You'll hear from us throughout — no black holes.</p>
+        <span class="step-tag">The Overhaul · from $2,997</span>
       </div>
-      <div class="process-step reveal">
+      <div class="how-step">
+        <div class="step-num">4</div>
         <h3>It runs, and keeps improving</h3>
-        <p>30 days of support included with every build. Clients who want ongoing growth add The Extended Warranty Coverage — your system gets sharper every month.</p>
-        <span class="step-pkg">Extended Warranty Coverage · $500/mo</span>
+        <p>30 days of support included with every build. Clients who want ongoing growth add The "Extended Warranty Coverage".</p>
+        <span class="step-tag">Extended Warranty · from $500/mo</span>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- =============== PRICING / UPSELL FLOW =============== -->
-<section class="section" id="pricing">
+<!-- PRICING SUMMARY -->
+<section class="section pricing-summary" id="pricing">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="badge">Pricing</span>
-      <h2>Three steps. One outcome. Clear prices.</h2>
-      <p>Every package is flat-rate, you know exactly what you're getting before you commit. Most clients move through all three as their business grows.</p>
-    </div>
-
-    <div class="upsell-flow reveal">
-      <div class="upsell-step u1">
-        <div class="upsell-step-num">Step 1</div>
-        <div class="upsell-step-name">The &#8220;Tune Up&#8221;</div>
-        <div class="upsell-step-price">$297 · One-time</div>
-        <div class="upsell-step-desc">Find out exactly what's losing you business. Top 3 issues fixed immediately. $297 credited toward The Overhaul.</div>
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title">Three steps. One outcome. Clear prices.</h2>
+    <div class="pricing-steps">
+      <div class="pricing-step">
+        <div class="ps-step">Step 1</div>
+        <div class="ps-name">The "Tune Up"</div>
+        <div class="ps-price">$297 · One-time</div>
+        <div class="ps-desc">Find out exactly what's losing you leads. Top 3 issues fixed immediately. $297 credited toward The Overhaul.</div>
       </div>
-      <div class="upsell-arrow">→</div>
-      <div class="upsell-step u2">
-        <div class="upsell-step-num">Step 2</div>
-        <div class="upsell-step-name">The &#8220;Overhaul&#8221;</div>
-        <div class="upsell-step-price">from $2,997 · One-time setup</div>
-        <div class="upsell-step-desc">Brand new website + Digital Employee that replies in under 90 seconds + automated follow-up. A complete system built and handed over to you.</div>
+      <div class="pricing-step">
+        <div class="ps-step">Step 2</div>
+        <div class="ps-name">The Overhaul</div>
+        <div class="ps-price">from $2,997 · One-time</div>
+        <div class="ps-desc">New or rebuilt site + AI lead agent + automated follow-up + local SEO. A complete lead system, built and handed over to you.</div>
       </div>
-      <div class="upsell-arrow">→</div>
-      <div class="upsell-step u3">
-        <div class="upsell-step-num">Step 3</div>
-        <div class="upsell-step-name">The &#8220;Extended Warranty Coverage&#8221;</div>
-        <div class="upsell-step-price">from $500 · Per month</div>
-        <div class="upsell-step-desc">Monthly content, Digital Employee tuning, Google listing management, and conversion checks. Your system keeps getting better — without you thinking about it.</div>
+      <div class="pricing-step">
+        <div class="ps-step">Step 3</div>
+        <div class="ps-name">The "Extended Warranty Coverage"</div>
+        <div class="ps-price">$500 · Per month</div>
+        <div class="ps-desc">Monthly SEO, Digital Employee tuning, content, conversion optimisation, website edits, and emergency support. Everything included — your system keeps getting better without you thinking about it.</div>
       </div>
     </div>
-
-    <p class="decision-help">
-      💬 Not sure where to start? <a href="#check">Get the free website check</a>, it'll make the right next step obvious.
-    </p>
+    <div class="pricing-note">💬 Not sure where to start? <a href="#check">Get the free website check</a> — it'll make the right next step obvious.</div>
   </div>
 </section>
 
-
-<!-- =============== WORK =============== -->
-<section class="section" id="work" style="background:var(--bg-soft);">
+<!-- RECENT WORK -->
+<section class="section recent-work">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="badge">Recent work</span>
-      <h2>Some of my recent work</h2>
-      <p>A sample of small businesses I've worked with, most start with one fix and end up sticking around.</p>
-    </div>
+    <p class="section-label">Recent work</p>
+    <h2 class="section-title">Some of my work across Guelph and beyond</h2>
     <div class="work-grid">
-      <a class="work-card reveal" href="https://acupuncturing.com/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">🪡</div></div>
-        <div class="work-info">
-          <h3>Acupuncturing.com</h3>
-          <p>Practitioners across Canada get found online and never miss an enquiry — leads are qualified and routed automatically, around the clock.</p>
-          <span class="work-tag">Directory · Lead routing</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://guelphdumpsterrental.com/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">🚛</div></div>
-        <div class="work-info">
-          <h3>Guelph Dumpster Rental</h3>
-          <p>Zero missed enquiries since launch. Every customer gets a reply within minutes — even at 11pm — and a follow-up if they go quiet.</p>
-          <span class="work-tag">Trades · The Overhaul</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://goodshave.com/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">🪒</div></div>
-        <div class="work-info">
-          <h3>GoodShave.com</h3>
-          <p>Built to earn without the owner lifting a finger — readers find the right product, the site earns the commission.</p>
-          <span class="work-tag">Content · Affiliate</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://pizzacam.ca/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">🍕</div></div>
-        <div class="work-info">
-          <h3>PizzaCam Guelph</h3>
-          <p>A robot pizza kiosk needed a site to match. Built for virality — it reached 1M+ people on TikTok without a single cent spent on ads.</p>
-          <span class="work-tag">Hospitality · New build</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://toterental.ca/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">📦</div></div>
-        <div class="work-info">
-          <h3>ToteRental.ca</h3>
-          <p>Customers book, pay, and get confirmations and reminders automatically — no phone calls, no back-and-forth, no chasing.</p>
-          <span class="work-tag">Service · Booking + automation</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://cheapeatsguelph.com/" target="_blank" rel="noopener noreferrer">
-        <div class="work-img"><div class="work-img-emoji">🍴</div></div>
-        <div class="work-info">
-          <h3>Cheap Eats Guelph</h3>
-          <p>A local deals site that updates itself every week. The owner spends zero time on it — it just runs.</p>
-          <span class="work-tag">Community · Full automation</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- =============== SERVICE AREA =============== -->
-<section style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0;">
-  <div class="container" style="text-align:center;">
-    <p style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-soft);margin-bottom:14px;">📍 Where we work</p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:12px;">
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Guelph</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Kitchener</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Waterloo</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Cambridge</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Milton</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Fergus</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Elora</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Rockwood</span>
-      <span style="padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.88rem;font-weight:600;color:var(--text);">Acton</span>
-      <span style="padding:8px 16px;background:var(--text);border:1px solid var(--text);border-radius:999px;font-size:0.88rem;font-weight:700;color:#fff;">+ Anywhere in Canada</span>
-    </div>
-    <p style="font-size:0.88rem;color:var(--text-muted);margin:0;">Based in Guelph. Work remotely across Ontario and Canada. Most clients in Waterloo Region and Wellington County — we know this market.</p>
-  </div>
-</section>
-
-<!-- =============== FREE WEBSITE CHECK (Lead Magnet) =============== -->
-<section class="section" id="check">
-  <div class="container">
-    <div class="lead-magnet">
-      <div class="lead-magnet-grid">
-        <div class="reveal">
-          <span class="badge badge-dark">Free · No obligation · 24-hour turnaround</span>
-          <h2>Find out exactly why you're losing business. Free. Takes 30 seconds to request.</h2>
-          <p>Drop your URL. We'll look at your site and send back a one-page breakdown of what's broken, what's slow, and what's costing you customers. No call, no pitch, no obligation.</p>
-          <ul class="lead-checks">
-            <li>Is your contact form actually working?</li>
-            <li>Mobile + speed score (and what's dragging it down)</li>
-            <li>Google + Maps visibility check</li>
-            <li>Top 3 things costing you business right now</li>
-            <li>Whether your site shows up in AI search results</li>
-          </ul>
-          <p style="font-size:0.88rem;color:rgba(255,255,255,0.4);">This is the first step of The Tune Up, for free. If you want the full fix, the $297 is ready when you are.</p>
-        </div>
-        <div>
-          <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:16px;">✅ Checked 30+ sites this month. Average leaks found: 4. Most common: contact form going to spam.</div>
-          <div class="lead-form reveal" style="text-align:center;">
-            <a href="https://overhauled.ai/onboarding" class="btn btn-accent btn-lg" style="display:inline-block;width:100%;margin-bottom:14px;">Get my free website check →</a>
-            <p class="lead-form-note">No spam. No sales call. Report back within 24 hours.</p>
-          </div>
-        </div>
+      <div class="work-card">
+        <div class="work-icon">🪡</div>
+        <div class="work-name">Acupuncturing.com</div>
+        <div class="work-desc">National practitioner directory with automated lead routing across Canada.</div>
+        <div class="work-tags"><span class="work-tag">Directory</span><span class="work-tag">Lead routing</span></div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon">🚛</div>
+        <div class="work-name">Guelph Dumpster Rental</div>
+        <div class="work-desc">Trades site with Growth Engine, AI response + automated follow-up. Zero missed leads since launch.</div>
+        <div class="work-tags"><span class="work-tag">Trades</span><span class="work-tag">Growth Engine</span></div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon">🪒</div>
+        <div class="work-name">GoodShave.com</div>
+        <div class="work-desc">Razor review + affiliate site with comparison tables and interactive product matcher quiz.</div>
+        <div class="work-tags"><span class="work-tag">Content</span><span class="work-tag">Affiliate</span></div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon">🍕</div>
+        <div class="work-name">PizzaCam Guelph</div>
+        <div class="work-desc">Viral marketing site for a 24/7 robot pizza kiosk at UoG, built around 895K+ TikTok reach.</div>
+        <div class="work-tags"><span class="work-tag">Hospitality</span><span class="work-tag">New build</span></div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon">📦</div>
+        <div class="work-name">ToteRental.ca</div>
+        <div class="work-desc">Online booking + pricing for moving totes. Confirmations + reminders built in from day one.</div>
+        <div class="work-tags"><span class="work-tag">Service</span><span class="work-tag">Booking</span></div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon">🍴</div>
+        <div class="work-name">Cheap Eats Guelph</div>
+        <div class="work-desc">Local resource that runs itself — automated weekly updates, zero manual maintenance.</div>
+        <div class="work-tags"><span class="work-tag">Community</span><span class="work-tag">Full automation</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SERVICE AREA STRIP -->
+<section class="service-area">
+  <div class="sa-inner">
+    <p class="sa-label">📍 Where we work</p>
+    <div class="sa-cities">
+      <span>Guelph</span>
+      <span>Kitchener</span>
+      <span>Waterloo</span>
+      <span>Cambridge</span>
+      <span>Milton</span>
+      <span>Fergus</span>
+      <span>Elora</span>
+      <span>Rockwood</span>
+      <span>Acton</span>
+      <span class="sa-plus">+ Anywhere in Canada</span>
+    </div>
+    <p class="sa-note">Based in Guelph. Work remotely across Ontario and Canada. Most clients in Waterloo Region and Wellington County — we know this market.</p>
+  </div>
+</section>
 
-<!-- =============== ABOUT =============== -->
-<section class="section about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-photo reveal">
-        <img src="mark.jpg" alt="Mark Hurson, founder of Overhauled.ai" loading="lazy" />
-      </div>
-      <div class="reveal">
-        <span class="badge">About</span>
-        <h2>25 years running Guelph businesses.
-Now I fix the website problems I used to deal with myself.</h2>
-        <p>I'm Mark Hurson. I've been running real businesses for over 25 years — not just building websites. I know what it feels like to miss leads, have a site that doesn't convert, and waste time on repetitive admin work that should be automated.</p>
-        <p>I built Overhauled.ai to fix those exact problems for other local business owners. I'm based in Guelph and work with businesses across Waterloo Region and Wellington County — Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora and beyond. Everything is done remotely, so location is never a barrier.</p>
-        <p>Flat rates. Straight answers. Fast turnaround. You'll know exactly what you're getting before you spend a cent.</p>
-        <div class="about-stats">
-          <div class="about-stat"><div class="about-stat-num">25+</div><div class="about-stat-label">Years running real businesses</div></div>
-          <div class="about-stat"><div class="about-stat-num">48hr</div><div class="about-stat-label">Average build / fix turnaround</div></div>
+<!-- FREE CHECK FORM -->
+<section class="free-check" id="check">
+  <div class="free-check-inner">
+    <p class="section-label">Free · No obligation · 24-hour turnaround</p>
+    <h2>Find out exactly why you're losing business.<br>Free. Takes 30 seconds.</h2>
+    <p class="free-check-body">Drop your URL. We'll look at your site and send back a one-page breakdown of what's broken, what's slow, and what's costing you customers. No call, no pitch, no obligation.</p>
+    <div class="check-list">
+      <div class="check-list-item">Is your contact form actually delivering — or going to spam?</div>
+      <div class="check-list-item">Mobile + speed score (and what's dragging it down)</div>
+      <div class="check-list-item">Google + Maps visibility check for Guelph searches</div>
+      <div class="check-list-item">Top 3 things costing you leads right now</div>
+      <div class="check-list-item">Whether your site shows up in AI search results</div>
+    </div>
+    <p class="check-note">This is the first step of The "Tune Up" — for free. <strong>If you want the full fix, the $297 is ready when you are.</strong></p>
+    <div class="check-proof">✅ Checked 30+ sites this month across Guelph, Kitchener, Waterloo & Cambridge. Average leaks found: 4. Most common: contact form going to spam.</div>
+    <a href="https://overhauled.ai/onboarding" class="btn-primary" style="display:inline-block;font-size:16px;padding:16px 32px;margin-top:8px;">Get my free website check →</a>
+    <p class="check-fine" style="margin-top:12px;">No spam. No sales call. Report back within 24 hours.</p>
+  </div>
+</section>
 
-        </div>
-        <a href="#check" class="btn btn-primary btn-lg">Get a free website check →</a>
-      </div>
+<!-- ABOUT -->
+<section class="section about">
+  <div class="about-inner">
+    <div>
+      <p class="section-label">About</p>
+      <h2>25 years running businesses.<br><em>I know when a business needs an Overhaul.</em></h2>
+      <p>I'm Mark Hurson. I've been running real businesses in Guelph for over 25 years — not just building websites. I know what it feels like to miss leads, have a site that doesn't convert, and waste time on repetitive admin work that should be automated.</p>
+      <p>I built Overhauled.ai to fix those exact problems for other local business owners. I'm based in Guelph and work with businesses across Waterloo Region and Wellington County — Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora and beyond. Everything is done remotely, so location is never a barrier.</p>
+      <p>Every package I offer is based on what actually moves the needle — not what sounds impressive in a sales pitch.</p>
+      <p>Flat rates. Straight answers. Fast turnaround. You'll know exactly what you're getting before you spend a cent.</p>
+      <a href="#check" class="about-cta">Get a free website check →</a>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat"><div class="num">25+</div><div class="label">Years running real businesses</div></div>
+      <div class="about-stat"><div class="num">48hr</div><div class="label">Average build / fix turnaround</div></div>
+
     </div>
   </div>
 </section>
 
-
-<!-- =============== FAQ =============== -->
-<section class="section" id="faq" style="background:var(--bg-soft);">
+<!-- FAQ -->
+<section class="section faq" id="faq">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="badge">FAQ</span>
-      <h2>Common questions. Plain answers.</h2>
-    </div>
-    <div class="faq-list">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common questions. Plain answers.</h2>
+    <div class="faq-grid">
       <div class="faq-item">
         <div class="faq-q">What's the difference between the three packages?</div>
-        <div class="faq-a"><p>The <strong>Tune Up ($297)</strong> is the starting point — we go through your existing website, find and fix the specific things losing you business right now. The <strong>Overhaul (from $2,997)</strong> is the full transformation: a brand new website, a Digital Employee that responds to enquiries instantly, and automated follow-up. The <strong>Extended Warranty Coverage (from $500/mo)</strong> keeps it all improving month after month. Most clients start with the Tune Up and upgrade once they see how much was being missed.</p></div>
+        <div class="faq-a">The "Tune Up" ($297) is the starting point — we find and fix the specific things losing you leads right now. The Overhaul (from $2,997) is the full transformation: new or rebuilt site, AI that responds to enquiries instantly, and automated follow-up. The "Extended Warranty Coverage" ($500/mo) keeps it all improving month after month. Most clients start with the Audit and upgrade once they see how much was being missed.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do I need to know anything about tech?</div>
-        <div class="faq-a"><p>Not a thing. You tell me what you need in plain English, I handle everything technical. You don't need to know what hosting, DNS, or SSL means. That's my job.</p></div>
+        <div class="faq-a">Not a thing. You tell me what you need in plain English — I handle everything technical. You don't need to know what hosting, DNS, or SSL means. That's my job.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How much does The Overhaul actually cost?</div>
-        <div class="faq-a"><p>Starting from $2,997 depending on how much work is involved — whether it's a brand new site or a full rebuild of what you already have. You'll get a firm flat-rate quote before we start anything, so there are no surprises. If you've already done The Tune Up, your $297 comes straight off the price.</p></div>
+        <div class="faq-a">Starting from $2,997 depending on scope — whether it's a new build or a rebuild, and how complex the AI automation needs to be. You'll get a firm flat-rate quote before anything starts. If you already did the $297 Audit, that comes off the price.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What's a Digital Employee and do I actually need one?</div>
-        <div class="faq-a"><p>A Digital Employee does the job a person would normally do — 24 hours a day, without forgetting, without getting tired. The simplest version: someone fills out your form at 11pm and gets a personalised reply in under a minute, written in your voice. More advanced: following up on quotes that went quiet, answering the 10 questions customers always ask before they buy, booking appointments, collecting Google reviews after a job is done. If customers are slipping through the cracks or you're spending time on repetitive back-and-forth, it pays for itself fast.</p></div>
+        <div class="faq-a">A Digital Employee does the job a person would normally do — 24 hours a day, without forgetting, without getting tired. The simplest version: someone fills out your form at 11pm and gets a personalised reply in under a minute, written in your voice. More advanced: following up on quotes that went quiet, answering the 10 questions customers always ask before they buy, booking appointments. If leads are slipping through the cracks or you're spending time on repetitive back-and-forth, it pays for itself fast.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How long does a project take?</div>
-        <div class="faq-a"><p>Free check: within 24 hours. The Tune Up: 48 hours. The Overhaul: under 2 weeks. Extended Warranty Coverage is ongoing. Faster is possible if it's urgent, just ask.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What if something breaks after you're done?</div>
-        <div class="faq-a"><p>Every project includes 30 days of free support. After that, the Extended Warranty Coverage retainer covers ongoing fixes, updates, and support. Or you carry on independently — you own everything.</p></div>
+        <div class="faq-a">Free check: within 24 hours. The Tune Up: 48 hours. The Overhaul: under 2 weeks. Extended Warranty Coverage is ongoing. Faster is possible if it's urgent — just ask.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do I own my website when it's done?</div>
-        <div class="faq-a"><p>100%. Domain, files, content, AI agents, you own all of it. I don't hold anything hostage. If you ever want to move on, you take everything with you.</p></div>
+        <div class="faq-a">100%. Domain, files, content, AI agents — you own all of it. I don't hold anything hostage. If you ever want to move on, you take everything with you.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do you work with businesses outside Guelph?</div>
-        <div class="faq-a"><p>Yes — everything is done remotely so location is never a barrier. I'm based in Guelph and work regularly with businesses across Waterloo Region and Wellington County: Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora, Rockwood, and Acton. I also work with clients across Canada. The closer you are, the better I know your local market — but the work is the same wherever you are.</p></div>
+        <div class="faq-a">Yes — everything is done remotely so location is never a barrier. I'm based in Guelph and work regularly with businesses across Waterloo Region and Wellington County: Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora, Rockwood, and Acton. I also work with clients across Canada. The closer you are, the better I know your local market — but the work is the same wherever you are.</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- =============== FINAL CTA =============== -->
-<section class="final-cta" id="book">
-  <div class="container">
-    <span class="badge badge-dark">Free · No commitment · Results in 24 hours</span>
-    <h2>Every day it stays broken, someone else gets the customer.</h2>
-    <p>Takes 30 seconds to submit. You'll have a one-page breakdown of exactly what's costing you customers within 24 hours. No pitch. No obligation. No surprises.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://overhauled.ai/onboarding" class="btn btn-primary btn-lg">Get my free website check →</a>
-      <a href="/contact" class="btn btn-ghost-dark btn-lg">Or get in touch directly</a>
-    </div>
-    <p style="margin-top:24px;font-size:0.88rem;color:var(--text-on-dark-muted);">
-      <span class="pulse-dot"></span>
-      Currently accepting new projects. Builds start within 48 hours of kickoff. Current wait: under 1 week.
-    </p>
-  </div>
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <p class="section-label">Free · No commitment · Results in 24 hours</p>
+  <h2>Ready for an <em style="color:var(--green);font-style:normal">Overhaul?</em><br>Every day it stays broken,<br>someone else gets the customer.</h2>
+  <p class="bottom-cta-sub">✅ Checked 30+ sites across Guelph, Kitchener, Waterloo & Cambridge this month. Average: 4 lead leaks per site.</p>
+  <p class="bottom-cta-body">Takes 30 seconds to submit. You'll have a one-page breakdown of exactly what's costing you customers within 24 hours. No pitch. No obligation. No surprises.</p>
+  <a href="#check" class="btn-primary">Get my free website check →</a>
+  <p class="bottom-cta-note">Or <a href="mailto:hello@overhauled.ai">get in touch directly</a></p>
+  <div class="status-line">Currently accepting new projects. Builds start within 48 hours of kickoff. Current wait: under 1 week.</div>
 </section>
 
-
-<!-- =============== FOOTER =============== -->
-<footer class="footer">
-  <div class="container">
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
     <div class="footer-top">
-      <div>
-        <a href="/" class="logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-          </div>
-          <span class="logo-word">overhauled<span>.ai</span></span>
-        </a>
-        <p class="footer-blurb">Websites, AI agents & automation for small businesses in Guelph, Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora & beyond.</p>
+      <div class="footer-brand">
+        <a href="#" class="logo">overhauled<span>.ai</span></a>
+        <p>Websites, AI agents & automation for small businesses in Guelph, Kitchener, Waterloo, Cambridge, Milton, Fergus, Elora & beyond.</p>
       </div>
       <div class="footer-col">
         <h4>Packages</h4>
-        <a href="#packages">The &#8220;Tune Up&#8221;</a>
-        <a href="#packages">The &#8220;Overhaul&#8221;</a>
-        <a href="#packages">The &#8220;Extended Warranty Coverage&#8221;</a>
+        <a href="#packages">The "Tune Up"</a>
+        <a href="#packages">The Overhaul</a>
+        <a href="#packages">The "Extended Warranty Coverage"</a>
         <a href="#check">Free Website Check</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#packages">Services</a>
+        <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="/blog/">Blog</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <span style="display:block;font-size:0.92rem;margin-bottom:8px;color:var(--text-on-dark-muted);">5 Edinburgh Rd S, Unit 21<br>Guelph, ON</span>
-        <a href="tel:+15199425698">(519) 942-5698</a>
+        <span>5 Edinburgh Rd S, Unit 21<br>Guelph, ON</span>
+        <a href="tel:5199425698">(519) 942-5698</a>
         <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a>
         <a href="https://www.linkedin.com/in/markhurson/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Overhauled+5+Edinburgh+Rd+S+Guelph+ON" target="_blank" rel="noopener" style="color:var(--accent);">⭐ Find us on Google</a>
-<a href="/contact">Get in touch →</a>
+        <a href="#check">Get in touch →</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Overhauled+5+Edinburgh+Rd+S+Guelph+ON" target="_blank" rel="noopener" style="color:#22C55E;">⭐ Find us on Google</a>
       </div>
     </div>
-    <div class="footer-map" style="margin:28px 0 0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+    <div style="margin:28px 0 0;border-radius:10px;overflow:hidden;border:1px solid #1a1a1a;">
       <iframe
         src="https://maps.google.com/maps?q=5+Edinburgh+Rd+S+Unit+21+Guelph+ON+N1G+4Y3&output=embed"
         width="100%"
-        height="170"
+        height="160"
         style="border:0;display:block;"
         allowfullscreen=""
         loading="lazy"
@@ -1191,8 +1081,8 @@ Now I fix the website problems I used to deal with myself.</h2>
       </iframe>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Overhauled.ai · Guelph, ON</span>
-      <div style="display:flex;gap:18px;">
+      <p class="footer-copy">© 2026 Overhauled.ai · Guelph, ON</p>
+      <div class="footer-legal">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
       </div>
@@ -1200,82 +1090,5 @@ Now I fix the website problems I used to deal with myself.</h2>
   </div>
 </footer>
 
-<!-- STICKY MOBILE CTA -->
-<div class="sticky-cta">
-  <span class="sticky-cta-text">Free website check</span>
-  <a href="#check" class="sticky-cta-btn">Get it free →</a>
-</div>
-
-<script>
-  // Lead form — posts to audit function, shows loading state while running
-  function handleLeadForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = document.getElementById('leadFormBtn');
-    const data = new FormData(form);
-    btn.textContent = 'Checking your site…';
-    btn.disabled = true;
-    fetch('/.netlify/functions/audit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
-    })
-      .then(() => { document.getElementById('leadFormSuccess').style.display = 'block'; form.style.display = 'none'; })
-      .catch(() => { document.getElementById('leadFormSuccess').style.display = 'block'; form.style.display = 'none'; });
-  }
-
-  // Mobile nav
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-  // ICP chips, personalise hero subheadline on click
-  const heroSub = document.getElementById('heroSub');
-  const defaultSub = heroSub.textContent;
-  document.querySelectorAll('.icp-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('.icp-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      const key = chip.dataset.icp;
-      const msg = heroSub.dataset['icp' + key.charAt(0).toUpperCase() + key.slice(1)];
-      if (msg) {
-        heroSub.style.opacity = '0';
-        heroSub.style.transition = 'opacity 0.2s ease';
-        setTimeout(() => { heroSub.textContent = msg; heroSub.style.opacity = '1'; }, 200);
-      }
-      setTimeout(() => document.getElementById('packages').scrollIntoView({ behavior: 'smooth' }), 400);
-    });
-  });
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => item.classList.toggle('open'));
-  });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => obs.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add('visible'));
-  }
-
-  // Smooth scroll for in-page links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1 && document.querySelector(id)) {
-        e.preventDefault();
-        document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
 </body>
 </html>
