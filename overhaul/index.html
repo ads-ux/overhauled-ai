@@ -490,7 +490,62 @@
       .cta-section { padding: 70px 20px; }
       .broken-grid { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    /* RETAINER CALLOUT */
+    .retainer-callout {
+      margin-top: 48px;
+      background: linear-gradient(135deg, #0F172A 0%, #162032 100%);
+      border: 1px solid #22C55E44;
+      border-radius: 14px;
+      padding: 36px 40px;
+    }
+    .retainer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .retainer-left { flex: 1; min-width: 240px; }
+    .retainer-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #22C55E;
+      margin-bottom: 8px;
+    }
+    .retainer-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .retainer-desc {
+      font-size: 15px;
+      color: #94A3B8;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .retainer-cta {
+      background: #22C55E;
+      color: #000;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .retainer-cta:hover { background: #16a34a; }
+    @media(max-width:640px){
+      .retainer-callout { padding: 28px 20px; }
+      .retainer-cta { width: 100%; text-align: center; }
+    }
+
+    </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -826,6 +881,22 @@
         <span class="own-card-icon">&#128274;</span>
         <h3>No Lock-In</h3>
         <p>No mandatory monthly retainers. No platform dependency. Ongoing support is available — but only if you want it.</p>
+      </div>
+      <div class="own-card">
+        <span class="own-card-icon">&#128101;</span>
+        <h3>Your Integrations</h3>
+        <p>We wire everything into your existing CRM, customer portal, or third-party systems. No silos — it all works together, and it's all yours.</p>
+      </div>
+    </div>
+
+    <div class="retainer-callout">
+      <div class="retainer-inner">
+        <div class="retainer-left">
+          <p class="retainer-label">Optional Add-On</p>
+          <h3 class="retainer-title">Full Support Retainer — $500/mo</h3>
+          <p class="retainer-desc">Need us on standby? For $500/month, you get us available for any work, strategy, or technical support you need. Updates, new features, AI tweaks, SEO adjustments — just ask. No scope negotiations, no invoices for every small thing. One flat monthly rate, full access to the team.</p>
+        </div>
+        <a href="https://overhauled.ai/onboarding" class="retainer-cta">Add support to my project →</a>
       </div>
     </div>
 
