@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Auto Pilot — AI Digital Employee for Small Business | Overhauled.ai</title>
+  <meta name="description" content="Stop being the bottleneck in your own business. The Auto Pilot sets up a Digital Employee that answers enquiries 24/7, follows up on leads, books appointments, and more — for $1,000 setup + $50/mo." />
+  <meta name="keywords" content="AI for small business Guelph, business automation Waterloo, digital employee Kitchener, automate follow-up small business Ontario" />
+  <link rel="canonical" href="https://overhauled.ai/auto-pilot/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Auto Pilot — AI Digital Employee for Small Business" />
+  <meta property="og:description" content="Stop being the bottleneck. A Digital Employee that works 24/7 so you don't have to." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://overhauled.ai/auto-pilot/" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green: #22C55E; --green-dim: #16A34A; --dark: #0A0A0A; --navy: #0F172A; --slate: #1E293B; --border: #1E293B; --text: #F8FAFC; --muted: #94A3B8; --light-border: #E2E8F0; --light-bg: #F8FAFC; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #0F172A; line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #1a1a1a; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { color: #fff; font-weight: 800; font-size: 17px; text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: var(--green); color: #000 !important; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 14px; }
+    .nav-cta:hover { background: var(--green-dim) !important; }
+    .section { padding: 80px 40px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 48px; max-width: 600px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .btn-primary { background: var(--green); color: #000; font-weight: 700; font-size: 16px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; }
+    .btn-primary:hover { background: var(--green-dim); transform: translateY(-1px); }
+    footer { background: var(--dark); border-top: 1px solid #111; padding: 48px 40px 32px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .logo { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; }
+    .footer-brand .logo span { color: var(--green); }
+    .footer-brand p { color: #555; font-size: 13px; margin-top: 10px; line-height: 1.6; max-width: 260px; }
+    .footer-col h4 { color: #888; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col a, .footer-col span { display: block; color: #555; font-size: 14px; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #111; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { color: #333; font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { color: #333; font-size: 13px; text-decoration: none; }
+    @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; } nav { padding: 0 20px; } .section { padding: 60px 20px; } }
+
+    /* ── Page-specific styles ── */
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--light-bg); border-bottom: 1px solid var(--light-border); padding: 10px 40px; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--navy); }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* Hero */
+    .hero { background: var(--dark); color: var(--text); padding: 100px 40px 80px; }
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-badge::before { content: ''; display: block; width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 24px; }
+    .hero h1 em { color: var(--green); font-style: normal; }
+    .hero-sub { font-size: 18px; color: #94A3B8; line-height: 1.7; margin-bottom: 36px; max-width: 480px; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .hero-price-note { font-size: 13px; color: #475569; }
+    .hero-price-note strong { color: #94A3B8; }
+
+    /* Pricing card in hero */
+    .hero-card { background: var(--slate); border: 1px solid #334155; border-radius: 16px; padding: 36px; }
+    .hero-card-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .hero-card h2 { font-size: 28px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .hero-card .price-block { margin: 24px 0; }
+    .hero-card .price-main { font-size: 48px; font-weight: 900; color: #fff; letter-spacing: -2px; line-height: 1; }
+    .hero-card .price-sub { font-size: 14px; color: #64748B; margin-top: 4px; }
+    .hero-card .price-recurring { display: flex; align-items: baseline; gap: 6px; margin-top: 12px; }
+    .hero-card .price-recurring .amount { font-size: 24px; font-weight: 800; color: var(--green); }
+    .hero-card .price-recurring .period { font-size: 13px; color: #64748B; }
+    .hero-card .divider { border: none; border-top: 1px solid #334155; margin: 20px 0; }
+    .hero-card-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .hero-card-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #94A3B8; }
+    .hero-card-features li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .hero-card .cancel-note { font-size: 12px; color: #475569; margin-top: 20px; text-align: center; }
+
+    /* What it handles */
+    .handles { background: var(--light-bg); }
+    .handles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .handle-card { background: #fff; border: 1px solid var(--light-border); border-radius: 12px; padding: 28px; transition: box-shadow 0.2s, transform 0.2s; }
+    .handle-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .handle-icon { width: 44px; height: 44px; background: rgba(34,197,94,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+    .handle-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .handle-card p { font-size: 14px; color: #64748B; line-height: 1.6; }
+
+    /* How it works */
+    .how-it-works { background: #fff; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px; }
+    .step { position: relative; padding-left: 20px; }
+    .step-number { font-size: 60px; font-weight: 900; color: rgba(34,197,94,0.12); line-height: 1; letter-spacing: -3px; margin-bottom: 8px; }
+    .step h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748B; line-height: 1.7; }
+    .step-connector { display: none; }
+
+    /* ROI */
+    .roi { background: var(--navy); color: var(--text); }
+    .roi .section-title { color: #fff; }
+    .roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .roi-intro { font-size: 18px; color: #94A3B8; line-height: 1.8; margin-bottom: 32px; }
+    .roi-cards { display: flex; flex-direction: column; gap: 16px; }
+    .roi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; }
+    .roi-card h4 { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .roi-card p { font-size: 15px; color: #94A3B8; line-height: 1.6; }
+    .roi-card strong { color: #fff; }
+    .roi-calc { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 16px; padding: 36px; }
+    .roi-calc h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 24px; letter-spacing: -0.3px; }
+    .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; }
+    .calc-row:last-of-type { border-bottom: none; }
+    .calc-label { color: #94A3B8; }
+    .calc-value { font-weight: 700; color: #fff; }
+    .calc-value.green { color: var(--green); }
+    .calc-total { margin-top: 16px; padding-top: 16px; border-top: 2px solid rgba(34,197,94,0.3); display: flex; justify-content: space-between; align-items: center; }
+    .calc-total-label { font-size: 14px; font-weight: 700; color: #fff; }
+    .calc-total-value { font-size: 24px; font-weight: 900; color: var(--green); letter-spacing: -0.5px; }
+    .roi-disclaimer { font-size: 12px; color: #475569; margin-top: 12px; }
+
+    /* What's included */
+    .included { background: var(--light-bg); }
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .included-list { display: flex; flex-direction: column; gap: 20px; }
+    .included-item { display: flex; gap: 16px; align-items: flex-start; }
+    .included-dot { width: 32px; height: 32px; background: rgba(34,197,94,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .included-item-text h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .included-item-text p { font-size: 14px; color: #64748B; line-height: 1.6; }
+    .included-aside { background: var(--navy); border-radius: 16px; padding: 40px; color: var(--text); }
+    .included-aside h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .included-aside .tagline { font-size: 14px; color: #64748B; margin-bottom: 28px; }
+    .price-display { margin-bottom: 28px; }
+    .price-display .amount-setup { font-size: 42px; font-weight: 900; color: #fff; letter-spacing: -2px; }
+    .price-display .label-setup { font-size: 14px; color: #64748B; margin-bottom: 8px; }
+    .price-display .amount-monthly { font-size: 28px; font-weight: 800; color: var(--green); letter-spacing: -1px; }
+    .price-display .label-monthly { font-size: 13px; color: #64748B; }
+    .included-cta { display: flex; flex-direction: column; gap: 12px; }
+    .included-cta .btn-primary { text-align: center; }
+    .included-cta .cancel { font-size: 12px; color: #475569; text-align: center; }
+
+    /* FAQ */
+    .faq { background: #fff; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; }
+    .faq-item { border: 1px solid var(--light-border); border-radius: 12px; padding: 24px; }
+    .faq-item h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .faq-item p { font-size: 14px; color: #64748B; line-height: 1.7; }
+    .faq-item p a { color: var(--green); text-decoration: none; }
+    .faq-item p a:hover { text-decoration: underline; }
+
+    /* Final CTA band */
+    .cta-band { background: var(--dark); color: var(--text); text-align: center; padding: 100px 40px; }
+    .cta-band h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+    .cta-band h2 em { color: var(--green); font-style: normal; }
+    .cta-band p { font-size: 18px; color: #64748B; margin-bottom: 40px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .cta-band .btn-primary { font-size: 18px; padding: 18px 36px; }
+    .cta-band .sub-note { font-size: 13px; color: #334155; margin-top: 16px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .roi-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero { padding: 60px 20px; }
+      .breadcrumb { padding: 10px 20px; }
+      .cta-band { padding: 70px 20px; }
+      .hero h1 { font-size: 34px; }
+    }
+    @media (max-width: 560px) {
+      .nav-links { display: none; }
+      .nav-cta { display: flex; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Auto Pilot",
+    "provider": {
+      "@type": "Organization",
+      "name": "Overhauled.ai",
+      "url": "https://overhauled.ai"
+    },
+    "description": "A Digital Employee for your small business that answers enquiries 24/7, follows up on leads, books appointments, and handles repetitive tasks — without the owner being involved.",
+    "areaServed": ["Guelph", "Waterloo", "Kitchener", "Ontario"],
+    "offers": {
+      "@type": "Offer",
+      "price": "1000",
+      "priceCurrency": "CAD",
+      "description": "$1,000 one-time setup fee plus $50/month subscription"
+    },
+    "serviceType": "Business Automation"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#check" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/#services">Services</a>
+      <span>/</span>
+      The Auto Pilot
+    </div>
+  </div>
+
+  <!-- ── 1. HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">The Auto Pilot</div>
+        <h1>Stop Being the <em>Bottleneck</em> in Your Own Business</h1>
+        <p class="hero-sub">Every missed after-hours enquiry, every follow-up you forgot, every appointment that didn't get confirmed — that's revenue walking out the door. The Auto Pilot handles it automatically.</p>
+        <div class="hero-actions">
+          <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+        </div>
+        <p class="hero-price-note" style="margin-top:16px;"><strong>$1,000 setup</strong> &nbsp;+&nbsp; <strong>$50/mo</strong> &nbsp;&mdash;&nbsp; Cancel anytime.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">The Auto Pilot Package</div>
+        <h2>Your Digital Employee</h2>
+        <div class="price-block">
+          <div style="font-size:12px;color:#475569;margin-bottom:4px;">One-time setup</div>
+          <div class="price-main">$1,000</div>
+          <div class="price-recurring">
+            <span class="amount">$50</span>
+            <span class="period">/ month after that</span>
+          </div>
+        </div>
+        <hr class="divider" />
+        <ul class="hero-card-features">
+          <li>Answers enquiries at 11pm — without you</li>
+          <li>Follows up on quotes that went quiet</li>
+          <li>Books and confirms appointments automatically</li>
+          <li>Sends reminders so clients don't no-show</li>
+          <li>Responds to common questions in your voice</li>
+          <li>Routes urgent matters so nothing slips</li>
+          <li>Trained on your business, your services, your tone</li>
+          <li>30-day support included after launch</li>
+        </ul>
+        <p class="cancel-note">No contracts. Cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. WHAT IT HANDLES ── -->
+  <section class="section handles">
+    <div class="container">
+      <div class="section-label">What it handles</div>
+      <h2 class="section-title">Eight things you'll never have to do manually again</h2>
+      <div class="handles-grid">
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128338;</div>
+          <h3>After-hours enquiries</h3>
+          <p>Someone fills out your form at 10:47pm. The Auto Pilot replies instantly with relevant information and captures their details — so you wake up to a warm lead, not a missed one.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128233;</div>
+          <h3>Quote follow-ups</h3>
+          <p>You sent a quote four days ago and heard nothing. The Auto Pilot follows up automatically — politely, professionally, in your tone — without you having to remember or feel awkward about chasing.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128197;</div>
+          <h3>Appointment booking</h3>
+          <p>Connects to your calendar and lets customers book a time that works for them — no back-and-forth emails, no double-booking, no manual scheduling overhead.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128276;</div>
+          <h3>Appointment reminders</h3>
+          <p>Automatically sends reminders 24 hours and 2 hours before a booking. Reduces no-shows. You stop losing money to gaps in your schedule that could have been filled.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128172;</div>
+          <h3>Common customer questions</h3>
+          <p>Pricing, hours, turnaround times, what's included, how to get started — your Digital Employee knows the answers and replies instantly, every time, without pulling you away from actual work.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128640;</div>
+          <h3>Lead routing and escalation</h3>
+          <p>Not every enquiry needs your immediate attention. The Auto Pilot handles the routine ones and flags the urgent, high-value, or complex ones so you focus where it counts.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#128202;</div>
+          <h3>Business reports</h3>
+          <p>Daily or weekly summaries of enquiries received, follow-ups sent, appointments booked. You always know what's happening without having to dig through inboxes or spreadsheets.</p>
+        </div>
+
+        <div class="handle-card">
+          <div class="handle-icon">&#9889;</div>
+          <h3>New lead capture</h3>
+          <p>Every enquiry, form submission, or message gets captured, categorised, and logged — so no lead falls through the cracks when you're busy, on a job, or simply offline.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS ── -->
+  <section class="section how-it-works">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Built for your business. Not a generic chatbot.</h2>
+      <p style="font-size:17px;color:#64748B;margin-bottom:56px;max-width:620px;line-height:1.8;">We build a custom Digital Employee trained on your business — your services, your pricing, your voice, your most common questions. It lives inside the tools you already use. You don't change how you work. It just fills the gaps you couldn't fill yourself.</p>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Discovery call</h3>
+          <p>We learn your business: what you do, who your customers are, what questions you answer ten times a week, what tasks eat your time, and what "done" looks like for you.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>We build your Digital Employee</h3>
+          <p>We train it on your services, your pricing, your FAQs, your tone. It learns your business the way a new staff member would — except it retains everything, instantly, and never forgets.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>We connect it to your tools</h3>
+          <p>Email, contact forms, SMS, calendar — your Digital Employee plugs into the systems you already use. No new software to learn. No disruption to how you operate.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>You review. We refine.</h3>
+          <p>You get 30 days of active support after launch. As it runs, we tune it. If it says something off, we fix it. If there's a gap, we fill it. You're never on your own.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">05</div>
+          <h3>It runs. You don't.</h3>
+          <p>Once it's live, it works 24 hours a day, 7 days a week — answering, following up, booking, reminding. You get your time back and your business keeps moving while you sleep.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. THE ROI ARGUMENT ── -->
+  <section class="section roi">
+    <div class="container">
+      <div class="section-label">The ROI argument</div>
+      <h2 class="section-title" style="color:#fff;">It pays for itself. Here's the math.</h2>
+      <div class="roi-grid">
+        <div>
+          <p class="roi-intro">You're not the bottleneck because you're bad at your job. You're the bottleneck because you're great at it — and everyone wants access to you. The Auto Pilot handles the volume so you can focus on the value.</p>
+          <div class="roi-cards">
+
+            <div class="roi-card">
+              <h4>The time argument</h4>
+              <p>If The Auto Pilot saves you just <strong>2 hours a week</strong>, that's over 100 hours a year. What's an hour of your time worth? If it's more than $5 — which it is — this pays for itself before the end of month one.</p>
+            </div>
+
+            <div class="roi-card">
+              <h4>The missed revenue argument</h4>
+              <p>One after-hours enquiry you didn't reply to in time. One quote that went cold because you forgot to follow up. One client who didn't rebook because no one reminded them. <strong>One extra job a month</strong> at your average ticket makes this a 10x return.</p>
+            </div>
+
+            <div class="roi-card">
+              <h4>The sleep argument</h4>
+              <p>You stop answering your phone at 10pm. You stop worrying about emails while you're on a job. Your business runs when you're not running it. <strong>That's worth something too.</strong></p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="roi-calc">
+          <h3>Back-of-napkin breakdown</h3>
+          <div class="calc-row">
+            <span class="calc-label">Your time saved per week</span>
+            <span class="calc-value">2 hrs</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Value of your time (est.)</span>
+            <span class="calc-value">$75/hr</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Monthly time savings</span>
+            <span class="calc-value green">$600</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Extra jobs closed / month (est.)</span>
+            <span class="calc-value">1</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Average job value</span>
+            <span class="calc-value">$600</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Revenue recovered / month</span>
+            <span class="calc-value green">$600</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Cost of The Auto Pilot / mo</span>
+            <span class="calc-value">$50</span>
+          </div>
+          <div class="calc-total">
+            <span class="calc-total-label">Net monthly gain</span>
+            <span class="calc-total-value">$1,150+</span>
+          </div>
+          <p class="roi-disclaimer">These are conservative estimates based on common outcomes. Your actual results depend on your business type and volume.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. WHAT'S INCLUDED IN SETUP ── -->
+  <section class="section included">
+    <div class="container">
+      <div class="included-grid">
+        <div>
+          <div class="section-label">What's included</div>
+          <h2 class="section-title">Everything you need to go live — and stay live.</h2>
+          <div class="included-list">
+
+            <div class="included-item">
+              <div class="included-dot">&#127775;</div>
+              <div class="included-item-text">
+                <h4>Custom Digital Employee build</h4>
+                <p>Built specifically for your business — not an off-the-shelf template. We configure it around your services, your pricing, your workflow, and your customer base.</p>
+              </div>
+            </div>
+
+            <div class="included-item">
+              <div class="included-dot">&#127941;</div>
+              <div class="included-item-text">
+                <h4>Business training and voice matching</h4>
+                <p>Your Digital Employee communicates in your tone — professional, friendly, direct, or however your brand speaks. It knows your FAQs, your service details, and how to represent you accurately.</p>
+              </div>
+            </div>
+
+            <div class="included-item">
+              <div class="included-dot">&#128279;</div>
+              <div class="included-item-text">
+                <h4>Integration with your existing tools</h4>
+                <p>We connect it to the systems you already use — email, web forms, SMS, calendar, CRM. No new software required. No learning curve for you or your team.</p>
+              </div>
+            </div>
+
+            <div class="included-item">
+              <div class="included-dot">&#128737;</div>
+              <div class="included-item-text">
+                <h4>30-day active support after launch</h4>
+                <p>We monitor, tune, and improve it for the first 30 days. If something doesn't perform the way it should, we fix it — fast. You're not left to figure it out alone.</p>
+              </div>
+            </div>
+
+            <div class="included-item">
+              <div class="included-dot">&#128200;</div>
+              <div class="included-item-text">
+                <h4>Reporting and visibility</h4>
+                <p>You'll always know what your Digital Employee is doing — enquiries handled, follow-ups sent, appointments booked. Transparency built in from day one.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="included-aside">
+          <h3>The Auto Pilot</h3>
+          <p class="tagline">Runs while you work. Runs while you sleep.</p>
+          <div class="price-display">
+            <div class="label-setup">One-time setup</div>
+            <div class="amount-setup">$1,000</div>
+            <div style="margin-top:16px;" class="label-monthly">Then just</div>
+            <div class="amount-monthly">$50 / month</div>
+          </div>
+          <div class="included-cta">
+            <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+            <p class="cancel">No contracts. No lock-in. Cancel anytime.</p>
+          </div>
+          <hr style="border:none;border-top:1px solid #1E293B;margin:28px 0;" />
+          <p style="font-size:13px;color:#475569;line-height:1.7;">Questions before committing? Reach us at <a href="mailto:hello@overhauled.ai" style="color:var(--green);text-decoration:none;">hello@overhauled.ai</a> — we'll tell you straight whether this is the right fit for your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. FAQ ── -->
+  <section class="section faq">
+    <div class="container">
+      <div class="section-label">Common questions</div>
+      <h2 class="section-title">Answered honestly.</h2>
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <h4>What exactly is a "Digital Employee"?</h4>
+          <p>It's an AI system trained specifically on your business that handles defined tasks automatically — answering enquiries, following up on leads, booking appointments, sending reminders. It's not a generic chatbot. It knows your business, your pricing, your services, and your tone. Think of it as a capable team member who works 24/7 and never misses a message.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Does it replace my staff?</h4>
+          <p>No. It handles the repetitive, high-volume tasks that currently fall on you (or don't get done at all). Your staff — and you — focus on the work that actually requires a human. If anything, it makes your existing team more effective by removing the administrative noise.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>What tools does it connect to?</h4>
+          <p>It integrates with your existing tools — email inboxes, website contact forms, SMS, calendar apps (Google, Outlook, Calendly), and common CRMs. We assess your current setup during onboarding and build the integration accordingly. If you're not sure what you have, we'll figure it out together.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>What if it says something wrong?</h4>
+          <p>We build in guardrails so it only responds within what it's been trained on — it won't invent information or make promises you haven't approved. If it encounters a question it can't handle confidently, it escalates to you rather than guessing. And if something slips through, the 30-day support window exists precisely to catch and fix it.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>How long does setup take?</h4>
+          <p>Typically 5 to 10 business days from our initial call to go-live, depending on the complexity of your integrations. We handle everything. You'll review it before it goes live — nothing runs until you're satisfied with how it represents your business.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Can I cancel?</h4>
+          <p>Yes. The $50/month subscription has no minimum term and no cancellation fee. Cancel anytime with 30 days' notice. The setup fee is one-time and non-refundable — but if you get to go-live and it's genuinely not what was described, <a href="mailto:hello@overhauled.ai">talk to us</a>. We'll make it right.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Your business is ready to run <em>without you</em> being the glue holding it together.</h2>
+      <p>Set up The Auto Pilot and stop being the bottleneck. One setup. $50 a month. Works while you sleep.</p>
+      <a href="/#check" class="btn-primary">Set up The Auto Pilot &rarr;</a>
+      <p class="sub-note">$1,000 one-time setup &nbsp;&middot;&nbsp; $50/mo &nbsp;&middot;&nbsp; Cancel anytime &nbsp;&middot;&nbsp; Serving Guelph, Kitchener, Waterloo &amp; across Ontario</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="/" class="logo">Overhauled<span>.ai</span></a>
+          <p>AI automation for small businesses in Guelph, Kitchener, Waterloo, and across Ontario. We build Digital Employees that handle the work you shouldn't have to do yourself.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/#services">All Packages</a>
+          <a href="/tune-up/">The Tune-Up</a>
+          <a href="/auto-pilot/">The Auto Pilot</a>
+          <a href="/overhaul/">The Overhaul</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#check">Get Started</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@overhauled.ai">hello@overhauled.ai</a>
+          <span>Guelph, ON</span>
+          <span>Serving all of Ontario</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Overhauled.ai. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
