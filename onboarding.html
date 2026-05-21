@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Client Onboarding — Overhauled.ai</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --bg-dark: #0b1120;
+      --bg-dark-2: #131e30;
+      --border: #e2e8f0;
+      --border-focus: #84cc16;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-soft: #64748b;
+      --accent: #84cc16;
+      --accent-dark: #65a30d;
+      --accent-soft: #ecfccb;
+      --accent-glow: rgba(132,204,22,0.12);
+      --warm: #fb923c;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(15,23,42,0.08);
+      --shadow-md: 0 4px 16px rgba(15,23,42,0.10);
+      --shadow-lg: 0 12px 40px rgba(15,23,42,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg-soft);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1,h2,h3 { font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+    p { margin: 0 0 1em; }
+    a { color: var(--accent-dark); }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--bg-dark);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    .header-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(132,204,22,0.12);
+      border: 1px solid rgba(132,204,22,0.25);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--bg-dark);
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px;
+      background: radial-gradient(ellipse, rgba(132,204,22,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(132,204,22,0.1);
+      border: 1px solid rgba(132,204,22,0.25);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 540px;
+      margin: 0 auto 0;
+      line-height: 1.7;
+    }
+
+    /* ── PROGRESS ── */
+    .progress-wrap {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow-sm);
+    }
+    .progress-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .progress-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .step-item:last-child { flex: 0; }
+    .step-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-soft);
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+    .step-dot.active {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #0b1120;
+    }
+    .step-dot.done {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #0b1120;
+    }
+    .step-dot.done::after { content: '✓'; font-size: 0.8rem; }
+    .step-dot.done span { display: none; }
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      transition: background 0.25s ease;
+      margin: 0 4px;
+    }
+    .step-line.done { background: var(--accent); }
+    .step-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      white-space: nowrap;
+      display: none;
+    }
+    @media (min-width: 480px) { .step-label { display: block; } }
+    .step-item.active .step-label { color: var(--accent-dark); font-weight: 700; }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .form-card-header {
+      padding: 1.75rem 2rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+    .form-card-header h2 { font-size: 1.2rem; margin-bottom: 0.2rem; }
+    .form-card-header p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+
+    /* ── FORM STEPS ── */
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    /* ── FORM FIELDS ── */
+    .form-body { padding: 1.75rem 2rem; }
+    .field-group {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .field-row { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .field label .optional {
+      font-weight: 500;
+      color: var(--text-soft);
+      font-size: 0.78rem;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.93rem;
+      color: var(--text);
+      background: var(--bg-soft);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      outline: none;
+      width: 100%;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--border-focus);
+      background: #fff;
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+    .field select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 2.2rem; }
+    .field input::placeholder, .field textarea::placeholder { color: #94a3b8; }
+
+    /* ── CHECKBOX GROUP ── */
+    .check-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .check-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      user-select: none;
+    }
+    .check-option:hover { border-color: #bef264; background: var(--accent-soft); }
+    .check-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .check-option.selected {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .check-label { font-size: 0.9rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .check-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+    /* ── RADIO GROUP ── */
+    .radio-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    @media (max-width: 440px) { .radio-group { grid-template-columns: 1fr; } }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      user-select: none;
+    }
+    .radio-option:hover { border-color: #bef264; background: #fafff0; }
+    .radio-option input[type="radio"] {
+      width: 16px; height: 16px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+    .radio-option.selected {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .radio-label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    /* ── SECTION DIVIDER ── */
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin: 0.5rem 0 0.75rem;
+      padding-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FIELD HINT ── */
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      margin-top: -0.15rem;
+    }
+
+    /* ── BUTTONS ── */
+    .form-footer {
+      padding: 1.25rem 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--bg-soft);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.93rem;
+      font-weight: 700;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); background: #1e293b; }
+    .btn-accent {
+      background: var(--accent);
+      color: #0b1120;
+    }
+    .btn-accent:hover { transform: translateY(-1px); background: var(--accent-dark); color: #fff; box-shadow: var(--shadow-md); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+    .btn-ghost:hover { background: #fff; color: var(--text); }
+    .btn-lg { padding: 0.85rem 2rem; font-size: 1rem; }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none !important; }
+    .step-counter {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 3.5rem 2rem;
+    }
+    .success-icon {
+      width: 72px; height: 72px;
+      background: var(--accent-soft);
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+    .success-state h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .success-state p { color: var(--text-muted); max-width: 420px; margin: 0 auto 1.5rem; }
+
+    /* ── ERROR MESSAGE ── */
+    .error-msg {
+      font-size: 0.82rem;
+      color: #dc2626;
+      margin-top: 0.3rem;
+      display: none;
+    }
+    .field.has-error input,
+    .field.has-error select,
+    .field.has-error textarea {
+      border-color: #dc2626;
+    }
+    .field.has-error .error-msg { display: block; }
+
+    /* ── SUBMIT SPINNER ── */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+    .trust-item span { font-size: 1rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 2.5rem 1.25rem 3rem; }
+      .form-body { padding: 1.25rem 1.25rem; }
+      .form-card-header { padding: 1.25rem 1.25rem 1rem; }
+      .form-footer { padding: 1rem 1.25rem; }
+      .main { padding: 1.5rem 1rem 3rem; }
+      .progress-wrap { padding: 0.85rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="https://overhauled.ai" class="logo">overhauled<span>.ai</span></a>
+    <span class="header-tag">New Client</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Let's get started</div>
+    <h1>Tell me about your business</h1>
+    <p>A few quick questions so I can understand exactly where you're at and how to make the biggest difference.</p>
+  </section>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-inner">
+      <div class="progress-steps">
+        <div class="step-item active" id="si-1">
+          <div class="step-dot active" id="sd-1"><span>1</span></div>
+          <span class="step-label">About You</span>
+        </div>
+        <div class="step-line" id="sl-1"></div>
+        <div class="step-item" id="si-2">
+          <div class="step-dot" id="sd-2"><span>2</span></div>
+          <span class="step-label">The Problem</span>
+        </div>
+        <div class="step-line" id="sl-2"></div>
+        <div class="step-item" id="si-3">
+          <div class="step-dot" id="sd-3"><span>3</span></div>
+          <span class="step-label">Your Assets</span>
+        </div>
+        <div class="step-line" id="sl-3"></div>
+        <div class="step-item" id="si-4">
+          <div class="step-dot" id="sd-4"><span>4</span></div>
+          <span class="step-label">Goals & Budget</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN FORM -->
+  <main class="main">
+    <div class="form-card" id="formCard">
+
+      <!-- ── STEP 1: ABOUT YOU ── -->
+      <div class="step-panel active" id="panel-1">
+        <div class="form-card-header">
+          <div class="step-icon" style="background:#f0fdf4;">🙋</div>
+          <div>
+            <h2>About you & your business</h2>
+            <p>The basics — so I know who I'm talking to.</p>
+          </div>
+        </div>
+        <div class="form-body">
+          <div class="field-group">
+            <div class="field-row">
+              <div class="field" id="f-firstName">
+                <label>First name</label>
+                <input type="text" name="firstName" id="firstName" placeholder="Jane" autocomplete="given-name" />
+                <span class="error-msg">Please enter your first name</span>
+              </div>
+              <div class="field" id="f-lastName">
+                <label>Last name</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Smith" autocomplete="family-name" />
+                <span class="error-msg">Please enter your last name</span>
+              </div>
+            </div>
+
+            <div class="field" id="f-email">
+              <label>Email address</label>
+              <input type="email" name="email" id="email" placeholder="jane@yourbusiness.com" autocomplete="email" />
+              <span class="error-msg">Please enter a valid email address</span>
+            </div>
+
+            <div class="field-row">
+              <div class="field" id="f-businessName">
+                <label>Business name</label>
+                <input type="text" name="businessName" id="businessName" placeholder="Acme Co." />
+                <span class="error-msg">Please enter your business name</span>
+              </div>
+              <div class="field">
+                <label>Website <span class="optional">(optional)</span></label>
+                <input type="text" name="website" id="website" placeholder="yoursite.com" />
+              </div>
+            </div>
+
+            <div class="field" id="f-industry">
+              <label>What industry are you in?</label>
+              <select name="industry" id="industry">
+                <option value="">Select your industry…</option>
+                <option>E-commerce / Retail</option>
+                <option>Professional Services (law, accounting, consulting)</option>
+                <option>Home Services (trades, contractors, landscaping)</option>
+                <option>Health & Wellness</option>
+                <option>Food & Hospitality</option>
+                <option>Real Estate</option>
+                <option>SaaS / Technology</option>
+                <option>Marketing / Creative Agency</option>
+                <option>Trades & Manufacturing</option>
+                <option>Education & Coaching</option>
+                <option>Other</option>
+              </select>
+              <span class="error-msg">Please select your industry</span>
+            </div>
+
+            <div class="field" id="f-businessAge">
+              <label>How long have you been in business?</label>
+              <select name="businessAge" id="businessAge">
+                <option value="">Select…</option>
+                <option>Less than 1 year</option>
+                <option>1–2 years</option>
+                <option>3–5 years</option>
+                <option>6–10 years</option>
+                <option>10+ years</option>
+              </select>
+              <span class="error-msg">Please select how long you've been in business</span>
+            </div>
+
+            <div class="field">
+              <label>How did you hear about Overhauled? <span class="optional">(optional)</span></label>
+              <select name="referralSource" id="referralSource">
+                <option value="">Select…</option>
+                <option>Google search</option>
+                <option>Referral from a friend or colleague</option>
+                <option>Social media</option>
+                <option>Cold email</option>
+                <option>I've worked with you before</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-footer">
+          <span class="step-counter">Step 1 of 4</span>
+          <button class="btn btn-primary" onclick="nextStep(1)">Next — The Problem →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: THE PROBLEM ── -->
+      <div class="step-panel" id="panel-2">
+        <div class="form-card-header">
+          <div class="step-icon" style="background:#fff7ed;">🔍</div>
+          <div>
+            <h2>What's not working?</h2>
+            <p>Be as honest as you like — the more specific, the better I can help.</p>
+          </div>
+        </div>
+        <div class="form-body">
+          <div class="field-group">
+
+            <div class="field" id="f-mainProblems">
+              <label>Which of these are you struggling with? <span class="optional">(pick all that apply)</span></label>
+              <div class="check-group" id="mainProblemsGroup">
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="not-enough-leads" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Not enough leads or enquiries</div>
+                    <div class="check-desc">Traffic coming in but nobody's getting in touch</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="website-not-converting" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Website isn't converting visitors into customers</div>
+                    <div class="check-desc">People visit but nothing happens</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="no-google-visibility" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Not showing up on Google / low organic traffic</div>
+                    <div class="check-desc">Hard to find unless you search the exact business name</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="ads-not-working" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Paid ads (Google/Meta) aren't profitable</div>
+                    <div class="check-desc">Spending money but not getting the return</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="slow-outdated-site" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Website looks outdated or loads slowly</div>
+                    <div class="check-desc">Embarrassed to send people there</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="no-strategy" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">No clear marketing strategy or direction</div>
+                    <div class="check-desc">Trying things randomly, nothing sticking</div>
+                  </div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="mainProblems" value="other-problem" onchange="toggleCheck(this)" />
+                  <div>
+                    <div class="check-label">Something else</div>
+                    <div class="check-desc">I'll describe it below</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="field" id="f-problemDetail">
+              <label>Describe the problem in your own words</label>
+              <textarea name="problemDetail" id="problemDetail" rows="4" placeholder="What's the main thing that isn't working? What have you already tried? The more detail, the better…"></textarea>
+              <span class="error-msg">Please describe what you're experiencing</span>
+            </div>
+
+            <div class="field">
+              <label>How long has this been a problem? <span class="optional">(optional)</span></label>
+              <select name="problemDuration" id="problemDuration">
+                <option value="">Select…</option>
+                <option>Just noticed it</option>
+                <option>A few months</option>
+                <option>6–12 months</option>
+                <option>Over a year</option>
+                <option>Since we launched</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Have you worked with anyone else on this before? <span class="optional">(optional)</span></label>
+              <textarea name="pastAttempts" id="pastAttempts" rows="3" placeholder="e.g. hired an agency, tried doing it ourselves, ran Google Ads briefly…"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn-ghost" onclick="prevStep(2)">← Back</button>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="step-counter">Step 2 of 4</span>
+            <button class="btn btn-primary" onclick="nextStep(2)">Next — Your Assets →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: ASSETS ── -->
+      <div class="step-panel" id="panel-3">
+        <div class="form-card-header">
+          <div class="step-icon" style="background:#eff6ff;">🛠️</div>
+          <div>
+            <h2>What are you working with?</h2>
+            <p>Your current tools, platforms, and online presence.</p>
+          </div>
+        </div>
+        <div class="form-body">
+          <div class="field-group">
+
+            <div class="field">
+              <label>What platform is your website built on? <span class="optional">(optional)</span></label>
+              <select name="websitePlatform" id="websitePlatform">
+                <option value="">Select or skip…</option>
+                <option>WordPress</option>
+                <option>Shopify</option>
+                <option>Squarespace</option>
+                <option>Wix</option>
+                <option>Webflow</option>
+                <option>Custom / Developer-built</option>
+                <option>I don't have a website</option>
+                <option>I don't know</option>
+              </select>
+            </div>
+
+            <div class="section-title">Marketing & Ads</div>
+
+            <div class="field">
+              <label>Which advertising platforms are you currently using? <span class="optional">(optional)</span></label>
+              <div class="check-group">
+                <label class="check-option">
+                  <input type="checkbox" name="adPlatforms" value="google-ads" onchange="toggleCheck(this)" />
+                  <div><div class="check-label">Google Ads</div></div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="adPlatforms" value="meta-ads" onchange="toggleCheck(this)" />
+                  <div><div class="check-label">Meta Ads (Facebook / Instagram)</div></div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="adPlatforms" value="tiktok-ads" onchange="toggleCheck(this)" />
+                  <div><div class="check-label">TikTok Ads</div></div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="adPlatforms" value="linkedin-ads" onchange="toggleCheck(this)" />
+                  <div><div class="check-label">LinkedIn Ads</div></div>
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="adPlatforms" value="no-ads" onchange="toggleCheck(this)" />
+                  <div><div class="check-label">Not running ads right now</div></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Monthly website traffic (approximate) <span class="optional">(optional)</span></label>
+              <select name="monthlyTraffic" id="monthlyTraffic">
+                <option value="">Select or skip…</option>
+                <option>I don't know / no analytics set up</option>
+                <option>Under 500 visitors/month</option>
+                <option>500–2,000 visitors/month</option>
+                <option>2,000–10,000 visitors/month</option>
+                <option>10,000+ visitors/month</option>
+              </select>
+            </div>
+
+            <div class="section-title">Email & CRM</div>
+
+            <div class="field">
+              <label>Do you have an email list? <span class="optional">(optional)</span></label>
+              <select name="emailList" id="emailList">
+                <option value="">Select or skip…</option>
+                <option>No email list yet</option>
+                <option>Under 500 subscribers</option>
+                <option>500–2,000 subscribers</option>
+                <option>2,000–10,000 subscribers</option>
+                <option>10,000+ subscribers</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Do you use a CRM or email marketing tool? <span class="optional">(optional)</span></label>
+              <input type="text" name="crmTool" id="crmTool" placeholder="e.g. Mailchimp, HubSpot, Klaviyo, none…" />
+            </div>
+
+            <div class="field">
+              <label>Anything else I should know about your current setup? <span class="optional">(optional)</span></label>
+              <textarea name="assetNotes" id="assetNotes" rows="3" placeholder="Other tools, integrations, or things about your setup that are relevant…"></textarea>
+            </div>
+
+          </div>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn-ghost" onclick="prevStep(3)">← Back</button>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="step-counter">Step 3 of 4</span>
+            <button class="btn btn-primary" onclick="nextStep(3)">Next — Goals & Budget →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: GOALS & BUDGET ── -->
+      <div class="step-panel" id="panel-4">
+        <div class="form-card-header">
+          <div class="step-icon" style="background:#fefce8;">🎯</div>
+          <div>
+            <h2>Goals</h2>
+            <p>What does success look like for your business?</p>
+          </div>
+        </div>
+        <div class="form-body">
+          <div class="field-group">
+
+            <div class="field" id="f-successLooksLike">
+              <label>What does success look like in 6 months?</label>
+              <textarea name="successLooksLike" id="successLooksLike" rows="4" placeholder="e.g. double our monthly leads, rank on page 1 for our main keywords, fix our website so it actually converts, stop wasting money on ads that don't work…"></textarea>
+              <span class="error-msg">Please share what success looks like for you</span>
+            </div>
+
+
+            <div class="field">
+              <label>Anything else you'd like me to know? <span class="optional">(optional)</span></label>
+              <textarea name="anythingElse" id="anythingElse" rows="3" placeholder="Questions, context, things that are important to you that don't fit elsewhere…"></textarea>
+            </div>
+
+          </div>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn-ghost" onclick="prevStep(4)">← Back</button>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="step-counter">Step 4 of 4</span>
+            <button class="btn btn-accent btn-lg" id="submitBtn" onclick="submitForm()">
+              <span id="submitLabel">Send my answers →</span>
+              <div class="spinner" id="submitSpinner"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SUCCESS STATE ── -->
+      <div class="success-state" id="successState">
+        <div class="success-icon">✓</div>
+        <h2>You're all set!</h2>
+        <p>Thanks — I've received your answers and I'll be in touch within 1 business day to talk through next steps.</p>
+        <a href="https://calendly.com/ads-rtu/vrume-quick-connect" class="btn btn-accent btn-lg">
+          Or book a call now →
+        </a>
+      </div>
+
+    </div><!-- /form-card -->
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-item"><span>🔒</span> Your info stays private</div>
+      <div class="trust-item"><span>📬</span> Response within 1 business day</div>
+      <div class="trust-item"><span>🚫</span> No spam, ever</div>
+    </div>
+
+  </main>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    // ── CHECKBOX TOGGLE ──
+    function toggleCheck(el) {
+      el.closest('.check-option').classList.toggle('selected', el.checked);
+    }
+
+    // ── RADIO TOGGLE ──
+    function toggleRadio(el, groupId) {
+      document.querySelectorAll(`#${groupId} .radio-option`).forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      el.closest('.radio-option').classList.add('selected');
+    }
+
+    // ── PROGRESS UI ──
+    function updateProgress(step) {
+      for (let i = 1; i <= totalSteps; i++) {
+        const dot = document.getElementById(`sd-${i}`);
+        const item = document.getElementById(`si-${i}`);
+        const line = document.getElementById(`sl-${i}`);
+
+        dot.classList.remove('active','done');
+        item.classList.remove('active');
+        if (line) line.classList.remove('done');
+
+        if (i < step) {
+          dot.classList.add('done');
+          if (line) line.classList.add('done');
+        } else if (i === step) {
+          dot.classList.add('active');
+          item.classList.add('active');
+        }
+      }
+    }
+
+    // ── VALIDATION ──
+    function validateStep(step) {
+      let valid = true;
+
+      const clearError = (id) => {
+        const f = document.getElementById(`f-${id}`);
+        if (f) f.classList.remove('has-error');
+      };
+      const setError = (id) => {
+        const f = document.getElementById(`f-${id}`);
+        if (f) { f.classList.add('has-error'); valid = false; }
+      };
+
+      if (step === 1) {
+        ['firstName','lastName','email','businessName','industry','businessAge'].forEach(clearError);
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const businessName = document.getElementById('businessName').value.trim();
+        const industry = document.getElementById('industry').value;
+        const businessAge = document.getElementById('businessAge').value;
+
+        if (!firstName) setError('firstName');
+        if (!lastName) setError('lastName');
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) setError('email');
+        if (!businessName) setError('businessName');
+        if (!industry) setError('industry');
+        if (!businessAge) setError('businessAge');
+      }
+
+      if (step === 2) {
+        clearError('problemDetail');
+        const detail = document.getElementById('problemDetail').value.trim();
+        if (!detail) setError('problemDetail');
+      }
+
+      if (step === 4) {
+        // Success looks like
+        clearError('successLooksLike');
+        const success = document.getElementById('successLooksLike').value.trim();
+        if (!success) setError('successLooksLike');
+
+      }
+
+      return valid;
+    }
+
+    // ── NEXT STEP ──
+    function nextStep(from) {
+      if (!validateStep(from)) return;
+
+      document.getElementById(`panel-${from}`).classList.remove('active');
+      currentStep = from + 1;
+      document.getElementById(`panel-${currentStep}`).classList.add('active');
+      updateProgress(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── PREV STEP ──
+    function prevStep(from) {
+      document.getElementById(`panel-${from}`).classList.remove('active');
+      currentStep = from - 1;
+      document.getElementById(`panel-${currentStep}`).classList.add('active');
+      updateProgress(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── COLLECT DATA ──
+    function collectData() {
+      const val = (id) => (document.getElementById(id)?.value || '').trim();
+      const checked = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+      const radio = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value || '';
+
+      return {
+        firstName: val('firstName'),
+        lastName: val('lastName'),
+        email: val('email'),
+        businessName: val('businessName'),
+        website: val('website'),
+        industry: val('industry'),
+        businessAge: val('businessAge'),
+        referralSource: val('referralSource'),
+        mainProblems: checked('mainProblems'),
+        problemDetail: val('problemDetail'),
+        problemDuration: val('problemDuration'),
+        pastAttempts: val('pastAttempts'),
+        websitePlatform: val('websitePlatform'),
+        adPlatforms: checked('adPlatforms'),
+        monthlyTraffic: val('monthlyTraffic'),
+        emailList: val('emailList'),
+        crmTool: val('crmTool'),
+        assetNotes: val('assetNotes'),
+        successLooksLike: val('successLooksLike'),
+        anythingElse: val('anythingElse'),
+      };
+    }
+
+    // ── SUBMIT ──
+    async function submitForm() {
+      if (!validateStep(4)) return;
+
+      const btn = document.getElementById('submitBtn');
+      const label = document.getElementById('submitLabel');
+      const spinner = document.getElementById('submitSpinner');
+
+      btn.disabled = true;
+      label.textContent = 'Sending…';
+      spinner.style.display = 'block';
+
+      const data = collectData();
+
+      try {
+        const res = await fetch('/.netlify/functions/onboarding', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) throw new Error('Server error');
+
+        // Show success
+        for (let i = 1; i <= totalSteps; i++) {
+          document.getElementById(`panel-${i}`)?.classList.remove('active');
+        }
+        document.getElementById('successState').style.display = 'block';
+
+        // Mark all done in progress
+        for (let i = 1; i <= totalSteps; i++) {
+          document.getElementById(`sd-${i}`)?.classList.add('done');
+          if (i < totalSteps) document.getElementById(`sl-${i}`)?.classList.add('done');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } catch (err) {
+        btn.disabled = false;
+        label.textContent = 'Send my answers →';
+        spinner.style.display = 'none';
+        alert('Something went wrong — please try again or email hello@overhauled.ai directly.');
+      }
+    }
+
+    // ── INIT ──
+    updateProgress(1);
+  </script>
+
+</body>
+</html>
