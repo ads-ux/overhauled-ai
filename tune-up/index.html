@@ -394,18 +394,30 @@
       .hero-trust { gap: 16px; flex-direction: column; align-items: center; }
       .cta-section { padding: 70px 20px; }
     }
-  </style>
+  
+/* ── MOBILE NAV ── */
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1; }
+@media (max-width: 768px) {
+  nav { padding: 0 18px; position: relative; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-bottom: 1px solid #222; padding: 16px 18px 20px; gap: 14px; z-index: 200; }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .nav-cta { width: 100%; text-align: center; padding: 10px 18px; }
+}
+</style>
 </head>
 <body>
 
 <!-- ── NAVIGATION ── -->
 <nav>
-  <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
-  <div class="nav-links">
+  <a href="/" class="nav-logo">overhauled<span>.ai</span></a>
+  <div class="nav-links" id="nav-links">
     <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
     <a href="/#faq">FAQ</a>
-    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
+    <a href="/health-check" class="nav-cta">Free Website Audit →</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -422,7 +434,7 @@
       <span class="price-note">flat rate &middot; one-time &middot; 48-hour turnaround</span>
     </div>
     <div class="hero-ctas">
-      <a href="https://overhauled.ai/onboarding" class="btn-primary">Start My Tune Up →</a>
+      <a href="/health-check" class="btn-primary">Start My Tune Up →</a>
       <a href="#what-we-check" class="btn-ghost">See what's included</a>
     </div>
     <div class="hero-trust">
@@ -692,7 +704,7 @@
     <div class="section-label">Get Started</div>
     <h2 class="cta-title">Stop guessing. Start knowing.</h2>
     <p class="cta-sub">For $297, you'll have a clear picture of what's wrong, the top issues fixed, and a straight answer on what to do next — all within 48 hours.</p>
-    <a href="https://overhauled.ai/onboarding" class="btn-primary" style="font-size:17px; padding: 16px 34px;">Start Your Tune Up for $297 →</a>
+    <a href="/health-check" class="btn-primary" style="font-size:17px; padding: 16px 34px;">Start Your Tune Up for $297 →</a>
     <div class="cta-reassurance">
       <span>
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5l3 3L11.5 2.5"/></svg>
@@ -715,7 +727,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo">Overhauled<span>.ai</span></a>
+        <a href="/" class="logo">overhauled<span>.ai</span></a>
         <p>Websites for small businesses that need to actually work. Guelph, Kitchener, Waterloo, and across Ontario.</p>
       </div>
       <div class="footer-col">
@@ -732,7 +744,7 @@
       </div>
       <div class="footer-col">
         <h4>Get Started</h4>
-        <a href="https://overhauled.ai/onboarding">Free Check</a>
+        <a href="/health-check">Free Check</a>
         <span>Guelph &middot; Kitchener</span>
         <span>Waterloo &middot; Ontario</span>
       </div>
@@ -785,8 +797,28 @@ body { padding-bottom: 60px; }
 <div class="sticky-cta-bar">
   <div class="sticky-cta-inner">
     <span class="sticky-cta-text">Start your Tune Up for $297 — results in 48 hours.</span>
-    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+    <a href="/health-check" class="sticky-cta-btn">Get Started →</a>
   </div>
 </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(btn && links){
+    btn.addEventListener('click', function(){
+      links.classList.toggle('open');
+      btn.textContent = links.classList.contains('open') ? '✕' : '☰';
+    });
+    // Close nav when a link is clicked
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        links.classList.remove('open');
+        btn.textContent = '☰';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
