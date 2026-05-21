@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Tune Up — Website Audit & Quick Fixes | Overhauled.ai | Guelph, Kitchener, Waterloo</title>
+  <meta name="description" content="Find out exactly what's losing you customers — in 48 hours. Our $297 website audit finds what's broken, fixes the top 3 issues immediately, and gives you a clear plan. Serving small businesses in Guelph, Kitchener, Waterloo, and across Ontario." />
+  <meta name="keywords" content="website audit Guelph, website check Kitchener, fix my website Waterloo, website not working small business Ontario, website audit Ontario, small business website fix" />
+  <link rel="canonical" href="https://overhauled.ai/tune-up/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Tune Up — $297 Website Audit & Quick Fixes | Overhauled.ai" />
+  <meta property="og:description" content="We go through your website top to bottom, fix the top 3 issues immediately, and hand you a written report — all in 48 hours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://overhauled.ai/tune-up/" />
+
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Tune Up",
+    "description": "Website audit and quick-fix service. We check your site top to bottom, fix the top 3 issues immediately, and give you a written report — in 48 hours.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Overhauled.ai",
+      "areaServed": ["Guelph", "Kitchener", "Waterloo", "Cambridge", "Ontario"]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "297",
+      "priceCurrency": "CAD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "297",
+        "priceCurrency": "CAD",
+        "description": "Flat rate, one-time. $297 credited toward The Overhaul if you upgrade."
+      }
+    }
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green: #22C55E; --green-dim: #16A34A; --dark: #0A0A0A; --navy: #0F172A; --slate: #1E293B; --border: #1E293B; --text: #F8FAFC; --muted: #94A3B8; --light-border: #E2E8F0; --light-bg: #F8FAFC; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #0F172A; line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #1a1a1a; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { color: #fff; font-weight: 800; font-size: 17px; text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: var(--green); color: #000 !important; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 14px; }
+    .nav-cta:hover { background: var(--green-dim) !important; }
+    .section { padding: 80px 40px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 48px; max-width: 600px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .btn-primary { background: var(--green); color: #000; font-weight: 700; font-size: 16px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; }
+    .btn-primary:hover { background: var(--green-dim); transform: translateY(-1px); }
+    footer { background: var(--dark); border-top: 1px solid #111; padding: 48px 40px 32px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .logo { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; }
+    .footer-brand .logo span { color: var(--green); }
+    .footer-brand p { color: #555; font-size: 13px; margin-top: 10px; line-height: 1.6; max-width: 260px; }
+    .footer-col h4 { color: #888; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col a, .footer-col span { display: block; color: #555; font-size: 14px; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #111; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { color: #333; font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { color: #333; font-size: 13px; text-decoration: none; }
+    @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; } nav { padding: 0 20px; } .section { padding: 60px 20px; } }
+
+    /* ── PAGE-SPECIFIC STYLES ── */
+
+    /* Hero */
+    .hero {
+      background: var(--dark);
+      padding: 100px 40px 90px;
+      text-align: center;
+    }
+    .hero .container { max-width: 780px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5.5vw, 58px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .hero h1 em { color: var(--green); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .hero-price-pill {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin-bottom: 36px;
+    }
+    .hero-price-pill .price { font-size: 28px; font-weight: 900; color: #fff; letter-spacing: -1px; }
+    .hero-price-pill .price-note { font-size: 13px; color: var(--muted); }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-ghost {
+      border: 1px solid #333;
+      color: #aaa;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: #555; color: #fff; }
+    .hero-trust {
+      margin-top: 44px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: #555;
+    }
+    .hero-trust-item svg { color: var(--green); flex-shrink: 0; }
+
+    /* What We Check */
+    .checks-section { background: var(--light-bg); }
+    .checks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .check-card {
+      background: #fff;
+      border: 1px solid var(--light-border);
+      border-radius: 12px;
+      padding: 28px 26px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .check-card:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(34,197,94,0.07); }
+    .check-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(34,197,94,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .check-icon svg { color: var(--green); }
+    .check-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .check-card p { font-size: 13px; color: #64748B; line-height: 1.55; }
+
+    /* What You Get Back */
+    .deliverables-section { background: #fff; }
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .deliverable-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 36px 30px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .deliverable-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--green);
+    }
+    .deliverable-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .deliverable-card h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 12px; }
+    .deliverable-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* Why Start Here */
+    .why-section { background: var(--dark); }
+    .why-section .section-title { color: #fff; }
+    .why-section .section-label { color: var(--green); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 30px 28px;
+      transition: border-color 0.2s;
+    }
+    .why-card:hover { border-color: #333; }
+    .why-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .why-card p { font-size: 14px; color: #666; line-height: 1.6; }
+    .why-highlight {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* Process */
+    .process-section { background: var(--light-bg); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(16.66% + 20px);
+      right: calc(16.66% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--green) 50%, #E2E8F0 50%);
+      z-index: 0;
+    }
+    .process-step {
+      text-align: center;
+      padding: 0 24px 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-bubble {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 3px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--green);
+    }
+    .process-step h3 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .process-step p { font-size: 14px; color: #64748B; line-height: 1.6; max-width: 260px; margin: 0 auto; }
+    .process-step .step-time {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.5px;
+    }
+
+    /* FAQ */
+    .faq-section { background: #fff; }
+    .faq-list { max-width: 760px; }
+    .faq-item {
+      border-bottom: 1px solid var(--light-border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--light-border); }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      gap: 16px;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--light-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s;
+    }
+    details[open] .faq-chevron { transform: rotate(180deg); background: rgba(34,197,94,0.1); }
+    details[open] .faq-chevron svg { color: var(--green); }
+    .faq-answer {
+      padding: 0 0 22px;
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+    .faq-answer strong { color: var(--navy); }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--navy);
+      text-align: center;
+      padding: 100px 40px;
+    }
+    .cta-section .section-label { justify-content: center; display: block; }
+    .cta-title {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .cta-reassurance {
+      margin-top: 22px;
+      font-size: 13px;
+      color: #3D5A80;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cta-reassurance span { display: flex; align-items: center; gap: 6px; }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-steps::before { display: none; }
+      .process-step { padding: 0 0 40px; text-align: left; display: flex; gap: 20px; }
+      .step-bubble { margin: 0; flex-shrink: 0; width: 52px; height: 52px; font-size: 18px; }
+      .process-step-content { flex: 1; }
+      .process-step p { margin: 0; }
+    }
+    @media (max-width: 768px) {
+      .hero { padding: 70px 20px 60px; }
+      .checks-grid { grid-template-columns: 1fr; }
+      .hero-trust { gap: 16px; flex-direction: column; align-items: center; }
+      .cta-section { padding: 70px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
+  <div class="nav-links">
+    <a href="/#services">Services</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#check" class="nav-cta">Get Started →</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+      The Tune Up — $297 Flat Rate
+    </div>
+    <h1>Find Out Exactly What's<br /><em>Losing You Customers</em><br />— in 48 Hours</h1>
+    <p class="hero-sub">You don't need to guess what's wrong with your website. For $297, we go through your site top to bottom, fix the top 3 issues immediately, and hand you a written report with a clear plan for the rest.</p>
+    <div class="hero-price-pill">
+      <span class="price">$297</span>
+      <span class="price-note">flat rate &middot; one-time &middot; 48-hour turnaround</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="/#check" class="btn-primary">Start My Tune Up →</a>
+      <a href="#what-we-check" class="btn-ghost">See what's included</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7l3.5 3.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No commitment required
+      </div>
+      <div class="hero-trust-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7l3.5 3.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        $297 credited toward The Overhaul
+      </div>
+      <div class="hero-trust-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7l3.5 3.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Fixes done before we hand anything over
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT WE CHECK ── -->
+<section class="section checks-section" id="what-we-check">
+  <div class="container">
+    <div class="section-label">What We Check</div>
+    <h2 class="section-title">Every corner of your site — not just a surface scan</h2>
+    <div class="checks-grid">
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Mobile Speed Test</h3>
+        <p>Most of your visitors are on a phone. We check how fast your site loads on mobile and flag anything that's making people leave before the page finishes.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Contact Form Test</h3>
+        <p>We submit your contact form ourselves — so we know for certain whether leads are actually getting through. Broken forms are the #1 silent killer of small business websites.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <h3>Broken Link Check</h3>
+        <p>Dead links frustrate visitors and hurt your Google ranking. We crawl every page and flag any link that leads nowhere — including links in your navigation and footer.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>Local SEO Audit</h3>
+        <p>Are you showing up when people in Guelph, Kitchener, or Waterloo search for what you do? We check your on-page signals, title tags, and local keyword targeting.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Google Business Profile Check</h3>
+        <p>Your Google listing is often the first thing people see. We check that it's claimed, accurate, and pointing to the right place — and flag anything that's costing you trust.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Security & SSL Check</h3>
+        <p>A browser warning that your site "isn't secure" will stop a visitor cold. We confirm your SSL certificate is valid, up to date, and not about to expire.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Core Web Vitals</h3>
+        <p>Google uses page experience signals as a ranking factor. We check your Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint scores.</p>
+      </div>
+
+      <div class="check-card">
+        <div class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Content & Call-to-Action Review</h3>
+        <p>Is it clear what you do, who you serve, and what a visitor should do next? We flag pages where the message is murky or the next step isn't obvious.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU GET BACK ── -->
+<section class="section deliverables-section" id="deliverables">
+  <div class="container">
+    <div class="section-label">What You Get Back</div>
+    <h2 class="section-title">Not just a list of problems. Actual fixes — and a plan.</h2>
+    <div class="deliverables-grid">
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">Deliverable 01</div>
+        <h3>Top 3 Issues Fixed — Immediately</h3>
+        <p>We don't just audit and walk away. The three highest-impact problems we find — broken form, slow image, missing meta tag, whatever it is — get fixed before we hand anything over. You see results the same day you get the report.</p>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">Deliverable 02</div>
+        <h3>Plain-English Written Report</h3>
+        <p>A clear, jargon-free document covering everything we found: what's working, what's hurting you, and why it matters in plain terms. No 40-page PDF you'll never read. Just the stuff that actually affects whether people call you.</p>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">Deliverable 03</div>
+        <h3>Clear Next-Step Recommendation</h3>
+        <p>After the audit, we'll tell you honestly what we think you should do next — whether that's a quick round of fixes, a bigger rebuild, or nothing at all. No upsell pressure. Just a straight answer based on what we actually found.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY START HERE ── -->
+<section class="section why-section" id="why-start-here">
+  <div class="container">
+    <div class="section-label">Why Start Here</div>
+    <h2 class="section-title" style="color:#fff;">The lowest-risk way to find out what's really going on</h2>
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h3>You'll finally know — instead of wondering</h3>
+        <p>Most small business owners have a nagging feeling their website isn't working, but no way to confirm it. The Tune Up removes the guesswork. After 48 hours, you'll know exactly what's costing you leads and what to do about it.</p>
+      </div>
+
+      <div class="why-card">
+        <h3><span class="why-highlight">$297 credited</span> if you decide to go further</h3>
+        <p>If the audit reveals your site needs a bigger overhaul and you decide to move forward with us, your $297 comes off the price of The Overhaul — no strings attached. You're not throwing money away by starting small.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>You get fixes, not just findings</h3>
+        <p>Other audits give you a spreadsheet and wish you luck. We fix the top 3 issues as part of the package. That means you're not spending $297 just to learn you have problems — you're spending $297 to solve some of them.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>48-hour turnaround, flat rate — no surprises</h3>
+        <p>$297 is the price. It doesn't change based on how many issues we find or how long it takes. You know exactly what you're getting into before you say yes. And we deliver in 48 hours, not 48 days.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── THE PROCESS ── -->
+<section class="section process-section" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three steps. 48 hours. Done.</h2>
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-bubble">1</div>
+        <div class="process-step-content">
+          <h3>Submit Your Site</h3>
+          <p>Fill out the short form with your website URL and a bit of context about your business. That's all we need to get started. No calls required, no back-and-forth.</p>
+          <span class="step-time">Takes 5 minutes</span>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-bubble">2</div>
+        <div class="process-step-content">
+          <h3>We Audit &amp; Fix</h3>
+          <p>We go through your site top to bottom — checking every item on the list, identifying the biggest problems, and making the top 3 fixes directly. No check-ins needed from you.</p>
+          <span class="step-time">We handle everything</span>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-bubble">3</div>
+        <div class="process-step-content">
+          <h3>You Get Your Report</h3>
+          <p>Within 48 hours, your written report lands in your inbox — with the fixes already done and a clear recommendation for what to do next. Review it on your own time.</p>
+          <span class="step-time">Within 48 hours</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Answers to what you're probably wondering</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What exactly do you fix — and what do you just report on?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">We fix the <strong>top 3 highest-impact issues</strong> we find — things like a broken contact form, a missing SSL redirect, slow images, or a missing page title. For issues that need bigger changes (a site redesign, new content, a different platform), we document them clearly in the report with our recommendation. You'll always know exactly what was done and what still needs attention.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Do you need access to my website to do this?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">For the audit itself, no — we can check most things from the front end. To <strong>make the fixes</strong>, yes, we'll need temporary login credentials or FTP access. We'll request only what we need, and you can revoke access once we're done. We treat your site with the same care we'd want for our own.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What if my site turns out to need a full rebuild?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">We'll tell you honestly. If the audit shows that your current site has fundamental problems that can't be patched, we'll say so in the report — along with what a rebuild would realistically involve. If you decide to move forward with <strong>The Overhaul</strong>, your $297 Tune Up fee is credited toward the cost. You're not wasting money by starting here.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What platforms do you work with?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">We work with <strong>WordPress, Squarespace, Wix, Shopify, Webflow</strong>, and most other common website platforms. If you're not sure what your site is built on, that's fine — just share the URL and we'll figure it out. The audit applies to any site. The fixes may vary slightly depending on platform access, which we'll clarify upfront.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Is the $297 credited if I upgrade to The Overhaul?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">Yes — <strong>always, no expiry</strong>. If you complete a Tune Up and later decide you want a full site rebuild with The Overhaul, the $297 you paid comes straight off the project price. There's no time limit on that credit, and it doesn't require you to decide right away. Start here, take your time, and we'll be here when you're ready.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          I'm in Guelph / Kitchener / Waterloo — do you work with local businesses?
+          <div class="faq-chevron">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+          </div>
+        </summary>
+        <p class="faq-answer">Absolutely. We work with small businesses across <strong>Guelph, Kitchener, Waterloo, Cambridge, and the surrounding area</strong> — and we specifically audit for local SEO signals like your Google Business Profile and local keyword presence. If ranking in your city matters to you (and it should), we pay extra attention to that as part of the Tune Up.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA SECTION ── -->
+<section class="cta-section" id="start">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2 class="cta-title">Stop guessing. Start knowing.</h2>
+    <p class="cta-sub">For $297, you'll have a clear picture of what's wrong, the top issues fixed, and a straight answer on what to do next — all within 48 hours.</p>
+    <a href="/#check" class="btn-primary" style="font-size:17px; padding: 16px 34px;">Start Your Tune Up for $297 →</a>
+    <div class="cta-reassurance">
+      <span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5l3 3L11.5 2.5"/></svg>
+        Flat rate, no hidden fees
+      </span>
+      <span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5l3 3L11.5 2.5"/></svg>
+        48-hour delivery
+      </span>
+      <span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5l3 3L11.5 2.5"/></svg>
+        $297 credited toward The Overhaul
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">Overhauled<span>.ai</span></a>
+        <p>Websites for small businesses that need to actually work. Guelph, Kitchener, Waterloo, and across Ontario.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/tune-up/">The Tune Up</a>
+        <a href="/overhaul/">The Overhaul</a>
+        <a href="/auto-pilot/">Auto Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/#services">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <a href="/#check">Free Check</a>
+        <span>Guelph &middot; Kitchener</span>
+        <span>Waterloo &middot; Ontario</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Overhauled.ai. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
