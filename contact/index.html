@@ -102,17 +102,29 @@ footer{background:#050505;border-top:1px solid #111;padding:40px;text-align:cent
 .footer-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s}
 .footer-links a:hover{color:#fff}
 .footer-copy{color:#333;font-size:12px}
+
+/* ── MOBILE NAV ── */
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1; }
+@media (max-width: 768px) {
+  nav { padding: 0 18px; position: relative; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-bottom: 1px solid #222; padding: 16px 18px 20px; gap: 14px; z-index: 200; }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .nav-cta { width: 100%; text-align: center; padding: 10px 18px; }
+}
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-logo">overhauled<span>.ai</span></a>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
     <a href="/#faq">FAQ</a>
-    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
+    <a href="/health-check" class="nav-cta">Free Website Audit →</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
 </nav>
 
 <section class="contact-hero">
@@ -239,5 +251,25 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 </script>
 
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(btn && links){
+    btn.addEventListener('click', function(){
+      links.classList.toggle('open');
+      btn.textContent = links.classList.contains('open') ? '✕' : '☰';
+    });
+    // Close nav when a link is clicked
+    links.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        links.classList.remove('open');
+        btn.textContent = '☰';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
