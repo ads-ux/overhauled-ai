@@ -394,10 +394,10 @@
 <nav>
   <a href="/" class="nav-logo">Overhauled<span>.ai</span></a>
   <div class="nav-links">
-    <a href="/#services">Services</a>
+    <a href="/#packages">Services</a>
     <a href="/#pricing">Pricing</a>
     <a href="/#faq">FAQ</a>
-    <a href="/#check" class="nav-cta">Get Started →</a>
+    <a href="https://overhauled.ai/onboarding" class="nav-cta">Get Started →</a>
   </div>
 </nav>
 
@@ -415,7 +415,7 @@
       <span class="price-note">flat rate &middot; one-time &middot; 48-hour turnaround</span>
     </div>
     <div class="hero-ctas">
-      <a href="/#check" class="btn-primary">Start My Tune Up →</a>
+      <a href="https://overhauled.ai/onboarding" class="btn-primary">Start My Tune Up →</a>
       <a href="#what-we-check" class="btn-ghost">See what's included</a>
     </div>
     <div class="hero-trust">
@@ -685,7 +685,7 @@
     <div class="section-label">Get Started</div>
     <h2 class="cta-title">Stop guessing. Start knowing.</h2>
     <p class="cta-sub">For $297, you'll have a clear picture of what's wrong, the top issues fixed, and a straight answer on what to do next — all within 48 hours.</p>
-    <a href="/#check" class="btn-primary" style="font-size:17px; padding: 16px 34px;">Start Your Tune Up for $297 →</a>
+    <a href="https://overhauled.ai/onboarding" class="btn-primary" style="font-size:17px; padding: 16px 34px;">Start Your Tune Up for $297 →</a>
     <div class="cta-reassurance">
       <span>
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5l3 3L11.5 2.5"/></svg>
@@ -719,13 +719,13 @@
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="/#services">How It Works</a>
+        <a href="/#packages">How It Works</a>
         <a href="/#pricing">Pricing</a>
         <a href="/#faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h4>Get Started</h4>
-        <a href="/#check">Free Check</a>
+        <a href="https://overhauled.ai/onboarding">Free Check</a>
         <span>Guelph &middot; Kitchener</span>
         <span>Waterloo &middot; Ontario</span>
       </div>
@@ -740,5 +740,46 @@
   </div>
 </footer>
 
+
+<style>
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #22C55E;
+  padding: 14px 24px;
+  z-index: 999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.sticky-cta-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sticky-cta-text { font-size: 16px; font-weight: 700; color: #000; }
+.sticky-cta-btn {
+  background: #000; color: #22C55E;
+  font-weight: 800; font-size: 15px;
+  padding: 10px 24px; border-radius: 7px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.sticky-cta-btn:hover { background: #111; }
+/* add bottom padding to body so sticky bar doesn't cover content */
+body { padding-bottom: 60px; }
+@media(max-width:600px){
+  .sticky-cta-text { font-size: 13px; }
+  .sticky-cta-btn { font-size: 13px; padding: 8px 16px; }
+}
+</style>
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta-bar">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-text">Start your Tune Up for $297 — results in 48 hours.</span>
+    <a href="https://overhauled.ai/onboarding" class="sticky-cta-btn">Get Started →</a>
+  </div>
+</div>
 </body>
 </html>
