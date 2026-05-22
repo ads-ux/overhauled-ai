@@ -53,3 +53,29 @@
   to     = "/about"
   status = 301
   force  = true
+
+# Redirect stale /audit page → /tune-up/ (renamed package)
+[[redirects]]
+  from   = "/audit"
+  to     = "/tune-up/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/audit/*"
+  to     = "/tune-up/"
+  status = 301
+  force  = true
+
+# Redirect old /ai-agents page → /work/ (our case studies)
+[[redirects]]
+  from   = "/ai-agents"
+  to     = "/work/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/ai-agents.html"
+  to     = "/work/"
+  status = 301
+  force  = true
