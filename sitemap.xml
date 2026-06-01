@@ -111,18 +111,5 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Legal -->
-  <url>
-    <loc>https://overhauled.ai/privacy/</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://overhauled.ai/terms/</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
 
 </urlset>
