@@ -1,5 +1,5 @@
-// netlify/functions/audit.js
-// Receives health-check form submission, runs site audit, emails report to prospect.
+// netlify/functions/assessment.js
+// Receives health-check form submission, runs site assessment, emails report to prospect.
 // Requires env var: RESEND_API_KEY (get a free one at resend.com)
 
 const https = require('https');
@@ -15,7 +15,7 @@ function httpGet(url, timeoutMs = 9000) {
 
     const req = require(url.startsWith('https') ? 'https' : 'http').get(
       url,
-      { headers: { 'User-Agent': 'OverhauledAI-Auditor/1.0' } },
+      { headers: { 'User-Agent': 'OverhauledAI-Assessor/1.0' } },
       (res) => {
         let body = '';
         const MAX = 500_000; // 500 KB cap
@@ -65,9 +65,9 @@ function resendPost(apiKey, payload) {
   });
 }
 
-// ─── Audit engine ────────────────────────────────────────────────────────────
+// ─── Assessment engine ────────────────────────────────────────────────────────────
 
-async function runAudit(rawUrl) {
+async function runAssessment(rawUrl) {
   const siteUrl = rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`;
   const result = {
     url: siteUrl,
@@ -166,21 +166,21 @@ function analyzeHTML(html, siteUrl) {
 function parsePSI(psi) {
   if (!psi.lighthouseResult) return null;
   const cats = psi.lighthouseResult.categories || {};
-  const audits = psi.lighthouseResult.audits || {};
+  const assessments = psi.lighthouseResult.audits || {};
 
   const score = (cat) => cat ? Math.round(cat.score * 100) : null;
 
-  const metricVal = (id) => audits[id]?.displayValue || null;
-  const metricNum = (id) => audits[id]?.numericValue || null;
+  const metricVal = (id) => assessments[id]?.displayValue || null;
+  const metricNum = (id) => assessments[id]?.numericValue || null;
 
   // Opportunities: passed = 1, failed < 1
-  const opportunities = Object.values(audits)
+  const opportunities = Object.values(assessments)
     .filter(a => a.score !== null && a.score !== undefined && a.score < 0.9 && a.details?.type === 'opportunity')
     .sort((a, b) => (a.score ?? 1) - (b.score ?? 1))
     .slice(0, 6)
     .map(a => ({ id: a.id, title: a.title, displayValue: a.displayValue }));
 
-  const diagnostics = Object.values(audits)
+  const diagnostics = Object.values(assessments)
     .filter(a => a.score !== null && a.score !== undefined && a.score < 0.9 && a.details?.type !== 'opportunity' && a.title)
     .filter(a => [
       'render-blocking-resources', 'uses-optimized-images', 'uses-text-compression',
@@ -208,30 +208,30 @@ function parsePSI(psi) {
     },
     opportunities,
     diagnostics,
-    crawlable: audits['is-crawlable']?.score === 1,
-    hasTitle: audits['document-title']?.score === 1,
-    hasMetaDesc: audits['meta-description']?.score === 1,
-    hasViewport: audits['viewport']?.score === 1,
-    tapTargetsOk: (audits['tap-targets']?.score ?? 1) > 0.8,
+    crawlable: assessments['is-crawlable']?.score === 1,
+    hasTitle: assessments['document-title']?.score === 1,
+    hasMetaDesc: assessments['meta-description']?.score === 1,
+    hasViewport: assessments['viewport']?.score === 1,
+    tapTargetsOk: (assessments['tap-targets']?.score ?? 1) > 0.8,
   };
 }
 
 // ─── Issue generation (plain English) ────────────────────────────────────────
 
-function buildIssues(audit) {
+function buildIssues(assessment) {
   const issues = []; // { severity, category, text, fix }
   const wins = [];
-  const h = audit.html;
-  const p = audit.psi;
+  const h = assessment.html;
+  const p = assessment.psi;
 
   // Reachability
-  if (!audit.reachable) {
-    issues.push({ severity: 'critical', category: 'Access', text: "Your website couldn't be reached during the audit.", fix: "Check that your domain is active and your hosting is running. If visitors can't reach your site, every minute it's down is lost business." });
+  if (!assessment.reachable) {
+    issues.push({ severity: 'critical', category: 'Access', text: "Your website couldn't be reached during the assessment.", fix: "Check that your domain is active and your hosting is running. If visitors can't reach your site, every minute it's down is lost business." });
     return { issues, wins };
   }
 
   // HTTPS
-  if (!audit.isHttps) {
+  if (!assessment.isHttps) {
     issues.push({ severity: 'critical', category: 'Security', text: 'Your site shows a "Not Secure" warning in browsers.', fix: "Install an SSL certificate — it's usually free through your hosting provider. Until you do, visitors see a scary security warning before they even see your content. Most will leave immediately." });
   } else {
     wins.push('Your site has a security certificate — visitors see the padlock ✓');
@@ -300,16 +300,16 @@ function buildIssues(audit) {
   }
 
   // robots.txt
-  if (audit.robots && !audit.robots.present) {
+  if (assessment.robots && !assessment.robots.present) {
     issues.push({ severity: 'low', category: 'Technical', text: 'A small technical file that helps Google navigate your site is missing.', fix: "Create a robots.txt file — it's a simple text file that your developer or web host can add quickly. At minimum it should point Google to your sitemap." });
-  } else if (audit.robots?.present) {
+  } else if (assessment.robots?.present) {
     wins.push("Google has the navigation guide it needs (robots.txt) ✓");
   }
 
   // sitemap.xml
-  if (audit.sitemap && !audit.sitemap.present) {
+  if (assessment.sitemap && !assessment.sitemap.present) {
     issues.push({ severity: 'medium', category: 'Technical', text: "Google doesn't have a map of your site pages — some of your pages may never be discovered or shown in search results.", fix: "Generate a sitemap (most website platforms do this automatically or with a free plugin) and submit it to Google Search Console. This tells Google about every page on your site." });
-  } else if (audit.sitemap?.present) {
+  } else if (assessment.sitemap?.present) {
     wins.push('Google has a map of all your site pages (sitemap.xml) ✓');
   }
 
@@ -326,7 +326,7 @@ function buildIssues(audit) {
     }
 
     if (p.seoScore !== null && p.seoScore < 80) {
-      issues.push({ severity: 'high', category: 'Google Ranking', text: `Google's own SEO audit flagged problems with your site (score: ${p.seoScore}/100). This is directly affecting where you show up in search results.`, fix: 'Review the specific issues listed in this report. Each one you fix is a step up in Google rankings.' });
+      issues.push({ severity: 'high', category: 'Google Ranking', text: `Google's own SEO assessment flagged problems with your site (score: ${p.seoScore}/100). This is directly affecting where you show up in search results.`, fix: 'Review the specific issues listed in this report. Each one you fix is a step up in Google rankings.' });
     }
 
     if (!p.crawlable) {
@@ -346,10 +346,10 @@ function buildIssues(audit) {
 
 // ─── Business opportunities ───────────────────────────────────────────────────
 
-function buildBusinessInsights(audit) {
+function buildBusinessInsights(assessment) {
   const tips = [];
-  const h = audit.html;
-  const p = audit.psi;
+  const h = assessment.html;
+  const p = assessment.psi;
 
   if (h && !h.hasContactForm && !h.hasPhone) {
     tips.push({ icon: '📞', title: "Make it easy for people to reach you", body: "Your site has no visible contact form or phone number. People who can't easily reach you don't wait — they call your competitor instead. Add your phone number to the top of every page and include a simple contact form. This is often the single biggest conversion improvement a local business can make." });
@@ -390,12 +390,12 @@ function buildBusinessInsights(audit) {
 
 // ─── Email template ───────────────────────────────────────────────────────────
 
-function buildReportEmail(name, url, audit) {
-  const { issues, wins } = buildIssues(audit);
-  const businessTips = buildBusinessInsights(audit);
-  const p = audit.psi;
-  const h = audit.html;
-  const hostname = audit.hostname || url;
+function buildReportEmail(name, url, assessment) {
+  const { issues, wins } = buildIssues(assessment);
+  const businessTips = buildBusinessInsights(assessment);
+  const p = assessment.psi;
+  const h = assessment.html;
+  const hostname = assessment.hostname || url;
   const firstName = (name && name !== 'there') ? name.split(' ')[0] : 'there';
 
   const criticalCount = issues.filter(i => i.severity === 'critical').length;
@@ -433,7 +433,7 @@ function buildReportEmail(name, url, audit) {
     ? '🟢 Works properly on phones and tablets'
     : '🔴 Likely broken on phones — needs fixing urgently';
 
-  const httpsReadout = audit.isHttps
+  const httpsReadout = assessment.isHttps
     ? '🟢 Secure — visitors see a padlock, not a warning'
     : '🔴 Not secure — browsers are showing visitors a "Not Secure" warning';
 
@@ -523,7 +523,7 @@ function buildReportEmail(name, url, audit) {
   <tr><td style="padding:36px 36px 32px;">
 
     <p style="font-size:17px;color:#1e293b;margin:0 0 6px;font-weight:600;">Hi ${firstName},</p>
-    <p style="font-size:15px;color:#475569;margin:0 0 24px;line-height:1.6;">I've finished the full audit on <strong>${url}</strong>. Everything below is written in plain English — no tech jargon, just an honest picture of what's working, what isn't, and what to do about it.</p>
+    <p style="font-size:15px;color:#475569;margin:0 0 24px;line-height:1.6;">I've finished the full assessment on <strong>${url}</strong>. Everything below is written in plain English — no tech jargon, just an honest picture of what's working, what isn't, and what to do about it.</p>
 
     <!-- Plain English Summary -->
     <div style="background:#f8fafc;border-radius:12px;padding:20px 24px;margin-bottom:28px;border-left:4px solid #84cc16;">
@@ -598,9 +598,9 @@ function buildReportEmail(name, url, audit) {
 </body></html>`;
 }
 
-function buildNotifyEmail(name, email, phone, url, audit) {
-  const { issues } = buildIssues(audit);
-  const p = audit.psi;
+function buildNotifyEmail(name, email, phone, url, assessment) {
+  const { issues } = buildIssues(assessment);
+  const p = assessment.psi;
   return `<h2>New health check submitted</h2>
 <p><strong>Site:</strong> ${url}<br>
 <strong>Name:</strong> ${name}<br>
@@ -671,7 +671,7 @@ async function addToHubSpot(email, website, name) {
       req.end();
     });
   } catch (err) {
-    // Never block the audit report over a HubSpot failure
+    // Never block the assessment report over a HubSpot failure
     console.error('[hubspot] Error:', err.message);
   }
 }
@@ -715,23 +715,23 @@ exports.handler = async function (event) {
 
   const apiKey   = process.env.RESEND_API_KEY;
 
-  console.log(`[audit] Starting: ${rawUrl} | ${email} | ${name}`);
+  console.log(`[assessment] Starting: ${rawUrl} | ${email} | ${name}`);
 
-  let audit;
+  let assessment;
   try {
-    audit = await runAudit(rawUrl);
+    assessment = await runAssessment(rawUrl);
   } catch (err) {
-    console.error('[audit] Fatal error:', err);
-    // Notify Mark even if audit failed
+    console.error('[assessment] Fatal error:', err);
+    // Notify Mark even if assessment failed
     await sendEmail(apiKey, 'hello@overhauled.ai',
-      `[New Health Check — Audit Failed] ${rawUrl}`,
-      `<p>Audit failed for ${rawUrl}. Submitted by: ${name} &lt;${email}&gt;, phone: ${phone}</p><p>Error: ${err.message}</p>`
+      `[New Health Check — Assessment Failed] ${rawUrl}`,
+      `<p>Assessment failed for ${rawUrl}. Submitted by: ${name} &lt;${email}&gt;, phone: ${phone}</p><p>Error: ${err.message}</p>`
     ).catch(() => {});
     return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
   }
 
-  const hostname = audit.hostname || rawUrl;
-  const reportHtml = buildReportEmail(name, rawUrl, audit);
+  const hostname = assessment.hostname || rawUrl;
+  const reportHtml = buildReportEmail(name, rawUrl, assessment);
 
   // Send emails + add to HubSpot in parallel; never block on any single failure
   await Promise.allSettled([
@@ -739,12 +739,12 @@ exports.handler = async function (event) {
     sendEmail(
       apiKey,
       'hello@overhauled.ai',
-      `[New Audit] ${hostname} · ${name} <${email}>`,
-      buildNotifyEmail(name, email, phone, rawUrl, audit)
+      `[New Assessment] ${hostname} · ${name} <${email}>`,
+      buildNotifyEmail(name, email, phone, rawUrl, assessment)
     ),
     addToHubSpot(email, rawUrl, name),
   ]);
 
-  console.log('[audit] Complete');
+  console.log('[assessment] Complete');
   return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
 };

@@ -1,6 +1,6 @@
 // netlify/functions/onboarding.js
 // Receives client onboarding form submission and emails it to Mark.
-// Uses the same Resend setup as audit.js — requires RESEND_API_KEY env var.
+// Uses the same Resend setup as assessment.js — requires RESEND_API_KEY env var.
 
 const https = require('https');
 

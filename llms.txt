@@ -8,7 +8,7 @@ Overhauled.ai is a web design and AI automation studio run by Mark Hurson, based
 
 Three core packages:
 
-- **Lead Leak Audit ($297)**: A full diagnostic of your existing website — what's broken, what's costing you leads, and what to fix first. Delivered in 48 hours. If nothing needs fixing, we tell you that.
+- **Lead Leak Assessment ($297)**: A full diagnostic of your existing website — what's broken, what's costing you leads, and what to fix first. Delivered in 48 hours. If nothing needs fixing, we tell you that.
 - **Lead Machine (from $2,997)**: A fast, mobile-first, SEO-ready website built to convert. Flat rate, you own everything, no ongoing fees.
 - **Autopilot Plan (from $397/month)**: AI agents and automation for your business — instant lead replies, quote follow-up, appointment booking, FAQ handling, and after-hours coverage. Flat monthly rate, cancel anytime.
 
@@ -18,7 +18,7 @@ Small business owners everywhere — especially trades, service businesses, clin
 
 ## Pricing
 
-- Lead Leak Audit: $297 (one-time, 48-hour turnaround)
+- Lead Leak Assessment: $297 (one-time, 48-hour turnaround)
 - Lead Machine: from $2,997 (one-time, flat rate, you own everything)
 - Autopilot Plan: from $397/month (flat monthly, cancel anytime)
 

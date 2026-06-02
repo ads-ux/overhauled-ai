@@ -54,15 +54,15 @@
   status = 301
   force  = true
 
-# Redirect stale /audit page → /tune-up/ (renamed package)
+# Redirect stale /assessment page → /tune-up/ (renamed package)
 [[redirects]]
-  from   = "/audit"
+  from   = "/assessment"
   to     = "/tune-up/"
   status = 301
   force  = true
 
 [[redirects]]
-  from   = "/audit/*"
+  from   = "/assessment/*"
   to     = "/tune-up/"
   status = 301
   force  = true

@@ -5,14 +5,14 @@ Contact: hello@overhauled.ai | (519) 942-5698 | https://overhauled.ai
 
 ---
 
-## Lead Leak Audit
+## Lead Leak Assessment
 
 - Price: $297 (one-time)
 - Turnaround: 48 hours
 - Includes: Full diagnostic of your existing website — broken forms, mobile issues, slow load times, missing calls-to-action, SEO gaps, and AI search visibility. Written report with prioritised fixes.
 - Best for: Businesses with an existing site that isn't generating enquiries
 - Note: If nothing needs fixing, we'll tell you that too
-- Quote: Email hello@overhauled.ai with subject "Lead Leak Audit"
+- Quote: Email hello@overhauled.ai with subject "Lead Leak Assessment"
 
 ## Lead Machine
 
