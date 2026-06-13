@@ -12,11 +12,27 @@
   <meta property="og:description" content="Guelph web design for small businesses. Fast, mobile-first websites, Google Business Profile optimization, and lead follow-up automation. Flat-fee $2,000. Book a free audit." />
   <meta property="og:site_name" content="Overhauled.ai" />
   <meta property="og:locale" content="en_CA" />
+  <meta property="og:image" content="https://overhauled.ai/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Web Design Guelph | Overhauled.ai" />
   <meta name="twitter:description" content="Guelph web design for small businesses. Fast sites, Google optimization, lead automation. Flat-fee $2,000." />
+  <meta name="twitter:image" content="https://overhauled.ai/og-image.png" />
   <meta name="geo.region" content="CA-ON" />
   <meta name="geo.placename" content="Guelph, Ontario" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1452794856103590');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1452794856103590&ev=PageView&noscript=1"/></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -755,7 +771,7 @@
     "alternateName": "Overhauled AI",
     "description": "Guelph web design and digital marketing agency for small businesses. We build fast, mobile-first websites, optimize Google Business Profiles, and set up lead follow-up automation.",
     "url": "https://overhauled.ai/",
-    "telephone": "",
+    "telephone": "+15199425698",
     "email": "hello@overhauled.ai",
     "founder": {
       "@type": "Person",
@@ -1250,7 +1266,8 @@
   <h2 class="section-title">Book your free audit</h2>
   <p class="section-sub" style="margin-bottom:0">Tell me a bit about your business and I'll come back with what I find — no cost, no catch.</p>
 
-  <form action="mailto:hello@overhauled.ai" method="POST" enctype="text/plain">
+  <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+    <input type="hidden" name="form-name" value="contact" />
     <div class="form-row">
       <input type="text" name="Name" placeholder="Your name" required />
       <input type="text" name="Business" placeholder="Business name" required />
