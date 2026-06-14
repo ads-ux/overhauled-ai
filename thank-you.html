@@ -10,6 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <!-- Google Analytics + Conversion -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHHFNBCFEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VHHFNBCFEC');
+    // Fire lead conversion event on page load
+    gtag('event', 'generate_lead', {
+      event_category: 'contact_form',
+      event_label: 'audit_request'
+    });
+  </script>
 </head>
 <body>
 
