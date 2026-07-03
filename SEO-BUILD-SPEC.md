@@ -211,3 +211,24 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 - [ ] Site is connected to GitHub continuous deployment (not Netlify Drop)
 
 A 2-minute automated check (run against the live site or repo): fetch each page, assert `title.length<=60`, `150>=metaDescLength>=110`, canonical has no `.html`, `og:title`/`twitter:card` present, and each image response ≤ 100 KB.
+
+---
+
+## 12. Retrofitting a legacy site to clean URLs
+
+Sites built before §4 was finalized may still use `.html` in canonicals, `og:url`,
+internal links, and sitemap.xml. Do **not** hand-edit these page by page — normalize the
+whole repo in one pass. The rules:
+
+- Strip `.html` from every **internal** `<a href>`, from `<link rel="canonical">`, and from `og:url`.
+- Force internal links to **absolute clean** form (`href="/blog"`, not `href="blog.html"`); map `/index` → `/`.
+- Leave external links, `mailto:`, `tel:`, `#anchors`, and non-HTML assets (`/sitemap.xml`, `/css/...`) untouched.
+- Rebuild `sitemap.xml` from the pages present, clean form, excluding `404.html` and `thank-you.html`.
+- Commit to `main`; Netlify continuous deployment republishes automatically.
+
+A ready-to-run normalizer (`retrofit-clean-urls.sh`) lives with the build tooling. It clones each
+repo, applies the rules above, rebuilds the sitemap, and (with `--push`) commits and pushes.
+Run it **dry** first, eyeball the diff, then re-run with `--push`.
+
+After running, spot-check with the §11 QA rule: for a few pages, confirm the canonical has no
+`.html`, equals `og:url`, and that internal links and sitemap all use the clean form.
