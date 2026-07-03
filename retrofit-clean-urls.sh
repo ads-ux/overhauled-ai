@@ -101,12 +101,14 @@ for repo in "${REPOS[@]}"; do
   echo "=================================================================="
   echo "  $repo  ($domain)"
   echo "=================================================================="
-  gh repo clone "$ORG/$repo" "$WORK/$repo" -- --depth 1 >/dev/null 2>&1 \
-    || git clone --depth 1 "https://github.com/$ORG/$repo.git" "$WORK/$repo" >/dev/null 2>&1
+  if ! gh repo clone "$ORG/$repo" "$WORK/$repo" -- --depth 1 >/dev/null 2>&1 \
+     && ! git clone --depth 1 "https://github.com/$ORG/$repo.git" "$WORK/$repo" >/dev/null 2>&1; then
+    echo "  ⚠ could not clone $repo — skipping"; continue
+  fi
   ( cd "$WORK/$repo"
     python3 <(normalize_py) "$domain"
-    # quick verification
-    left=$(grep -rlE 'href="[^"]*\.html"|canonical[^>]*\.html"' --include=*.html . | wc -l | tr -d ' ')
+    # quick verification (|| true so a clean "0 matches" result doesn't abort)
+    left=$( { grep -rlE 'href="[^"]*\.html"|canonical[^>]*\.html"' --include='*.html' . 2>/dev/null || true; } | wc -l | tr -d ' ')
     echo "  files still containing .html links/canonicals: $left  (expect 0)"
     if git diff --quiet; then
       echo "  no changes (already clean)"
@@ -118,7 +120,7 @@ for repo in "${REPOS[@]}"; do
       echo "  (dry run) changes staged locally; re-run with --push to publish"
       git --no-pager diff --stat | tail -3
     fi
-  )
+  ) || echo "  ⚠ error processing $repo — continuing to next"
 done
 
 echo
