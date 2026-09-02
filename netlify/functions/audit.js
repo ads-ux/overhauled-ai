@@ -4,7 +4,7 @@
 
 const https = require('https');
 
-// ─── HTTP helpers ────────────────────────────────────────────────────────────
+// ─── HTTP helpers ──────────────────────────────────────────────────────
 
 function httpGet(url, timeoutMs = 9000) {
   return new Promise((resolve, reject) => {
@@ -65,7 +65,7 @@ function resendPost(apiKey, payload) {
   });
 }
 
-// ─── Assessment engine ────────────────────────────────────────────────────────────
+// ─── Assessment engine ─────────────────────────────────────────────────────────
 
 async function runAssessment(rawUrl) {
   const siteUrl = rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`;
@@ -216,7 +216,7 @@ function parsePSI(psi) {
   };
 }
 
-// ─── Issue generation (plain English) ────────────────────────────────────────
+// ─── Issue generation (plain English) ───────────────────────────────────────
 
 function buildIssues(assessment) {
   const issues = []; // { severity, category, text, fix }
@@ -588,7 +588,6 @@ function buildReportEmail(name, url, assessment) {
 
     <p style="font-size:12px;color:#94a3b8;margin:24px 0 0;text-align:center;line-height:1.8;">
       Report prepared by Mark at <a href="https://overhauled.ai" style="color:#84cc16;">overhauled.ai</a> · Guelph, ON<br>
-      <a href="mailto:hello@overhauled.ai" style="color:#84cc16;">hello@overhauled.ai</a>
     </p>
 
   </td></tr>
@@ -723,7 +722,7 @@ exports.handler = async function (event) {
   } catch (err) {
     console.error('[assessment] Fatal error:', err);
     // Notify Mark even if assessment failed
-    await sendEmail(apiKey, 'hello@overhauled.ai',
+    await sendEmail(apiKey, 'mark@weprovideleads.com',
       `[New Health Check — Assessment Failed] ${rawUrl}`,
       `<p>Assessment failed for ${rawUrl}. Submitted by: ${name} &lt;${email}&gt;, phone: ${phone}</p><p>Error: ${err.message}</p>`
     ).catch(() => {});
@@ -738,7 +737,7 @@ exports.handler = async function (event) {
     sendEmail(apiKey, email, `Your Overhauled.ai Site Report — ${hostname}`, reportHtml),
     sendEmail(
       apiKey,
-      'hello@overhauled.ai',
+      'mark@weprovideleads.com',
       `[New Assessment] ${hostname} · ${name} <${email}>`,
       buildNotifyEmail(name, email, phone, rawUrl, assessment)
     ),
