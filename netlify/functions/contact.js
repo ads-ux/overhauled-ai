@@ -1,5 +1,5 @@
 // netlify/functions/contact.js
-// Receives contact form submissions and emails them to hello@overhauled.ai
+// Receives contact form submissions and emails them to mark@weprovideleads.com
 // Requires env var: RESEND_API_KEY
 
 const https = require('https');
@@ -140,7 +140,7 @@ exports.handler = async function (event) {
   try {
     await sendEmail(
       apiKey,
-      'hello@overhauled.ai',
+      'mark@weprovideleads.com',
       subjectLine,
       buildNotificationEmail(name, email, subject, message)
     );
