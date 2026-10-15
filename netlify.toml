@@ -6,28 +6,10 @@
 publish = "."
 
 # Pretty URLs for the new pages — keep .html on disk, serve at clean path
-[[redirects]]
-from = "/ai-agents"
-to = "/ai-agents.html"
-status = 200
 
-[[redirects]]
-from = "/health-check"
-to = "/health-check.html"
-status = 200
 
 # .html versions: 301-redirect to clean URL (force=true overrides static serving)
-[[redirects]]
-from = "/ai-agents.html"
-to = "/ai-agents"
-status = 301
-force = true
 
-[[redirects]]
-from = "/health-check.html"
-to = "/health-check"
-status = 301
-force = true
 
 # Force /contact to serve the new contact/index.html (overrides legacy contact.html)
 [[redirects]]
@@ -55,34 +37,26 @@ status = 301
 force = true
 
 # Redirect stale /assessment page → /tune-up/ (renamed package)
-[[redirects]]
-from = "/assessment"
-to = "/tune-up/"
-status = 301
-force = true
 
-[[redirects]]
-from = "/assessment/*"
-to = "/tune-up/"
-status = 301
-force = true
 
 # Redirect old /ai-agents page → /work/ (our case studies)
-[[redirects]]
-from = "/ai-agents"
-to = "/work/"
-status = 301
-force = true
 
-[[redirects]]
-from = "/ai-agents.html"
-to = "/work/"
-status = 301
-force = true
 
 # Redirect the raw Netlify subdomain to the primary domain
 [[redirects]]
 from = "https://stellar-pavlova-6e1103.netlify.app/*"
 to = "https://overhauled.ai/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/assessment"
+to = "/#contact"
+status = 301
+force = true
+
+[[redirects]]
+from = "/assessment/*"
+to = "/#contact"
 status = 301
 force = true

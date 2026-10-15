@@ -1,3 +1,27 @@
+# 2026-10-15 one-offer strip-back: retired package pages
+/pricing              /#pricing   301!
+/pricing/*            /#pricing   301!
+/overhaul             /#pricing   301!
+/overhaul/*           /#pricing   301!
+/tune-up              /#contact   301!
+/tune-up/*            /#contact   301!
+/audit                /#contact   301!
+/audit/*              /#contact   301!
+/audit-confirmed      /           301!
+/audit-confirmed/*    /           301!
+/health-check         /#contact   301!
+/health-check.html    /#contact   301!
+/health-check/*       /#contact   301!
+/auto-pilot           /           301!
+/auto-pilot/*         /           301!
+/ai-agents            /           301!
+/ai-agents.html       /           301!
+/ai-agents/*          /           301!
+/blog/pizzacam-guelph-website-case-study    /work/   301!
+/blog/pizzacam-guelph-website-case-study/*  /work/   301!
+/blog/what-is-an-ai-agent-for-small-business    /   301!
+/blog/what-is-an-ai-agent-for-small-business/*  /   301!
+
 /ai-agents-guelph/        /    301
 /website-repair-guelph/   /    301
 /local-seo-guelph/        /    301
