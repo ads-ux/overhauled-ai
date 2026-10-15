@@ -1,8 +1,8 @@
 # Overhauled.ai
 
-> Websites and AI automation for small businesses everywhere.
+> Websites and AI automation for trades and service businesses.
 
-Overhauled.ai is a web design and AI automation studio run by Mark Hurson, based in Guelph, Ontario, Canada. We help small business owners get professional websites built fast, fix sites that are losing leads, and add AI-powered automation that handles the repetitive work — all at flat-rate prices with no tech jargon.
+Overhauled.ai is a web design and AI automation studio run by Mark Hurson, based in Guelph, Ontario, Canada. We help trades and service business owners — plumbers, roofers, contractors, landscapers, cleaners and other local service companies — get professional websites built fast, fix sites that are losing leads, and add AI-powered automation that handles the repetitive work — all at flat-rate prices with no tech jargon.
 
 ## What We Do
 
@@ -14,7 +14,7 @@ Three core packages:
 
 ## Who We Serve
 
-Small business owners everywhere — especially trades, service businesses, clinics, consultants, and local retailers who want their website to work harder and their inbox to stop running their day.
+Trades and service businesses: plumbers, electricians, HVAC, roofers, contractors and renovators, landscapers, cleaners, movers, junk removal, restoration and other companies that win work from people searching Google for help nearby. Based in Guelph, serving Waterloo Region, Wellington County and beyond.
 
 ## Pricing
 
@@ -48,7 +48,7 @@ Machine-readable pricing: https://overhauled.ai/pricing.md
 - Owner: Mark Hurson
 - Phone: (519) 942-5698
 - Location: Guelph, Ontario, Canada
-- Serving: Small businesses everywhere
+- Serving: Trades and service businesses
 
 ## Recent Client Work
 
@@ -59,4 +59,4 @@ Machine-readable pricing: https://overhauled.ai/pricing.md
 
 ## Last Updated
 
-May 2026
+October 2026
