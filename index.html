@@ -1266,18 +1266,19 @@
   <h2 class="section-title">Book your free audit</h2>
   <p class="section-sub" style="margin-bottom:0">Tell me a bit about your business and I'll come back with what I find — no cost, no catch.</p>
 
-  <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
     <input type="hidden" name="form-name" value="contact" />
+    <p hidden><label>Leave this empty: <input name="bot-field" /></label></p>
     <div class="form-row">
-      <input type="text" name="Name" placeholder="Your name" required />
-      <input type="text" name="Business" placeholder="Business name" required />
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="text" name="business" placeholder="Business name" required />
     </div>
     <div class="form-row">
-      <input type="email" name="Email" placeholder="Email address" required />
-      <input type="tel" name="Phone" placeholder="Phone (optional)" />
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="tel" name="phone" placeholder="Phone (optional)" />
     </div>
-    <input type="text" name="Website" placeholder="Your current website (if you have one)" />
-    <select name="Interest">
+    <input type="text" name="website" placeholder="Your current website (if you have one)" />
+    <select name="topic">
       <option value="" disabled selected>What are you most interested in?</option>
       <option>New website build</option>
       <option>Google Business Profile fix</option>
@@ -1285,7 +1286,7 @@
       <option>Ongoing management / Growth plan</option>
       <option>Not sure — just want the audit</option>
     </select>
-    <textarea name="Message" placeholder="Anything else you'd like me to know about your business?"></textarea>
+    <textarea name="message" placeholder="Anything else you'd like me to know about your business?"></textarea>
     <button type="submit" class="form-submit">Send — I'll be in touch within 24 hours</button>
   </form>
 </section>
